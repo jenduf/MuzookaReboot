@@ -13,7 +13,8 @@ class SongCell: UITableViewCell
 	@IBOutlet var songName: UILabel!
 	@IBOutlet var bandName: UILabel!
 	@IBOutlet var rank: UILabel!
-	@IBOutlet var songArtwork: UIImageView!
+	@IBOutlet var albumArtView: AlbumArtView!
+	@IBOutlet var producerIcon: UIImageView!
 	@IBOutlet var voteButton: UIButton!
 	@IBOutlet var menuButton: UIButton!
 	
@@ -25,28 +26,28 @@ class SongCell: UITableViewCell
 			self.bandName.text = song!.band.name
 			//self.rank.text = "\(song!.position)"
 			
-			if song?.band.following == true
+			self.producerIcon.hidden = song!.producerVotes == 0
+			
+			if song!.band.following == true
 			{
 				self.voteButton.selected = true
 			}
 			
-			let request = NSURLRequest(URL: NSURL(string: song!.artwork)!)
-			NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
-				{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-					if data != nil
-					{
-						let image = UIImage(data: data)
-						self.songArtwork.image = image
-					}
-				}
+			if self.albumArtView != nil
+			{
+				self.albumArtView.artURL = song!.artwork
+			}
 		}
 		
 	}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+	override func awakeFromNib()
+	{
+		super.awakeFromNib()
+		
+		//self.songArtwork.layer.masksToBounds = true
+		//self.songArtwork.layer.cornerRadius = 2.0
+	}
 	
 	override func prepareForReuse()
 	{
@@ -54,9 +55,16 @@ class SongCell: UITableViewCell
 		
 		self.songName.text = ""
 		self.bandName.text = ""
-		self.rank.text = ""
 		
-		self.songArtwork.image = nil
+		if self.rank != nil
+		{
+			self.rank.text = ""
+		}
+		
+		if self.albumArtView != nil
+		{
+			self.albumArtView.albumImageView.image = nil
+		}
 	}
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -27,7 +27,7 @@ class BorderedButton: UIButton
 		
 		if color!.rawValue > 0
 		{
-			self.strokeColor = Utils.UIColorFromRGB(color!.hex, alpha: 1.0)
+			self.strokeColor = color!.uiColor
 		}
 		else
 		{

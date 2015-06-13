@@ -32,12 +32,15 @@ class SongInfoViewController: MuzookaViewController
 			self.artistName.text = song?.band.name
 			self.songName.text = song?.name
 			
-			let request = NSURLRequest(URL: NSURL(string: song!.artwork)!)
+			/*
+			let request = NSURLRequest(URL: NSURL(string: song!.artwork!)!)
 			NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
 			{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
 				let image = UIImage(data: data)
 				self.songArtwork.image = image
-			}
+			}*/
+			
+			self.songArtwork.loadFromURL(NSURL(string: song!.artwork!)!)
 		}
 	}
 	

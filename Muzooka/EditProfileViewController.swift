@@ -8,7 +8,10 @@
 
 import UIKit
 
-class EditProfileViewController: MuzookaViewController {
+class EditProfileViewController: MuzookaViewController
+{
+	@IBOutlet var avatarView: AvatarView!
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()

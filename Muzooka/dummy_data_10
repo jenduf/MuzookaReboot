@@ -1,0 +1,47 @@
+{
+  "id": 7741,
+  "name": "Jen Duffey",
+  "username": "jenduf",
+  "city": "",
+  "country": null,
+  "provstate": null,
+  "bio": "",
+  "artist": false,
+  "producer": false,
+  "workedwith": null,
+  "score": 23.7424673,
+  "scoredetails": {
+    "score": 23.7424673,
+    "code": "#956D4E"
+  },
+  "votes": 0,
+  "playlists_count": 2,
+  "followers": 0,
+  "follows": 0,
+  "facebook_username": null,
+  "twitter_username": null,
+  "google_username": "107697983081379481807",
+  "email": "jennifer@muzooka.com",
+  "initialActivityFeed": 1,
+  "membersince": "2015-05-07T21:45:55.000Z",
+  "lastmodified": "2015-06-11T04:17:42.000Z",
+  "is_administrator": false,
+  "is_testuser": false,
+  "is_email_verified": true,
+  "filtering": 0,
+  "genre": null,
+  "locations": null,
+  "networks": {
+    "google": {
+      "username": "107697983081379481807",
+      "url": "https:\/\/plus.google.com\/107697983081379481807"
+    }
+  },
+  "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/7741\/avatar.20150527182334.jpg",
+  "dismissed": [
+    
+  ],
+  "partner_platforms": [
+    
+  ]
+}

@@ -1,0 +1,102 @@
+
+{
+  "total": 1,
+  "count": 1,
+  "offset": 0,
+  "results": [
+    {
+      "id": 4512,
+      "name": "Blondie",
+      "published": "2015-05-26T01:50:34.000Z",
+      "listens": 17,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2245\/avatar.20150526015607.jpg",
+      "age": "6 days ago",
+      "age_short": "6d",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "2:54",
+      "snippet_start": 126,
+      "hotchartposition": 40,
+      "hotchartpositions": {
+        "range": {
+          "min": 31,
+          "max": 61
+        },
+        "past_days": [
+          61,
+          61,
+          40,
+          37,
+          46,
+          31,
+          40
+        ]
+      },
+      "partner_platforms": [
+        {
+          "id": 3,
+          "subdomain": "basement"
+        }
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "blues",
+        "rock",
+        "surf"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "dis"
+      ],
+      "ranks": [
+        0,
+        0,
+        21,
+        3,
+        -9,
+        15,
+        -9
+      ],
+      "rank": 14.2144719,
+      "votes": 5,
+      "status": "Published",
+      "owner_avatar": "avatar.20150526015839.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 2245,
+        "name": "James Wolpert",
+        "score": 17.0625527,
+        "country": null,
+        "provstate": null,
+        "owner_id": 8062,
+        "homepage": "https:\/\/muzooka.com\/jamespwolpert",
+        "subdomain": "jamespwolpert",
+        "networks": {
+          "facebook": {
+            "username": "jamespwolpert",
+            "url": "https:\/\/www.facebook.com\/jamespwolpert"
+          },
+          "twitter": {
+            "username": "jamespwolpert",
+            "url": "https:\/\/www.twitter.com\/jamespwolpert"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2245\/avatar.20150526015607.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2245\/banner.20150526013853.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "type": "song"
+    }
+  ]
+}

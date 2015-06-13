@@ -19,12 +19,14 @@ class PartnerCell: UITableViewCell
 		{
 			self.bannerText.text = partner!.descriptionShort
 			
-			let request = NSURLRequest(URL: NSURL(string: partner!.banner)!)
+		/*	let request = NSURLRequest(URL: NSURL(string: partner!.banner)!)
 			NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
 				{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
 					let image = UIImage(data: data)
 					self.bannerImage.image = image
-			}
+			}*/
+			
+			self.bannerImage.loadFromURL(NSURL(string: partner!.banner)!)
 		}
 	
 	}

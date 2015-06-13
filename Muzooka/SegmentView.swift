@@ -39,6 +39,7 @@ class SegmentView: UIView
 		if self.indicatorView == nil
 		{
 			self.indicatorView = IndicatorView(frame: indicatorFrame)
+			self.indicatorView!.percent = 1.0
 			self.addSubview(self.indicatorView!)
 		}
 		else
@@ -55,6 +56,14 @@ class SegmentView: UIView
 			var btn = BorderedButton(frame: CGRect(x: nextX, y: 0, width: segWidth, height: Int(self.frame.height - indicatorView!.frame.height)), text: item, stroke: UIColor.clearColor(), fontSize: Constants.FONT_SIZE_SEGMENT)
 			btn.tag = index
 			btn.addTarget(self, action: "segmentClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+			btn.setTitleColor(Color.White.uiColor.colorWithAlphaComponent(0.5), forState: UIControlState.Normal)
+			btn.setTitleColor(Color.White.uiColor, forState: UIControlState.Selected)
+			
+			if index == 0
+			{
+				btn.selected = true
+			}
+			
 			self.addSubview(btn)
 			
 			self.segments.append(btn)

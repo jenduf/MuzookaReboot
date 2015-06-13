@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ChartViewController: MuzookaViewController, UITableViewDataSource, UITableViewDelegate
 {
@@ -34,9 +35,9 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 		
 		var song = self.songs[index] as Song
 		
-		var paramDict = NSDictionary(objectsAndKeys: "\(song.songID)", "song_id")//"Jen", "name", "jenduf2", "username", "jenduf3@gmail.com", "email", "Duff0818", "password")
+		//var paramDict = NSDictionary(objectsAndKeys: "\(song.songID)", "song_id")//"Jen", "name", "jenduf2", "username", "jenduf3@gmail.com", "email", "Duff0818", "password")
 		
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.VoteSong, delegate: self, parameters: paramDict)
+		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.VoteSong, delegate: self, parameters: nil, appendedString: "\(song.songID)")
 	}
 	
 	@IBAction func showMenu(sender: UIButton)
@@ -77,7 +78,8 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 		self.songTableView.reloadData()
 		
 		var apiRequest = APIRequest(rawValue: index)
-		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest!, delegate: self)
+		let referrer = apiRequest!.buildReferrerWithAppendedIDAndExtraInfo(0, extraInfo: "")
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest!, delegate: self, apiReferrer: referrer)
 	}
 	
 	// MARK: - Helpers
@@ -159,6 +161,12 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
 	{
 		self.songSelected = self.songs[indexPath.row] as Song
+
+		MusicPlayer.sharedPlayer.delegate = self.navController
+		
+		MusicPlayer.sharedPlayer.playSong(self.songSelected!)
+		
+		//self.navController!.toggleMusicPlayer()
 
 		//	APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Band, delegate: self, parameters: nil, appendedString: "\(self.songSelected!.band.bandID)")
 	}

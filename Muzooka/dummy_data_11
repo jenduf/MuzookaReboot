@@ -1,0 +1,660 @@
+{
+  "id": 7741,
+  "name": "Jen Duffey",
+  "username": "jenduf",
+  "city": "",
+  "country": null,
+  "provstate": null,
+  "bio": "",
+  "artist": false,
+  "producer": false,
+  "workedwith": null,
+  "score": 22.0238271,
+  "scoredetails": {
+    "score": 22.0238271,
+    "code": "#956D4E"
+  },
+  "votes": 0,
+  "playlists_count": 2,
+  "followers": 0,
+  "follows": 0,
+  "facebook_username": null,
+  "twitter_username": null,
+  "google_username": "107697983081379481807",
+  "membersince": "2015-05-07T21:45:55.000Z",
+  "lastmodified": "2015-05-27T00:09:44.000Z",
+  "is_testuser": false,
+  "is_email_verified": true,
+  "filtering": 0,
+  "genre": null,
+  "locations": null,
+  "networks": {
+    "google": {
+      "username": "107697983081379481807",
+      "url": "https:\/\/plus.google.com\/107697983081379481807"
+    }
+  },
+  "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/7741\/avatar.20150525211240.jpg",
+  "user": {
+    "id": 7741,
+    "following": false,
+    "followed": false
+  },
+  "playlists": {
+    "total": 2,
+    "count": 2,
+    "offset": 0,
+    "playlists": [
+      {
+        "id": 3964,
+        "name": "Discovered",
+        "songs_count": 3,
+        "subscribers": 0,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/playlists\/3964\/artwork.s.20150525233021.jpg",
+        "owner": {
+          "id": 7741,
+          "name": "Jen Duffey",
+          "username": "jenduf",
+          "producer": false,
+          "artist": false
+        },
+        "user": {
+          "id": 7741,
+          "subscribed": false
+        }
+      },
+      {
+        "id": 3963,
+        "name": "new",
+        "songs_count": 3,
+        "subscribers": 0,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/playlists\/3963\/artwork.s.20150525232924.jpg",
+        "owner": {
+          "id": 7741,
+          "name": "Jen Duffey",
+          "username": "jenduf",
+          "producer": false,
+          "artist": false
+        },
+        "user": {
+          "id": 7741,
+          "subscribed": false
+        }
+      }
+    ]
+  },
+  "playlists_subscriptions": {
+    "total": 1,
+    "count": 1,
+    "offset": 0,
+    "playlists": [
+      {
+        "id": 3953,
+        "name": "Discovered",
+        "songs_count": 21,
+        "subscribers": 1,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/playlists\/3953\/artwork.s.20150523041809.jpg",
+        "owner": {
+          "id": 7798,
+          "name": "John Anthony Martinez",
+          "username": "RhythmIntensive",
+          "producer": true,
+          "artist": false
+        },
+        "user": {
+          "id": 7741,
+          "subscribed": true
+        }
+      }
+    ]
+  },
+  "listens": {
+    "total": 8,
+    "count": 5,
+    "offset": 0,
+    "listens": [
+      {
+        "id": 4512,
+        "name": "Blondie",
+        "published": "2015-05-26T01:50:34.000Z",
+        "listens": 13,
+        "downloadable": false,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2245\/avatar.20150526015607.jpg",
+        "age": "1 day ago",
+        "age_short": "1d",
+        "producer_votes": 0,
+        "song_comments": 0,
+        "duration": "2:54",
+        "snippet_start": 126,
+        "hotchartposition": 50,
+        "hotchartpositions": {
+          "range": {
+            "min": 50,
+            "max": 61
+          },
+          "past_days": [
+            61,
+            61,
+            61,
+            61,
+            61,
+            61,
+            50
+          ]
+        },
+        "partner_platforms": [
+          {
+            "id": 3,
+            "subdomain": "basement",
+            "user": {
+              "id": 7741,
+              "participating": false
+            }
+          }
+        ],
+        "primary_tag": "Rock",
+        "tags": [
+          "blues",
+          "rock",
+          "surf"
+        ],
+        "bitRates": [
+          "128",
+          "256",
+          "320",
+          "96",
+          "dis"
+        ],
+        "ranks": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11
+        ],
+        "rank": 13.7777816,
+        "votes": 5,
+        "status": "Published",
+        "owner_avatar": "avatar.20150526015839.jpg",
+        "latest_three_voting_producers": [
+          
+        ],
+        "latest_voting_producer": null,
+        "band": {
+          "id": 2245,
+          "name": "James Wolpert",
+          "score": 0,
+          "country": null,
+          "provstate": null,
+          "owner_id": 8062,
+          "homepage": "https:\/\/muzooka.com\/jamespwolpert",
+          "subdomain": "jamespwolpert",
+          "networks": {
+            "facebook": {
+              "username": "jamespwolpert",
+              "url": "https:\/\/www.facebook.com\/jamespwolpert"
+            },
+            "twitter": {
+              "username": "jamespwolpert",
+              "url": "https:\/\/www.twitter.com\/jamespwolpert"
+            }
+          },
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2245\/avatar.20150526015607.jpg",
+          "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2245\/banner.20150526013853.jpg",
+          "allow_join_requests": false,
+          "allow_member_comments": false,
+          "user": {
+            "following": false
+          }
+        },
+        "user": {
+          "id": 7741,
+          "voted": false,
+          "listened": true,
+          "purchased": false
+        },
+        "listened_on": "2015-05-26T16:13:28.000Z",
+        "listened_on_age": "12 hours ago"
+      },
+      {
+        "id": 4321,
+        "name": "Revelation Blues",
+        "published": "2015-05-11T22:25:58.000Z",
+        "listens": 16,
+        "downloadable": true,
+        "price": 0,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2143\/avatar.20150511223129.jpg",
+        "age": "2 weeks ago",
+        "age_short": "2w",
+        "producer_votes": 0,
+        "song_comments": 0,
+        "duration": "3:31",
+        "snippet_start": 65,
+        "hotchartposition": 218,
+        "hotchartpositions": {
+          "range": {
+            "min": 47,
+            "max": 218
+          },
+          "past_days": [
+            58,
+            53,
+            56,
+            55,
+            63,
+            210,
+            218
+          ]
+        },
+        "partner_platforms": [
+          {
+            "id": 3,
+            "subdomain": "basement",
+            "user": {
+              "id": 7741,
+              "participating": false
+            }
+          }
+        ],
+        "primary_tag": "Blues",
+        "tags": [
+          "americana",
+          "blues",
+          "folk"
+        ],
+        "bitRates": [
+          "128",
+          "256",
+          "320",
+          "96",
+          "dis"
+        ],
+        "ranks": [
+          -11,
+          5,
+          -3,
+          1,
+          -8,
+          -147,
+          -8
+        ],
+        "rank": 5.4751194,
+        "votes": 3,
+        "status": "Published",
+        "owner_avatar": null,
+        "latest_three_voting_producers": [
+          
+        ],
+        "latest_voting_producer": null,
+        "band": {
+          "id": 2143,
+          "name": "Garner Sloan",
+          "score": 16.847501,
+          "country": null,
+          "provstate": null,
+          "owner_id": 7788,
+          "homepage": "https:\/\/muzooka.com\/garnersloan",
+          "subdomain": "garnersloan",
+          "networks": {
+            "facebook": {
+              "username": "garnersloanmusic",
+              "url": "https:\/\/www.facebook.com\/garnersloanmusic"
+            },
+            "twitter": {
+              "username": "GarnerSloan",
+              "url": "https:\/\/www.twitter.com\/GarnerSloan"
+            }
+          },
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2143\/avatar.20150511223129.jpg",
+          "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2143\/banner.20150511223041.jpg",
+          "allow_join_requests": false,
+          "allow_member_comments": false,
+          "user": {
+            "following": false
+          }
+        },
+        "user": {
+          "id": 7741,
+          "voted": false,
+          "listened": true,
+          "purchased": false
+        },
+        "listened_on": "2015-05-25T23:30:17.000Z",
+        "listened_on_age": "1 day ago"
+      },
+      {
+        "id": 4372,
+        "name": "Which Ever Way it Goes",
+        "published": "2015-05-14T21:21:07.000Z",
+        "listens": 12,
+        "downloadable": false,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2171\/avatar.20150514204756.jpg",
+        "age": "1 week ago",
+        "age_short": "1w",
+        "producer_votes": 0,
+        "song_comments": 0,
+        "duration": "4:07",
+        "snippet_start": 11,
+        "hotchartposition": 54,
+        "hotchartpositions": {
+          "range": {
+            "min": 51,
+            "max": 62
+          },
+          "past_days": [
+            57,
+            51,
+            54,
+            54,
+            56,
+            53,
+            54
+          ]
+        },
+        "partner_platforms": [
+          {
+            "id": 47,
+            "subdomain": "schoolnight",
+            "user": {
+              "id": 7741,
+              "participating": false
+            }
+          },
+          {
+            "id": 8,
+            "subdomain": "tonymardini",
+            "user": {
+              "id": 7741,
+              "participating": false
+            }
+          }
+        ],
+        "primary_tag": "Rock",
+        "tags": [
+          "rock"
+        ],
+        "bitRates": [
+          "128",
+          "256",
+          "320",
+          "96",
+          "dis"
+        ],
+        "ranks": [
+          5,
+          6,
+          -3,
+          0,
+          -2,
+          3,
+          -1
+        ],
+        "rank": 13.6666047,
+        "votes": 3,
+        "status": "Published",
+        "owner_avatar": "avatar.20150514202421.jpg",
+        "latest_three_voting_producers": [
+          
+        ],
+        "latest_voting_producer": null,
+        "band": {
+          "id": 2171,
+          "name": "Suspect",
+          "score": 20.765746,
+          "country": null,
+          "provstate": null,
+          "owner_id": 7908,
+          "homepage": "https:\/\/muzooka.com\/suspect",
+          "subdomain": "suspect",
+          "networks": {
+            "facebook": {
+              "username": "suspectmusicofficial",
+              "url": "https:\/\/www.facebook.com\/suspectmusicofficial"
+            },
+            "twitter": {
+              "username": "we_are_suspect",
+              "url": "https:\/\/www.twitter.com\/we_are_suspect"
+            }
+          },
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2171\/avatar.20150514204756.jpg",
+          "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2171\/banner.20150514203740.jpg",
+          "allow_join_requests": false,
+          "allow_member_comments": false,
+          "user": {
+            "following": false
+          }
+        },
+        "user": {
+          "id": 7741,
+          "voted": false,
+          "listened": true,
+          "purchased": false
+        },
+        "listened_on": "2015-05-25T23:29:24.000Z",
+        "listened_on_age": "1 day ago"
+      },
+      {
+        "id": 2667,
+        "name": "Strangers",
+        "published": "2014-11-25T22:13:18.000Z",
+        "listens": 165,
+        "downloadable": false,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1382\/avatar.20141125220940.jpg",
+        "age": "6 months ago",
+        "age_short": "26w",
+        "producer_votes": 1,
+        "song_comments": 0,
+        "duration": "3:47",
+        "snippet_start": 173,
+        "hotchartposition": 550,
+        "hotchartpositions": {
+          "range": {
+            "min": 550,
+            "max": 2652
+          },
+          "past_days": [
+            2652,
+            2638,
+            911,
+            904,
+            558,
+            555,
+            550
+          ]
+        },
+        "partner_platforms": [
+          
+        ],
+        "primary_tag": "Pop",
+        "tags": [
+          "indie rock ",
+          "pop"
+        ],
+        "bitRates": [
+          "128",
+          "256",
+          "320",
+          "96",
+          "dis"
+        ],
+        "ranks": [
+          -1716,
+          14,
+          1727,
+          7,
+          346,
+          3,
+          5
+        ],
+        "rank": 2.1261591,
+        "votes": 47,
+        "status": "Published",
+        "owner_avatar": "avatar.20141212022220.jpg",
+        "latest_three_voting_producers": [
+          {
+            "id": 3237,
+            "username": "JaredLeeGosselin",
+            "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+            "user": {
+              "id": 7741,
+              "following": false
+            }
+          }
+        ],
+        "latest_voting_producer": {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        "band": {
+          "id": 1382,
+          "name": "Dead Lilies",
+          "score": 12.0590516,
+          "country": null,
+          "provstate": null,
+          "owner_id": 4210,
+          "homepage": "https:\/\/muzooka.com\/deadlilies",
+          "subdomain": "deadlilies",
+          "networks": {
+            "facebook": {
+              "username": "deadlilies",
+              "url": "https:\/\/www.facebook.com\/deadlilies"
+            }
+          },
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1382\/avatar.20141125220940.jpg",
+          "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1382\/banner.20141125220941.jpg",
+          "allow_join_requests": false,
+          "allow_member_comments": false,
+          "user": {
+            "following": false
+          }
+        },
+        "user": {
+          "id": 7741,
+          "voted": false,
+          "listened": true,
+          "purchased": false
+        },
+        "listened_on": "2015-05-25T23:27:03.000Z",
+        "listened_on_age": "1 day ago"
+      },
+      {
+        "id": 840,
+        "name": "Down With The Darkside",
+        "published": "2013-03-29T11:41:21.000Z",
+        "listens": 66,
+        "downloadable": false,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/120\/avatar.jpg",
+        "age": "2 years ago",
+        "age_short": "112w",
+        "producer_votes": 2,
+        "song_comments": 0,
+        "duration": "3:53",
+        "snippet_start": 30,
+        "hotchartposition": 543,
+        "hotchartpositions": {
+          "range": {
+            "min": 543,
+            "max": 2999
+          },
+          "past_days": [
+            2999,
+            2991,
+            1347,
+            1341,
+            551,
+            544,
+            543
+          ]
+        },
+        "partner_platforms": [
+          
+        ],
+        "primary_tag": "Pop",
+        "tags": [
+          "pop"
+        ],
+        "bitRates": [
+          "128",
+          "256",
+          "320",
+          "96",
+          "Dis"
+        ],
+        "ranks": [
+          -1637,
+          8,
+          1644,
+          6,
+          790,
+          7,
+          1
+        ],
+        "rank": 2.3184163,
+        "votes": 54,
+        "status": "Published",
+        "owner_avatar": "avatar.jpg",
+        "latest_three_voting_producers": [
+          {
+            "id": 3237,
+            "username": "JaredLeeGosselin",
+            "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+            "user": {
+              "id": 7741,
+              "following": false
+            }
+          },
+          {
+            "id": 184,
+            "username": "tonymardini",
+            "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/184\/avatar.jpg",
+            "user": {
+              "id": 7741,
+              "following": false
+            }
+          }
+        ],
+        "latest_voting_producer": {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        "band": {
+          "id": 120,
+          "name": "Ripe",
+          "score": 9.70915615,
+          "country": null,
+          "provstate": null,
+          "owner_id": 266,
+          "homepage": "https:\/\/muzooka.com\/ripemusic",
+          "subdomain": "ripemusic",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/120\/avatar.jpg",
+          "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/120\/banner.jpg",
+          "allow_join_requests": false,
+          "allow_member_comments": false,
+          "user": {
+            "following": false
+          }
+        },
+        "user": {
+          "id": 7741,
+          "voted": false,
+          "listened": true,
+          "purchased": false
+        },
+        "listened_on": "2015-05-25T23:25:12.000Z",
+        "listened_on_age": "1 day ago"
+      }
+    ]
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "id": 3964,
+  "name": "Discovered",
+  "songs_count": 3,
+  "subscribers": 0,
+  "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/playlists\/3964\/artwork.s.20150525233021.jpg",
+  "owner": {
+    "id": 7741,
+    "name": "Jen Duffey",
+    "username": "jenduf",
+    "producer": false,
+    "artist": false
+  },
+  "user": {
+    "id": 7741,
+    "subscribed": false
+  },
+  "songs": [
+    {
+      "id": 4323,
+      "name": "Zoo",
+      "published": "2015-05-11T23:22:25.000Z",
+      "listens": 13,
+      "downloadable": true,
+      "price": 0,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1877\/songs\/4323\/artwork.20150511232333.jpg",
+      "age": "2 weeks ago",
+      "age_short": "2w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "4:19",
+      "snippet_start": 63,
+      "hotchartposition": 107,
+      "hotchartpositions": {
+        "range": {
+          "min": 59,
+          "max": 107
+        },
+        "past_days": [
+          59,
+          64,
+          62,
+          66,
+          62,
+          60,
+          107
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rap",
+      "tags": [
+        "rap",
+        "rapstep"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "dis"
+      ],
+      "ranks": [
+        1,
+        -5,
+        2,
+        -4,
+        4,
+        2,
+        -47
+      ],
+      "rank": 21.1656932,
+      "votes": 3,
+      "status": "Published",
+      "owner_avatar": "avatar.20150326170234.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 1877,
+        "name": "Filthy Mammals",
+        "score": 18.9338568,
+        "country": null,
+        "provstate": null,
+        "owner_id": 7203,
+        "homepage": "https:\/\/muzooka.com\/filthymammals",
+        "subdomain": "filthymammals",
+        "networks": {
+          "facebook": {
+            "username": "FilthyMammals",
+            "url": "https:\/\/www.facebook.com\/FilthyMammals"
+          },
+          "twitter": {
+            "username": "filthymammals",
+            "url": "https:\/\/www.twitter.com\/filthymammals"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1877\/avatar.20150326170129.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1877\/banner.20150524164231.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 4362,
+      "name": "Older",
+      "published": "2015-05-14T17:50:40.000Z",
+      "listens": 12,
+      "downloadable": true,
+      "price": 0,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2169\/songs\/4362\/artwork.20150514175123.jpg",
+      "age": "1 week ago",
+      "age_short": "1w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "3:05",
+      "snippet_start": 58,
+      "hotchartposition": 52,
+      "hotchartpositions": {
+        "range": {
+          "min": 52,
+          "max": 62
+        },
+        "past_days": [
+          61,
+          62,
+          58,
+          62,
+          61,
+          58,
+          52
+        ]
+      },
+      "partner_platforms": [
+        {
+          "id": 3,
+          "subdomain": "basement",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        }
+      ],
+      "primary_tag": "Alternative",
+      "tags": [
+        "alternative",
+        "indie rock "
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "dis"
+      ],
+      "ranks": [
+        0,
+        -1,
+        4,
+        -4,
+        1,
+        3,
+        6
+      ],
+      "rank": 27.1195612,
+      "votes": 3,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 2169,
+        "name": "Brother Moses ",
+        "score": 11.3821582,
+        "country": null,
+        "provstate": null,
+        "owner_id": 7902,
+        "homepage": "https:\/\/muzooka.com\/brothermoses",
+        "subdomain": "brothermoses",
+        "networks": {
+          "facebook": {
+            "username": "timeline",
+            "url": "https:\/\/www.facebook.com\/timeline"
+          },
+          "twitter": {
+            "username": "brother_moses",
+            "url": "https:\/\/www.twitter.com\/brother_moses"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2169\/avatar.20150514181053.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2169\/banner.20150514174936.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 4479,
+      "name": "Stand",
+      "published": "2015-05-21T15:04:03.000Z",
+      "listens": 11,
+      "downloadable": true,
+      "price": 0,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2226\/songs\/4479\/artwork.20150521164222.jpg",
+      "age": "5 days ago",
+      "age_short": "5d",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "3:24",
+      "snippet_start": 36,
+      "hotchartposition": 51,
+      "hotchartpositions": {
+        "range": {
+          "min": 51,
+          "max": 107
+        },
+        "past_days": [
+          107,
+          107,
+          77,
+          70,
+          60,
+          57,
+          51
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Pop",
+      "tags": [
+        "edm",
+        "electronic",
+        "electronic pop",
+        "pop",
+        "pop"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "dis"
+      ],
+      "ranks": [
+        0,
+        0,
+        30,
+        7,
+        10,
+        3,
+        6
+      ],
+      "rank": 27.1243987,
+      "votes": 3,
+      "status": "Published",
+      "owner_avatar": "avatar.20150521135316.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 2226,
+        "name": "Lucky Three",
+        "score": 17.7254321,
+        "country": null,
+        "provstate": null,
+        "owner_id": 8028,
+        "homepage": "https:\/\/muzooka.com\/luckythree",
+        "subdomain": "luckythree",
+        "networks": {
+          "facebook": {
+            "username": "luckythreemusic",
+            "url": "https:\/\/www.facebook.com\/luckythreemusic"
+          },
+          "twitter": {
+            "username": "luckythreemusic",
+            "url": "https:\/\/www.twitter.com\/luckythreemusic"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2226\/avatar.20150521141023.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2226\/banner.20150521141024.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    }
+  ]
+}

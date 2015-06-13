@@ -14,7 +14,7 @@ public class Song
 	public let songID: Int
 	public let name: String
 	public let position: Int
-	public let artwork: String
+	public let artwork: String?
 	public let band: Band
 	public let listens: Int?
 	public var downloadable: Bool = false
@@ -22,17 +22,28 @@ public class Song
 	public let primaryTag: String?
 	public var tags = [String]()
 	public let votes: Int?
+	public let producerVotes: Int?
 	public let price: Int?
 	public var hotChartRank: Int = 0
 	public var hotChartMin: Int = 0
 	public var hotChartMax: Int = 0
 	public var hotChartDays = [Int]()
 	
+	public var image: UIImage?
+	
+	public var songURL: String
+	{
+		get
+		{
+			return "\(Constants.SONG_URL)\(self.band.bandID)/songs/\(self.songID)_96.mp3"
+		}
+	}
+	
 	public init(dict: NSDictionary)
 	{
 		self.songID = dict["id"] as! Int
 		self.name = dict["name"] as! String
-		self.artwork = dict["artwork"] as! String
+		self.artwork = dict["artwork"] as? String
 		self.position = dict["hotchartposition"] as! Int
 		self.band = Band(dict: dict["band"] as! NSDictionary) as Band
 		self.listens = dict["listens"] as? Int
@@ -51,6 +62,7 @@ public class Song
 		}
 		
 		self.votes = dict["votes"] as? Int
+		self.producerVotes = dict["producer_votes"] as? Int
 		self.price = dict["price"] as? Int
 		
 		self.hotChartRank = dict["hotchartposition"] as! Int

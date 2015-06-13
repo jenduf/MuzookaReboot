@@ -12,21 +12,21 @@ class LeftNavView: NavContentView
 {
 	
 	@IBOutlet var guestView: UIView!
-	@IBOutlet var avatarView: AvatarView!
+	@IBOutlet var bannerView: BannerView!
 	
 	func viewWillDisplay()
 	{
 		if User.currentUser != nil
 		{
 			self.guestView.hidden = true
-			self.avatarView.hidden = false
+			self.bannerView.hidden = false
 			
-			self.avatarView.user = User.currentUser
+			self.bannerView.user = User.currentUser
 		}
 		else
 		{
 			self.guestView.hidden = false
-			self.avatarView.hidden = true
+			self.bannerView.hidden = true
 		}
 		
 		self.layer.shadowOffset = CGSize(width: 1, height: 1)

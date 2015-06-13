@@ -11,15 +11,34 @@ import UIKit
 class IndicatorView: UIView
 {
 	
+	var percent: CGFloat = 0.0
+	{
+		/*UIView.animateWithDuration(0.1, animations:
+		{ () -> Void in
+		self.indicatorView.frame.size.width = self.frame.width * percent
+		})*/
+		
+		didSet
+		{
+			self.setNeedsDisplay()
+		}
+	}
+	
 	override func drawRect(rect: CGRect)
 	{
+		super.drawRect(rect)
+		
 		let context = UIGraphicsGetCurrentContext()
 		
-		CGContextSaveGState(context)
-		CGContextSetFillColorWithColor(context, Utils.UIColorFromRGB(Color.MenuActive.hex, alpha: 1.0).CGColor)
-		CGContextFillRect(context, rect)
-		CGContextRestoreGState(context)
+		let percentWidth = rect.size.width * self.percent
 		
-		super.drawRect(rect)
+		let percentRect = CGRect(x: 0, y: 0, width: percentWidth, height: rect.size.height)
+		
+		//println("width: \(percentWidth)")
+		
+		CGContextSaveGState(context)
+		CGContextSetFillColorWithColor(context, Color.MenuActive.uiColor.CGColor)
+		CGContextFillRect(context, percentRect)
+		CGContextRestoreGState(context)
 	}
 }

@@ -10,28 +10,12 @@ import Foundation
 
 enum Color: Int
 {
-	case None = 0, OffWhite = 1, MenuActive = 2, MenuInactive = 3
+	case None = 0, White = 1, MenuActive = 2, MenuInactive = 3, TextDark = 4, ButtonGreyBackground = 5, SearchTextColor = 6, SearchHeaderTextColor = 7, OffWhite = 8, SeparatorColor = 9
 	
-	var hex: String
+	static var hexValues = ["", "FFFFFF", "34b5e5", "707676", "4a4d4d", "464C4C", "8E8E93", "9B9B9B", "F8F8F8", "979797"]
+	
+	var uiColor: UIColor
 	{
-		switch self
-		{
-			case .None:
-				return ""
-			
-			case .OffWhite:
-				return "FFFFFF"
-			
-			case .MenuActive:
-				return "34b5e5"
-			
-			case .MenuInactive:
-				return "707676"
-		
-			default:
-		
-				break
-		}
-		
+		return Utils.UIColorFromRGB(Color.hexValues[self.rawValue], alpha: 1.0)
 	}
 }

@@ -95,8 +95,8 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 		return jsonData
 	}
 	
-	// MARK: Get Hot Music Request
-	func getAPIRequestForDelegate(apiRequest: APIRequest, delegate: APIDelegate, parameters:NSDictionary? = nil, appendedString: String = "")
+	// MARK: Get API Request
+	func getAPIRequestForDelegate(apiRequest: APIRequest, delegate: APIDelegate, apiReferrer: APIReferrer? = nil, parameters:NSDictionary? = nil, appendedString: String = "")
 	{
 		self.apiRequest = apiRequest
 		
@@ -122,11 +122,13 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 			//postData = parameters?.dataUsingEncoding(NSUTF8StringEncoding)
 		}
 		
-		self.startRequest(requestURL, method: apiRequest.httpMethod, postData: postData)
+		let apiString = (apiReferrer != nil ? apiReferrer!.getParameterString() : "")
+		
+		self.startRequest(requestURL, method: apiRequest.httpMethod, postData: postData, apiReferrer: apiString)
 	}
 	
 	// MARK: Make the Request
-	func startRequest(requestStr: String, method: String, postData: NSData?)
+	func startRequest(requestStr: String, method: String, postData: NSData?, apiReferrer: String = "")
 	{
 		if self.currentTask != nil
 		{
@@ -148,11 +150,17 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 			var jsonString:NSString = NSString(data: postData!, encoding: NSUTF8StringEncoding)!
 			println("\n POST DATA: \(jsonString)")
 			request.HTTPBody = postData
-			request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-			request.setValue("application/json", forHTTPHeaderField: "Accept")
-			request.setValue("Muzooka-iOS-App", forHTTPHeaderField: "Browser")
-			request.setValue("iOS", forHTTPHeaderField: "OS")
-			request.setValue(UIDevice.currentDevice().systemVersion, forHTTPHeaderField: "Version")
+		}
+		
+		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+		request.setValue("application/json", forHTTPHeaderField: "Accept")
+		request.setValue("Muzooka-iOS-App", forHTTPHeaderField: "Browser")
+		request.setValue("iOS", forHTTPHeaderField: "OS")
+		request.setValue(UIDevice.currentDevice().systemVersion, forHTTPHeaderField: "Version")
+		
+		if !apiReferrer.isEmpty
+		{
+			request.setValue(apiReferrer, forHTTPHeaderField: "Muzooka-Referrer")
 		}
 		
 		// authenticate if logged in
@@ -160,6 +168,8 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 		{
 			request.setValue(self.authToken, forHTTPHeaderField: "Muzooka-Auth-Token")
 		}
+		
+		println("REFERRER VALUES: \(apiReferrer)")
 		
 		self.responseData = NSMutableData.new()
 		

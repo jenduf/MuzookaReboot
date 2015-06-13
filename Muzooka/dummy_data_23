@@ -1,0 +1,2405 @@
+{
+  "total": 3552,
+  "count": 20,
+  "songs": [
+    {
+      "id": 2205,
+      "name": "Love Can Change",
+      "published": "2014-09-23T00:00:52.000Z",
+      "listens": 396,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/687\/songs\/2205\/artwork.20140923000052.jpg",
+      "age": "9 months ago",
+      "age_short": "37w",
+      "producer_votes": 2,
+      "song_comments": 0,
+      "duration": "3:50",
+      "snippet_start": 30,
+      "hotchartposition": 642,
+      "hotchartpositions": {
+        "range": {
+          "min": 395,
+          "max": 668
+        },
+        "past_days": [
+          434,
+          521,
+          610,
+          668,
+          631,
+          643,
+          642
+        ]
+      },
+      "partner_platforms": [
+        {
+          "id": 30,
+          "subdomain": "bbrmusic",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 19,
+          "subdomain": "caa",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 22,
+          "subdomain": "madhouse",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 23,
+          "subdomain": "rockridgemusic",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 29,
+          "subdomain": "tinderbox",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 2,
+          "subdomain": "yesiortiz",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        }
+      ],
+      "primary_tag": "Pop",
+      "tags": [
+        "folk",
+        "pop"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -39,
+        -87,
+        -89,
+        -58,
+        37,
+        -12,
+        1
+      ],
+      "rank": 3.0455679,
+      "votes": 148,
+      "status": "Published",
+      "owner_avatar": "avatar.20140912213836.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 3525,
+          "username": "NeilSanderson",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3525\/avatar.20140914021108.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 3525,
+        "username": "NeilSanderson",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3525\/avatar.20140914021108.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 687,
+        "name": "Georgia Sound",
+        "score": 33.1230912,
+        "country": null,
+        "provstate": null,
+        "owner_id": 1362,
+        "homepage": "https:\/\/muzooka.com\/georgiasound",
+        "subdomain": "georgiasound",
+        "networks": {
+          "facebook": {
+            "username": "georgiasoundband",
+            "url": "https:\/\/www.facebook.com\/georgiasoundband"
+          },
+          "twitter": {
+            "username": "georgiasound",
+            "url": "https:\/\/www.twitter.com\/georgiasound"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/687\/avatar.20140912213502.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/687\/banner.20140912213502.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 2191,
+      "name": "Suicide City",
+      "published": "2014-09-17T21:26:00.000Z",
+      "listens": 188,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1265\/avatar.20140918010011.jpg",
+      "age": "9 months ago",
+      "age_short": "38w",
+      "producer_votes": 7,
+      "song_comments": 0,
+      "duration": "4:32",
+      "snippet_start": 30,
+      "hotchartposition": 795,
+      "hotchartpositions": {
+        "range": {
+          "min": 456,
+          "max": 795
+        },
+        "past_days": [
+          486,
+          552,
+          592,
+          652,
+          749,
+          791,
+          795
+        ]
+      },
+      "partner_platforms": [
+        {
+          "id": 47,
+          "subdomain": "schoolnight",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 15,
+          "subdomain": "shamoneyxl",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 51,
+          "subdomain": "y7studio",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        }
+      ],
+      "primary_tag": "Rap",
+      "tags": [
+        "hip-hop",
+        "rap"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -30,
+        -66,
+        -40,
+        -60,
+        -97,
+        -42,
+        -4
+      ],
+      "rank": 0.9034024,
+      "votes": 43,
+      "status": "Published",
+      "owner_avatar": "avatar.20140918010716.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3856,
+          "username": "YesiOrtiz",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3856\/avatar.20141024202531.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3805,
+          "username": "DJSKEE",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3805\/avatar.20141023005123.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 3237,
+        "username": "JaredLeeGosselin",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 1265,
+        "name": "NameBrand",
+        "score": 14.1278174,
+        "country": null,
+        "provstate": null,
+        "owner_id": 3501,
+        "homepage": "https:\/\/muzooka.com\/NameBrand",
+        "subdomain": "NameBrand",
+        "networks": {
+          "facebook": {
+            "username": "akanamebrand",
+            "url": "https:\/\/www.facebook.com\/akanamebrand"
+          },
+          "twitter": {
+            "username": "namebrand",
+            "url": "https:\/\/www.twitter.com\/namebrand"
+          },
+          "google": {
+            "username": "107885227760870000000",
+            "url": "https:\/\/plus.google.com\/107885227760870000000"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1265\/avatar.20140918010011.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1265\/banner.20140917212522.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 2192,
+      "name": "Child's Eyes",
+      "published": "2014-09-05T23:09:37.000Z",
+      "listens": 135,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1214\/avatar.20140717173554.jpg",
+      "age": "9 months ago",
+      "age_short": "39w",
+      "producer_votes": 2,
+      "song_comments": 0,
+      "duration": "2:42",
+      "snippet_start": 30,
+      "hotchartposition": 2296,
+      "hotchartpositions": {
+        "range": {
+          "min": 691,
+          "max": 3012
+        },
+        "past_days": [
+          2024,
+          3012,
+          698,
+          691,
+          1497,
+          2292,
+          2296
+        ]
+      },
+      "partner_platforms": [
+        {
+          "id": 19,
+          "subdomain": "caa",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 10,
+          "subdomain": "laluchaspace",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 9,
+          "subdomain": "paradigmandy9347",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 11,
+          "subdomain": "tmg9563",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 12,
+          "subdomain": "websterhall",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        }
+      ],
+      "primary_tag": "Country",
+      "tags": [
+        "country",
+        "folk",
+        "singer-songwriter"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -814,
+        -988,
+        2314,
+        7,
+        -806,
+        -795,
+        -4
+      ],
+      "rank": 0,
+      "votes": 41,
+      "status": "Published",
+      "owner_avatar": "avatar.20140703203659.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 5958,
+          "username": "mitchdane",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/5958\/avatar.20150304211904.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3104,
+          "username": "AdamH.",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3104\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 5958,
+        "username": "mitchdane",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/5958\/avatar.20150304211904.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 1214,
+        "name": "Kalsey Kulyk",
+        "score": 12.8112792,
+        "country": null,
+        "provstate": null,
+        "owner_id": 3229,
+        "homepage": "https:\/\/muzooka.com\/KalseyKulyk",
+        "subdomain": "KalseyKulyk",
+        "networks": {
+          "facebook": {
+            "username": "KalseyKulyk",
+            "url": "https:\/\/www.facebook.com\/KalseyKulyk"
+          },
+          "twitter": {
+            "username": "KalseyKulyk",
+            "url": "https:\/\/www.twitter.com\/KalseyKulyk"
+          },
+          "google": {
+            "username": "posts",
+            "url": "https:\/\/plus.google.com\/posts"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1214\/avatar.20140717173554.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1214\/banner.20140703203434.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 2172,
+      "name": "Conversations",
+      "published": "2014-08-18T16:34:55.000Z",
+      "listens": 188,
+      "downloadable": true,
+      "price": 0.99,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1213\/songs\/2172\/artwork.20140818163930.jpg",
+      "age": "10 months ago",
+      "age_short": "42w",
+      "producer_votes": 3,
+      "song_comments": 0,
+      "duration": "3:54",
+      "snippet_start": 30,
+      "hotchartposition": 952,
+      "hotchartpositions": {
+        "range": {
+          "min": 414,
+          "max": 952
+        },
+        "past_days": [
+          433,
+          480,
+          585,
+          645,
+          734,
+          948,
+          952
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "heavy metal",
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -19,
+        -47,
+        -105,
+        -60,
+        -89,
+        -214,
+        -4
+      ],
+      "rank": 0,
+      "votes": 50,
+      "status": "Published",
+      "owner_avatar": "avatar.20140913070146.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 3104,
+          "username": "AdamH.",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3104\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 982,
+          "username": "gogetterlb",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/982\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 3104,
+        "username": "AdamH.",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3104\/avatar.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 1213,
+        "name": "Vino Alan",
+        "score": 13.6880262,
+        "country": null,
+        "provstate": null,
+        "owner_id": 3220,
+        "homepage": "https:\/\/muzooka.com\/vinoalan",
+        "subdomain": "vinoalan",
+        "networks": {
+          "facebook": {
+            "username": "officialvinoalan",
+            "url": "https:\/\/www.facebook.com\/officialvinoalan"
+          },
+          "twitter": {
+            "username": "@vinoalan",
+            "url": "https:\/\/www.twitter.com\/@vinoalan"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1213\/avatar.20140913065805.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1213\/banner.20140611043459.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 2059,
+      "name": "Open Your Eyes",
+      "published": "2014-08-10T03:52:49.000Z",
+      "listens": 64,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1235\/avatar.20140810034705.jpg",
+      "age": "10 months ago",
+      "age_short": "43w",
+      "producer_votes": 2,
+      "song_comments": 0,
+      "duration": "3:47",
+      "snippet_start": 30,
+      "hotchartposition": 1497,
+      "hotchartpositions": {
+        "range": {
+          "min": 1233,
+          "max": 3549
+        },
+        "past_days": [
+          1233,
+          2226,
+          2799,
+          2770,
+          3549,
+          1493,
+          1497
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "ramaduke",
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        2071,
+        -993,
+        -573,
+        29,
+        -779,
+        2056,
+        -4
+      ],
+      "rank": 0,
+      "votes": 27,
+      "status": "Published",
+      "owner_avatar": "avatar.20140810040148.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 3133,
+          "username": "autumnrowe",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3133\/avatar.20140609195222.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 3133,
+        "username": "autumnrowe",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3133\/avatar.20140609195222.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 1235,
+        "name": "Rama Duke",
+        "score": 9.55064358,
+        "country": null,
+        "provstate": null,
+        "owner_id": 3324,
+        "homepage": "https:\/\/muzooka.com\/ramaduke",
+        "subdomain": "ramaduke",
+        "networks": {
+          "facebook": {
+            "username": "OfficialRamaDuke",
+            "url": "https:\/\/www.facebook.com\/OfficialRamaDuke"
+          },
+          "twitter": {
+            "username": "IamRamaDuke",
+            "url": "https:\/\/www.twitter.com\/IamRamaDuke"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1235\/avatar.20140810034705.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1235\/banner.20140810034705.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 2158,
+      "name": "Welcome To Catatonia",
+      "published": "2014-08-16T00:00:00.000Z",
+      "listens": 74,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1254\/avatar.20140814194850.jpg",
+      "age": "10 months ago",
+      "age_short": "42w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "3:10",
+      "snippet_start": 30,
+      "hotchartposition": 2753,
+      "hotchartpositions": {
+        "range": {
+          "min": 1155,
+          "max": 3477
+        },
+        "past_days": [
+          2486,
+          3477,
+          1162,
+          1155,
+          1952,
+          2750,
+          2753
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Alternative",
+      "tags": [
+        "alternative",
+        "juhi",
+        "nashville",
+        "the voice"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -819,
+        -991,
+        2315,
+        7,
+        -797,
+        -798,
+        -3
+      ],
+      "rank": 0,
+      "votes": 16,
+      "status": "Published",
+      "owner_avatar": "avatar.20141112213537.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 1254,
+        "name": "Juhi",
+        "score": 8.63321788,
+        "country": null,
+        "provstate": null,
+        "owner_id": 3415,
+        "homepage": "https:\/\/muzooka.com\/juhi",
+        "subdomain": "juhi",
+        "networks": {
+          "facebook": {
+            "username": "juhimusic",
+            "url": "https:\/\/www.facebook.com\/juhimusic"
+          },
+          "twitter": {
+            "username": "juhix3",
+            "url": "https:\/\/www.twitter.com\/juhix3"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1254\/avatar.20140814194850.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1254\/banner.20140814194850.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 1921,
+      "name": "Beautiful",
+      "published": "2014-06-11T00:19:09.000Z",
+      "listens": 218,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1211\/avatar.jpg",
+      "age": "1 year ago",
+      "age_short": "52w",
+      "producer_votes": 5,
+      "song_comments": 0,
+      "duration": "3:28",
+      "snippet_start": 30,
+      "hotchartposition": 537,
+      "hotchartpositions": {
+        "range": {
+          "min": 413,
+          "max": 584
+        },
+        "past_days": [
+          428,
+          474,
+          490,
+          524,
+          584,
+          547,
+          537
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Pop",
+      "tags": [
+        "chill",
+        "electro",
+        "electronic",
+        "los angeles",
+        "new york",
+        "new zealand",
+        "pop"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -15,
+        -46,
+        -16,
+        -34,
+        -60,
+        37,
+        10
+      ],
+      "rank": 4.1516733,
+      "votes": 46,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 3783,
+          "username": "paulESMG",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3783\/avatar.20141020165529.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3104,
+          "username": "AdamH.",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3104\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3201,
+          "username": "leilasteinberg",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3201\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 3783,
+        "username": "paulESMG",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3783\/avatar.20141020165529.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 1211,
+        "name": "Nova",
+        "score": 16.0194028,
+        "country": null,
+        "provstate": null,
+        "owner_id": 3182,
+        "homepage": "https:\/\/muzooka.com\/nova",
+        "subdomain": "nova",
+        "networks": {
+          "facebook": {
+            "username": "music.nova",
+            "url": "https:\/\/www.facebook.com\/music.nova"
+          },
+          "twitter": {
+            "username": "nz_nova",
+            "url": "https:\/\/www.twitter.com\/nz_nova"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1211\/avatar.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1211\/banner.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 2174,
+      "name": "Spitfire",
+      "published": "2014-08-20T20:00:43.000Z",
+      "listens": 32,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1060\/songs\/2174\/artwork.20140820200154.jpg",
+      "age": "10 months ago",
+      "age_short": "42w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "3:43",
+      "snippet_start": 30,
+      "hotchartposition": 756,
+      "hotchartpositions": {
+        "range": {
+          "min": 726,
+          "max": 3374
+        },
+        "past_days": [
+          2384,
+          3374,
+          1062,
+          1145,
+          726,
+          751,
+          756
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "alternative",
+        "indie",
+        "nashville",
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -817,
+        -990,
+        2312,
+        -83,
+        419,
+        -25,
+        -5
+      ],
+      "rank": 1.9880706,
+      "votes": 10,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 1060,
+        "name": "INTL",
+        "score": 17.6652128,
+        "country": null,
+        "provstate": null,
+        "owner_id": 2649,
+        "homepage": "https:\/\/muzooka.com\/INTL",
+        "subdomain": "INTL",
+        "networks": {
+          "facebook": {
+            "username": "intlofficial",
+            "url": "https:\/\/www.facebook.com\/intlofficial"
+          },
+          "twitter": {
+            "username": "intlofficial",
+            "url": "https:\/\/www.twitter.com\/intlofficial"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1060\/avatar.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1060\/banner.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 1577,
+      "name": "Dollar Freestyle",
+      "published": "2013-11-19T02:53:22.000Z",
+      "listens": 120,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1031\/avatar.20140628043446.jpg",
+      "age": "1 year ago",
+      "age_short": "81w",
+      "producer_votes": 1,
+      "song_comments": 0,
+      "duration": "1:57",
+      "snippet_start": 30,
+      "hotchartposition": 2197,
+      "hotchartpositions": {
+        "range": {
+          "min": 1117,
+          "max": 3566
+        },
+        "past_days": [
+          1925,
+          2917,
+          3495,
+          3566,
+          1400,
+          2193,
+          2197
+        ]
+      },
+      "partner_platforms": [
+        {
+          "id": 51,
+          "subdomain": "y7studio",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        }
+      ],
+      "primary_tag": "Rap",
+      "tags": [
+        "rap"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -808,
+        -992,
+        -578,
+        -71,
+        2166,
+        -793,
+        -4
+      ],
+      "rank": 0,
+      "votes": 36,
+      "status": "Published",
+      "owner_avatar": "avatar.20140628042156.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 3237,
+        "username": "JaredLeeGosselin",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 1031,
+        "name": "MC S.A.V",
+        "score": 13.5448709,
+        "country": null,
+        "provstate": null,
+        "owner_id": 2397,
+        "homepage": "https:\/\/muzooka.com\/skillsandvariety",
+        "subdomain": "skillsandvariety",
+        "networks": {
+          "facebook": {
+            "username": "skillsandvariety",
+            "url": "https:\/\/www.facebook.com\/skillsandvariety"
+          },
+          "twitter": {
+            "username": "skillandvariety",
+            "url": "https:\/\/www.twitter.com\/skillandvariety"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1031\/avatar.20140628043446.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1031\/banner.20150417041523.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 2155,
+      "name": "If I Can't Live For Love",
+      "published": "2014-08-14T17:24:42.000Z",
+      "listens": 56,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1253\/avatar.20140814171916.jpg",
+      "age": "10 months ago",
+      "age_short": "42w",
+      "producer_votes": 1,
+      "song_comments": 0,
+      "duration": "3:44",
+      "snippet_start": 30,
+      "hotchartposition": 2209,
+      "hotchartpositions": {
+        "range": {
+          "min": 1129,
+          "max": 3507
+        },
+        "past_days": [
+          1937,
+          2929,
+          3507,
+          3493,
+          1412,
+          2205,
+          2209
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "modoc",
+        "nashville",
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -808,
+        -992,
+        -578,
+        14,
+        2081,
+        -793,
+        -4
+      ],
+      "rank": 0,
+      "votes": 15,
+      "status": "Published",
+      "owner_avatar": "avatar.20141112213537.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 3783,
+          "username": "paulESMG",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3783\/avatar.20141020165529.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 3783,
+        "username": "paulESMG",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3783\/avatar.20141020165529.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 1253,
+        "name": "MODOC",
+        "score": 11.0046571,
+        "country": null,
+        "provstate": null,
+        "owner_id": 3415,
+        "homepage": "https:\/\/muzooka.com\/modoc",
+        "subdomain": "modoc",
+        "networks": {
+          "facebook": {
+            "username": "modocmusic",
+            "url": "https:\/\/www.facebook.com\/modocmusic"
+          },
+          "twitter": {
+            "username": "modocmusic",
+            "url": "https:\/\/www.twitter.com\/modocmusic"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1253\/avatar.20140814171916.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1253\/banner.20140814171917.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 32,
+      "name": "I Lost Myself",
+      "published": "2013-02-20T03:39:44.000Z",
+      "listens": 81,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/50\/songs\/32\/artwork.jpg",
+      "age": "2 years ago",
+      "age_short": "120w",
+      "producer_votes": 2,
+      "song_comments": 0,
+      "duration": "3:27",
+      "snippet_start": 30,
+      "hotchartposition": 2513,
+      "hotchartpositions": {
+        "range": {
+          "min": 920,
+          "max": 3233
+        },
+        "past_days": [
+          2244,
+          3233,
+          920,
+          1004,
+          1804,
+          2510,
+          2513
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Pop",
+      "tags": [
+        "pop"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -728,
+        -989,
+        2313,
+        -84,
+        -800,
+        -706,
+        -3
+      ],
+      "rank": 0,
+      "votes": 36,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3133,
+          "username": "autumnrowe",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3133\/avatar.20140609195222.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 3237,
+        "username": "JaredLeeGosselin",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 50,
+        "name": "Lauren Mann and the Fairly Odd Folk",
+        "score": 6.04813404,
+        "country": null,
+        "provstate": null,
+        "owner_id": 116,
+        "homepage": "https:\/\/muzooka.com\/laurenmannmusic",
+        "subdomain": "laurenmannmusic",
+        "networks": {
+          "facebook": {
+            "username": "laurenmannmusic",
+            "url": "https:\/\/www.facebook.com\/laurenmannmusic"
+          },
+          "twitter": {
+            "username": "laurenmann",
+            "url": "https:\/\/www.twitter.com\/laurenmann"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/50\/avatar.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/50\/banner.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 27,
+      "name": "Broken",
+      "published": "2013-07-13T02:24:33.000Z",
+      "listens": 75,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/48\/avatar.jpg",
+      "age": "1 year ago",
+      "age_short": "99w",
+      "producer_votes": 4,
+      "song_comments": 0,
+      "duration": "3:38",
+      "snippet_start": 30,
+      "hotchartposition": 765,
+      "hotchartpositions": {
+        "range": {
+          "min": 761,
+          "max": 3582
+        },
+        "past_days": [
+          1173,
+          2168,
+          2739,
+          2804,
+          3582,
+          761,
+          765
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Pop",
+      "tags": [
+        "pop"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        2164,
+        -995,
+        -571,
+        -65,
+        -778,
+        2821,
+        -4
+      ],
+      "rank": 1.8750038,
+      "votes": 62,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        {
+          "id": 4645,
+          "username": "TheoAronson",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/4645\/avatar.20141219155206.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 3237,
+          "username": "JaredLeeGosselin",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3237\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        },
+        {
+          "id": 982,
+          "username": "gogetterlb",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/982\/avatar.jpg",
+          "user": {
+            "id": 7741,
+            "following": false
+          }
+        }
+      ],
+      "latest_voting_producer": {
+        "id": 4645,
+        "username": "TheoAronson",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/4645\/avatar.20141219155206.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "band": {
+        "id": 48,
+        "name": "Kirsten Price",
+        "score": 14.6809279,
+        "country": null,
+        "provstate": null,
+        "owner_id": 110,
+        "homepage": "https:\/\/muzooka.com\/kirstenprice",
+        "subdomain": "kirstenprice",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/48\/avatar.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/48\/banner.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 4275,
+      "name": "Kissed By The Sun",
+      "published": "2015-05-06T03:14:13.000Z",
+      "listens": 23,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2108\/songs\/4275\/artwork.20150506031727.jpg",
+      "age": "1 month ago",
+      "age_short": "5w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "4:06",
+      "snippet_start": 82,
+      "hotchartposition": 415,
+      "hotchartpositions": {
+        "range": {
+          "min": 378,
+          "max": 435
+        },
+        "past_days": [
+          393,
+          420,
+          395,
+          379,
+          435,
+          424,
+          415
+        ]
+      },
+      "partner_platforms": [
+        {
+          "id": 3,
+          "subdomain": "basement",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 14,
+          "subdomain": "centurymedia",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 37,
+          "subdomain": "fellowcoworking",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 5,
+          "subdomain": "jaredleegosselin",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 20,
+          "subdomain": "justinhammel",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 10,
+          "subdomain": "laluchaspace",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 22,
+          "subdomain": "madhouse",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 42,
+          "subdomain": "northbrooklynrunners",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 49,
+          "subdomain": "onlyatoms",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 24,
+          "subdomain": "oohlala",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 23,
+          "subdomain": "rockridgemusic",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 13,
+          "subdomain": "syndicatelounge",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 29,
+          "subdomain": "tinderbox",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 8,
+          "subdomain": "tonymardini",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 12,
+          "subdomain": "websterhall",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 7,
+          "subdomain": "wspeakerbox",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 2,
+          "subdomain": "yesiortiz",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        }
+      ],
+      "primary_tag": "Acoustic",
+      "tags": [
+        "acoustic",
+        "songwriter original",
+        "soul"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "dis"
+      ],
+      "ranks": [
+        -15,
+        -27,
+        25,
+        16,
+        -56,
+        11,
+        9
+      ],
+      "rank": 5.4121487,
+      "votes": 2,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 2108,
+        "name": "Sam Letric",
+        "score": 12.6943533,
+        "country": null,
+        "provstate": null,
+        "owner_id": 7678,
+        "homepage": "https:\/\/muzooka.com\/samletric",
+        "subdomain": "samletric",
+        "networks": {
+          "facebook": {
+            "username": "109454109126420",
+            "url": "https:\/\/www.facebook.com\/109454109126420"
+          },
+          "twitter": {
+            "username": "SamLetric",
+            "url": "https:\/\/www.twitter.com\/SamLetric"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2108\/avatar.20150506030955.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2108\/banner.20150506021305.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 4928,
+      "name": "Ball and Chain",
+      "published": "2015-06-09T19:41:11.000Z",
+      "listens": 2,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2454\/songs\/4928\/artwork.20150609194240.jpg",
+      "age": "1 day ago",
+      "age_short": "1d",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "4:10",
+      "snippet_start": 104,
+      "hotchartposition": 237,
+      "hotchartpositions": {
+        "range": {
+          "min": 237,
+          "max": 656
+        },
+        "past_days": [
+          656,
+          656,
+          656,
+          656,
+          656,
+          239,
+          237
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "alt country",
+        "americana",
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "dis"
+      ],
+      "ranks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        417,
+        2
+      ],
+      "rank": 8.79902,
+      "votes": 2,
+      "status": "Published",
+      "owner_avatar": null,
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 2454,
+        "name": "Zach Wolfe and the Coyotes ",
+        "score": 10.362635,
+        "country": null,
+        "provstate": null,
+        "owner_id": 8616,
+        "homepage": "https:\/\/muzooka.com\/zachwolfeandthecoyotes",
+        "subdomain": "zachwolfeandthecoyotes",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2454\/avatar.20150609192924.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2454\/banner.20150609192925.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 1433,
+      "name": "Riff Ramp Bounce!",
+      "published": "2013-01-31T00:37:34.000Z",
+      "listens": 0,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/683\/avatar.jpg",
+      "age": "2 years ago",
+      "age_short": "123w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "4:19",
+      "snippet_start": 30,
+      "hotchartposition": 3615,
+      "hotchartpositions": {
+        "range": {
+          "min": 1487,
+          "max": 3615
+        },
+        "past_days": [
+          3386,
+          1487,
+          2056,
+          2119,
+          2904,
+          3612,
+          3615
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -728,
+        1899,
+        -569,
+        -63,
+        -785,
+        -708,
+        -3
+      ],
+      "rank": 0,
+      "votes": 3,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 683,
+        "name": "The Henry Maneuver",
+        "score": 1.61111167,
+        "country": null,
+        "provstate": null,
+        "owner_id": 1356,
+        "homepage": "https:\/\/muzooka.com\/thehenrymaneuver",
+        "subdomain": "thehenrymaneuver",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/683\/avatar.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/683\/banner.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 1255,
+      "name": "sinful delights",
+      "published": "2012-12-17T23:46:52.000Z",
+      "listens": 0,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/910\/avatar.jpg",
+      "age": "2 years ago",
+      "age_short": "129w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "4:15",
+      "snippet_start": 30,
+      "hotchartposition": 2374,
+      "hotchartpositions": {
+        "range": {
+          "min": 779,
+          "max": 3095
+        },
+        "past_days": [
+          2103,
+          3095,
+          779,
+          861,
+          1663,
+          2371,
+          2374
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -726,
+        -992,
+        2316,
+        -82,
+        -802,
+        -708,
+        -3
+      ],
+      "rank": 0,
+      "votes": 1,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 910,
+        "name": "kim kematt",
+        "score": 1.32291688,
+        "country": null,
+        "provstate": null,
+        "owner_id": 1878,
+        "homepage": "https:\/\/muzooka.com\/kimkematt",
+        "subdomain": "kimkematt",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/910\/avatar.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/910\/banner.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 3329,
+      "name": "Collisions",
+      "published": "2015-02-26T00:05:04.000Z",
+      "listens": 24,
+      "downloadable": true,
+      "price": 0,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1668\/songs\/3329\/artwork.20150226000527.jpg",
+      "age": "3 months ago",
+      "age_short": "15w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "3:48",
+      "snippet_start": 22,
+      "hotchartposition": 1974,
+      "hotchartpositions": {
+        "range": {
+          "min": 983,
+          "max": 2980
+        },
+        "past_days": [
+          2886,
+          983,
+          1557,
+          2980,
+          1179,
+          1970,
+          1974
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "alternative rock",
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "dis"
+      ],
+      "ranks": [
+        -729,
+        1903,
+        -574,
+        -1423,
+        1801,
+        -791,
+        -4
+      ],
+      "rank": 0,
+      "votes": 6,
+      "status": "Published",
+      "owner_avatar": "avatar.20150226000012.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 1668,
+        "name": "The Sea, Close By",
+        "score": 3.66807201,
+        "country": null,
+        "provstate": null,
+        "owner_id": 5899,
+        "homepage": "https:\/\/muzooka.com\/theseacloseby",
+        "subdomain": "theseacloseby",
+        "networks": {
+          "facebook": {
+            "username": "theseacloseby",
+            "url": "https:\/\/www.facebook.com\/theseacloseby"
+          },
+          "twitter": {
+            "username": "theseacloseby",
+            "url": "https:\/\/www.twitter.com\/theseacloseby"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1668\/avatar.20150226000916.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/1668\/banner.20150226001421.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 269,
+      "name": "Tired Eyes To Sunrise",
+      "published": "2012-11-06T17:28:07.000Z",
+      "listens": 0,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/265\/avatar.jpg",
+      "age": "2 years ago",
+      "age_short": "135w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "3:51",
+      "snippet_start": 30,
+      "hotchartposition": 822,
+      "hotchartpositions": {
+        "range": {
+          "min": 564,
+          "max": 2971
+        },
+        "past_days": [
+          564,
+          1552,
+          2124,
+          2187,
+          2971,
+          818,
+          822
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Rock",
+      "tags": [
+        "rock"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        2162,
+        -988,
+        -572,
+        -63,
+        -784,
+        2153,
+        -4
+      ],
+      "rank": 0,
+      "votes": 3,
+      "status": "Published",
+      "owner_avatar": "avatar.jpg",
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 265,
+        "name": "The Saving Pointe",
+        "score": 0.8333325,
+        "country": null,
+        "provstate": null,
+        "owner_id": 515,
+        "homepage": "https:\/\/muzooka.com\/thesavingpointe",
+        "subdomain": "thesavingpointe",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/265\/avatar.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/265\/banner.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 4809,
+      "name": "Last Day of Summer",
+      "published": "2015-06-06T16:32:36.000Z",
+      "listens": 2,
+      "downloadable": false,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2393\/songs\/4809\/artwork.20150606163314.jpg",
+      "age": "4 days ago",
+      "age_short": "4d",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "5:30",
+      "snippet_start": 0,
+      "hotchartposition": 627,
+      "hotchartpositions": {
+        "range": {
+          "min": 545,
+          "max": 627
+        },
+        "past_days": [
+          545,
+          545,
+          545,
+          559,
+          610,
+          627,
+          627
+        ]
+      },
+      "partner_platforms": [
+        {
+          "id": 72,
+          "subdomain": "chuckainlay",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 5,
+          "subdomain": "jaredleegosselin",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        },
+        {
+          "id": 52,
+          "subdomain": "redline",
+          "user": {
+            "id": 7741,
+            "participating": false
+          }
+        }
+      ],
+      "primary_tag": "Electronic",
+      "tags": [
+        "electro",
+        "electronic",
+        "house"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "dis"
+      ],
+      "ranks": [
+        0,
+        0,
+        0,
+        -14,
+        -51,
+        -17,
+        0
+      ],
+      "rank": 3.17402,
+      "votes": 2,
+      "status": "Published",
+      "owner_avatar": null,
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 2393,
+        "name": "Bogdanl",
+        "score": 10.0176579,
+        "country": null,
+        "provstate": null,
+        "owner_id": 8413,
+        "homepage": "https:\/\/muzooka.com\/bogdanl",
+        "subdomain": "bogdanl",
+        "networks": {
+          "facebook": {
+            "username": "producerBogdanl",
+            "url": "https:\/\/www.facebook.com\/producerBogdanl"
+          },
+          "twitter": {
+            "username": "_bogdanl",
+            "url": "https:\/\/www.twitter.com\/_bogdanl"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2393\/avatar.20150606162320.jpg",
+        "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2393\/banner.20150606162320.jpg",
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    },
+    {
+      "id": 237,
+      "name": "Believe",
+      "published": "2012-11-06T17:28:08.000Z",
+      "listens": 0,
+      "downloadable": false,
+      "artwork": null,
+      "age": "2 years ago",
+      "age_short": "135w",
+      "producer_votes": 0,
+      "song_comments": 0,
+      "duration": "4:27",
+      "snippet_start": 30,
+      "hotchartposition": 1811,
+      "hotchartpositions": {
+        "range": {
+          "min": 829,
+          "max": 3185
+        },
+        "past_days": [
+          1553,
+          2545,
+          3116,
+          3185,
+          1104,
+          1807,
+          1811
+        ]
+      },
+      "partner_platforms": [
+        
+      ],
+      "primary_tag": "Pop",
+      "tags": [
+        "pop"
+      ],
+      "bitRates": [
+        "128",
+        "256",
+        "320",
+        "96",
+        "Dis"
+      ],
+      "ranks": [
+        -724,
+        -992,
+        -571,
+        -69,
+        2081,
+        -703,
+        -4
+      ],
+      "rank": 0,
+      "votes": 2,
+      "status": "Published",
+      "owner_avatar": null,
+      "latest_three_voting_producers": [
+        
+      ],
+      "latest_voting_producer": null,
+      "band": {
+        "id": 232,
+        "name": "Toby Mathis",
+        "score": 1.39583375,
+        "country": null,
+        "provstate": null,
+        "owner_id": 467,
+        "homepage": "https:\/\/muzooka.com\/tobymathis",
+        "subdomain": "tobymathis",
+        "avatar": null,
+        "banner": null,
+        "allow_join_requests": false,
+        "allow_member_comments": false,
+        "user": {
+          "following": false
+        }
+      },
+      "user": {
+        "id": 7741,
+        "voted": false,
+        "listened": false,
+        "purchased": false
+      }
+    }
+  ]
+}

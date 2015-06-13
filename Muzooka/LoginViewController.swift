@@ -27,6 +27,14 @@ class LoginViewController: MuzookaViewController, GPPSignInDelegate
         // Dispose of any resources that can be recreated.
     }
 	
+	@IBAction func login(sender: AnyObject)
+	{
+		var currentLoginView = self.loginScreens[self.currentLoginScreen.rawValue]
+		
+		var paramDict = NSDictionary(objectsAndKeys: currentLoginView.emailTextField.text, "email", currentLoginView.passwordTextField.text, "password")
+		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Login, delegate: self, parameters: paramDict)
+	}
+	
 	@IBAction func close(sender: AnyObject)
 	{
 		var currentLoginView = self.loginScreens[self.currentLoginScreen.rawValue]
@@ -49,49 +57,48 @@ class LoginViewController: MuzookaViewController, GPPSignInDelegate
 		}
 	}
 	
+	@IBAction func loginWithGoogle(sender: UIButton)
+	{
+		var signIn = GPPSignIn.sharedInstance()
+		signIn.shouldFetchGooglePlusUser = true
+		signIn.clientID = Constants.GOOGLE_CLIENT_ID
+		signIn.scopes = [kGTLAuthScopePlusLogin]
+		//signIn.useClientIDForURLScheme = true
+		signIn.delegate = self
+		
+		signIn.authenticate()
+	}
+	
+	@IBAction func loginWithFacebook(sender: UIButton)
+	{
+		let fbLogin = FBSDKLoginManager.new()
+		fbLogin.logInWithReadPermissions(["email"], handler:
+		{ (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
+			var paramDict = NSDictionary(objectsAndKeys: result.token.tokenString, "accessToken")
+			APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.FacebookRegister, delegate: self, parameters: paramDict)
+		
+		})
+	}
+	
+	@IBAction func loginWithEmail(sender: UIButton)
+	{
+		// update action button title
+		//self.actionButton.setTitle(Constants.TITLE_LOGIN, forState: UIControlState.Normal)
+		//self.backButton.hidden = false
+		self.animateToScreen(LoginScreen.Login)
+	}
+	
 	@IBAction func loginPathSelected(sender: UIButton)
 	{
 		var loginScreen:LoginScreen = LoginScreen(rawValue: sender.tag)!
 		
 		switch(loginScreen)
 		{
-			case .Google:
-				
-				var signIn = GPPSignIn.sharedInstance()
-				signIn.shouldFetchGooglePlusUser = true
-				signIn.clientID = Constants.GOOGLE_CLIENT_ID
-				signIn.scopes = [kGTLAuthScopePlusLogin]
-				//signIn.useClientIDForURLScheme = true
-				signIn.delegate = self
-				
-				signIn.authenticate()
-
-				break
-			
-			case .Facebook:
-				let fbLogin = FBSDKLoginManager.new()
-				fbLogin.logInWithReadPermissions(["email"], handler:
-					{ (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
-						var paramDict = NSDictionary(objectsAndKeys: result.token.tokenString, "accessToken")
-						APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.FacebookRegister, delegate: self, parameters: paramDict)
-						
-				})
-				break
-			
 			case .Intro:
 				
 				// update action button title
 				self.actionButton.setTitle(Constants.TITLE_CLOSE, forState: UIControlState.Normal)
 				self.backButton.hidden = true
-			
-			case .Login:
-				
-				// update action button title
-				self.actionButton.setTitle(Constants.TITLE_LOGIN, forState: UIControlState.Normal)
-				self.backButton.hidden = false
-				self.animateToScreen(loginScreen)
-				
-				break
 				
 			case .Register:
 			

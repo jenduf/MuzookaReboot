@@ -11,7 +11,7 @@ import Foundation
 
 enum APIRequest: Int
 {
-	case Hot = 0, New, Top, Partner, Producers, Login, Register, FacebookRegister, GoogleRegister, VoteSong, User, UserDetails, Band, BandSongs, SongDetails, PersonalPlaylists, SubscribedPlaylists
+	case Hot = 0, New = 1, Top = 2, Partner = 3, Producers = 4, Login = 5, Register = 6, FacebookRegister = 7, GoogleRegister = 8, VoteSong = 9, User = 10, UserDetails = 11, Band = 12, BandSongs = 13, SongDetails = 14, PersonalPlaylists = 15, SubscribedPlaylists, CreatePlaylist, SubscribeToPlaylist, PlaylistDetails, Followers, Following, SearchAll, Discovery
 	
 	var stringValue: String
 	{
@@ -34,8 +34,14 @@ enum APIRequest: Int
 			"songs", // song list
 			"songs", // song details
 			"playlists", // personal playlists
-			"playlists/subscriptions" // subscribed playlists
-			
+			"playlists/subscriptions", // subscribed playlists
+			"playlists", // create playlists
+			"subscribe", //subscribe to playlist
+			"playlists",
+			"followers",
+			"following/users",
+			"search/all",
+			"discovery"
 		]
 		
 		return urls[self.rawValue]
@@ -48,7 +54,7 @@ enum APIRequest: Int
 			case .BandSongs:
 				return "\(APIRequest.Band.stringValue)/\(appendedID)/\(self.stringValue)"
 			
-			case .Band, .SongDetails, .UserDetails:
+			case .Band, .SongDetails, .UserDetails, .PlaylistDetails:
 				return "\(self.stringValue)/\(appendedID)"
 			
 			case .PersonalPlaylists:
@@ -57,8 +63,24 @@ enum APIRequest: Int
 			case .SubscribedPlaylists:
 				return "users/\(appendedID)/\(self.stringValue)"
 			
+			case .SubscribeToPlaylist:
+				return "\(APIRequest.CreatePlaylist.stringValue)/\(appendedID)/\(self.stringValue)"
+			
+			case .Followers:
+				return "users/\(appendedID)/\(self.stringValue)"
+			
+			case .Following:
+				return "users/\(appendedID)/\(self.stringValue)"
+			
 			default:
-				return self.stringValue
+				if appendedID.isEmpty == true
+				{
+					return self.stringValue
+				}
+				else
+				{
+					return "\(self.stringValue)/\(appendedID)"
+				}
 		}
 		
 	}
@@ -67,13 +89,10 @@ enum APIRequest: Int
 	{
 		switch(self)
 		{
-			case .Login:
+			case .Login, .CreatePlaylist:
 				return Constants.HTTP_POST
 			
-			case .Register:
-				return Constants.HTTP_PUT
-			
-			case .VoteSong:
+			case .VoteSong, .SubscribeToPlaylist, .Register:
 				return Constants.HTTP_PUT
 			
 			default:
@@ -85,18 +104,67 @@ enum APIRequest: Int
 	{
 		switch(self)
 		{
-			case .VoteSong:
+			case .VoteSong, .Discovery:
 				return true
 			
 			case .User:
 				return true
 			
-			case .PersonalPlaylists, .SubscribedPlaylists:
+			case .PersonalPlaylists, .SubscribedPlaylists, .CreatePlaylist:
 				return true
 			
 			default:
 				return false
 		}
 		
+	}
+	
+	func buildReferrerWithAppendedIDAndExtraInfo(id: Int, extraInfo: String = "") -> APIReferrer?
+	{
+		var returnRefer: APIReferrer? = nil
+		
+		switch self
+		{
+			case .Hot:
+				returnRefer = APIReferrer(type: .Charts, id: 0, extra: APIReferrer.ExtraInfo.Hot.rawValue, isQueue: false, isManual: false)
+				break
+			
+			case .New:
+				returnRefer = APIReferrer(type: .Charts, id: 0, extra: APIReferrer.ExtraInfo.New.rawValue, isQueue: false, isManual: false)
+				break
+				
+			case .Top:
+				returnRefer = APIReferrer(type: .Charts, id: 0, extra: APIReferrer.ExtraInfo.Top.rawValue, isQueue: false, isManual: false)
+				break
+			
+			case .Partner:
+				returnRefer = APIReferrer(type: .PartnerCharts, id: id, extra: extraInfo, isQueue: true, isManual: false)
+				break
+			
+			case .PlaylistDetails:
+				returnRefer = APIReferrer(type: .Playlist, id: id, extra: extraInfo, isQueue: true, isManual: true)
+				break
+			
+			case .BandSongs:
+				returnRefer = APIReferrer(type: .Band, id: id, extra: extraInfo, isQueue: false, isManual: false)
+				break
+			
+			case .SearchAll:
+				returnRefer = APIReferrer(type: .Search, id: id, extra: extraInfo, isQueue: false, isManual: false)
+				break
+			
+			case .SongDetails:
+				returnRefer = APIReferrer(type: .Song, id: id, extra: extraInfo, isQueue: false, isManual: false)
+				break
+			
+			case .Discovery:
+				returnRefer = APIReferrer(type: .Discovery, id: id, extra: extraInfo, isQueue: true, isManual: false)
+				break
+			
+			default:
+				break
+		}
+		
+		return returnRefer
 	}
 }

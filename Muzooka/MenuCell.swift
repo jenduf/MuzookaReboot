@@ -19,7 +19,7 @@ class MenuCell: UITableViewCell
 		{
 			self.menuImage.highlighted = active
 			
-			self.menuTitle.textColor = (active ? Utils.UIColorFromRGB(Color.MenuActive.hex, alpha: 1.0) : Utils.UIColorFromRGB(Color.MenuInactive.hex, alpha: 1.0))
+			self.menuTitle.textColor = (active ? Color.MenuActive.uiColor : Color.MenuInactive.uiColor)
 		}
 	}
 

@@ -1,0 +1,504 @@
+{
+  "id": 2156,
+  "name": "Sam Burchfield",
+  "city": "Atlanta",
+  "score": 28.7418579,
+  "country": "United States",
+  "provstate": "Georgia",
+  "headline": null,
+  "bio": "?",
+  "followers": 0,
+  "owner_id": 7853,
+  "homepage": "https:\/\/muzooka.com\/samburchfield",
+  "subdomain": "samburchfield",
+  "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2156\/avatar.20150513194258.jpg",
+  "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2156\/banner.20150513194259.jpg",
+  "allow_join_requests": false,
+  "allow_member_comments": false,
+  "songs_count": 1,
+  "votes": 9,
+  "members": [
+    {
+      "role": null,
+      "owner": false,
+      "user": {
+        "id": 7853,
+        "name": "Sam",
+        "username": "samburchfieldmusic",
+        "city": null,
+        "country": null,
+        "provstate": null,
+        "bio": null,
+        "artist": true,
+        "producer": false,
+        "workedwith": null,
+        "score": 18.7653503,
+        "scoredetails": {
+          "score": 18.7653503,
+          "code": "#956D4E"
+        },
+        "votes": 1,
+        "playlists_count": 0,
+        "followers": 0,
+        "follows": 0,
+        "facebook_username": null,
+        "twitter_username": null,
+        "google_username": null,
+        "membersince": "2015-05-13T19:41:09.000Z",
+        "lastmodified": "2015-05-29T08:48:59.000Z",
+        "is_testuser": false,
+        "is_email_verified": true,
+        "filtering": 0,
+        "genre": "[]",
+        "locations": "[]",
+        "avatar": null,
+        "member_confirmed": 1
+      }
+    }
+  ],
+  "songs": {
+    "total": 1,
+    "count": 1,
+    "offset": 0,
+    "songs": [
+      {
+        "id": 4349,
+        "name": "Here Tonight",
+        "published": "2015-05-13T19:43:50.000Z",
+        "listens": 63,
+        "downloadable": false,
+        "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2156\/songs\/4349\/artwork.20150513194633.jpg",
+        "age": "2 weeks ago",
+        "age_short": "2w",
+        "producer_votes": 0,
+        "song_comments": 0,
+        "duration": "4:12",
+        "snippet_start": 114,
+        "hotchartposition": 5,
+        "hotchartpositions": {
+          "range": {
+            "min": 4,
+            "max": 14
+          },
+          "past_days": [
+            6,
+            4,
+            5,
+            11,
+            6,
+            5,
+            5
+          ]
+        },
+        "partner_platforms": [
+          {
+            "id": 3,
+            "subdomain": "basement"
+          }
+        ],
+        "primary_tag": "Acoustic",
+        "tags": [
+          "acoustic",
+          "folk",
+          "soul"
+        ],
+        "bitRates": [
+          "128",
+          "256",
+          "320",
+          "96",
+          "dis"
+        ],
+        "ranks": [
+          -1,
+          2,
+          -1,
+          -6,
+          5,
+          1,
+          0
+        ],
+        "rank": 20.5826621,
+        "votes": 9,
+        "status": "Published",
+        "owner_avatar": null,
+        "latest_three_voting_producers": [
+          
+        ],
+        "latest_voting_producer": null,
+        "band": {
+          "id": 2156,
+          "name": "Sam Burchfield",
+          "score": 28.7418579,
+          "country": null,
+          "provstate": null,
+          "owner_id": 7853,
+          "homepage": "https:\/\/muzooka.com\/samburchfield",
+          "subdomain": "samburchfield",
+          "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2156\/avatar.20150513194258.jpg",
+          "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2156\/banner.20150513194259.jpg",
+          "allow_join_requests": false,
+          "allow_member_comments": false,
+          "user": {
+            "following": false
+          }
+        },
+        "isDwollaID": false,
+        "license": {
+          "type": "All Rights Reserved"
+        }
+      }
+    ]
+  },
+  "voters": {
+    "total": 9,
+    "count": 9,
+    "offset": 0,
+    "users": [
+      {
+        "id": 20,
+        "name": "Shawn Wilson",
+        "username": "shawn",
+        "city": "Calgary",
+        "country": "Canada",
+        "provstate": "AB",
+        "website": "http:\/\/muzooka.com",
+        "bio": "Music lover, proud father, snowboarder, wine drinker & BBQ scientist. Co-Founder and CEO @Muzooka",
+        "artist": true,
+        "producer": false,
+        "workedwith": "Everyone",
+        "score": 70.3411574,
+        "scoredetails": {
+          "score": 70.3411574,
+          "code": "#EDBF54"
+        },
+        "votes": 1147,
+        "playlists_count": 3,
+        "followers": 54,
+        "follows": 52,
+        "facebook_username": "762948050",
+        "twitter_username": "ShawnWEI",
+        "google_username": null,
+        "membersince": "2011-11-16T21:40:50.000Z",
+        "lastmodified": "2015-05-29T01:26:12.000Z",
+        "is_testuser": false,
+        "is_email_verified": true,
+        "filtering": 1,
+        "genre": "[]",
+        "locations": "[]",
+        "networks": {
+          "facebook": {
+            "username": "762948050",
+            "url": "https:\/\/www.facebook.com\/762948050"
+          },
+          "twitter": {
+            "username": "ShawnWEI",
+            "url": "https:\/\/www.twitter.com\/ShawnWEI"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/20\/avatar.20141030164312.jpg"
+      },
+      {
+        "id": 2916,
+        "name": "Doug Nyhoff",
+        "username": "DougNyhoff",
+        "city": "Southlake",
+        "country": "United States",
+        "provstate": "Texas",
+        "bio": "Muzooka Executive Chairman & COO",
+        "artist": false,
+        "producer": false,
+        "workedwith": "",
+        "score": 73.9344599,
+        "scoredetails": {
+          "score": 73.9344599,
+          "code": "#EDBF54"
+        },
+        "votes": 763,
+        "playlists_count": 1,
+        "followers": 86,
+        "follows": 77,
+        "facebook_username": null,
+        "twitter_username": "DougNyhoff",
+        "google_username": null,
+        "membersince": "2014-02-08T14:55:18.000Z",
+        "lastmodified": "2015-05-29T08:48:59.000Z",
+        "is_testuser": true,
+        "is_email_verified": true,
+        "filtering": 0,
+        "genre": "[]",
+        "locations": "[]",
+        "networks": {
+          "twitter": {
+            "username": "DougNyhoff",
+            "url": "https:\/\/www.twitter.com\/DougNyhoff"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/2916\/avatar.jpg"
+      },
+      {
+        "id": 2919,
+        "name": "Karen Nyhoff",
+        "username": "KarenNyhoff",
+        "city": "",
+        "country": "United States",
+        "provstate": "Texas",
+        "bio": "",
+        "artist": false,
+        "producer": false,
+        "workedwith": null,
+        "score": 61.3698615,
+        "scoredetails": {
+          "score": 61.3698615,
+          "code": "#EDBF54"
+        },
+        "votes": 212,
+        "playlists_count": 2,
+        "followers": 18,
+        "follows": 10,
+        "facebook_username": null,
+        "twitter_username": null,
+        "google_username": null,
+        "membersince": "2014-02-08T17:23:49.000Z",
+        "lastmodified": "2015-05-29T09:23:51.000Z",
+        "is_testuser": false,
+        "is_email_verified": true,
+        "filtering": 1,
+        "genre": [
+          
+        ],
+        "locations": [
+          
+        ],
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/2919\/avatar.jpg"
+      },
+      {
+        "id": 3013,
+        "name": "J. Desmond Brown",
+        "username": "DesmondBrown",
+        "city": "Calgary",
+        "country": "Canada",
+        "provstate": "Alberta",
+        "website": "http:\/\/www.muzooka.com\/",
+        "bio": "Why can't the crunching nuisance explode? Because the media stole your bandwagon. How does a doomed exoplanet refute the wolf?  Will my cycle exist after the daytime converter? The dumb metal declines.",
+        "artist": true,
+        "producer": false,
+        "workedwith": "",
+        "score": 68.7304237,
+        "scoredetails": {
+          "score": 68.7304237,
+          "code": "#EDBF54"
+        },
+        "votes": 404,
+        "playlists_count": 8,
+        "followers": 13,
+        "follows": 31,
+        "facebook_username": "10152425982046061",
+        "twitter_username": null,
+        "google_username": "105312814609384320942",
+        "membersince": "2014-02-25T00:49:21.000Z",
+        "lastmodified": "2015-05-29T09:23:51.000Z",
+        "is_testuser": false,
+        "is_email_verified": true,
+        "filtering": 0,
+        "genre": "[]",
+        "locations": "[]",
+        "networks": {
+          "facebook": {
+            "username": "10152425982046061",
+            "url": "https:\/\/www.facebook.com\/10152425982046061"
+          },
+          "google": {
+            "username": "105312814609384320942",
+            "url": "https:\/\/plus.google.com\/105312814609384320942"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3013\/avatar.jpg"
+      },
+      {
+        "id": 3142,
+        "name": "Leigh McDonald",
+        "username": "lemd",
+        "city": "Calgary",
+        "country": "Canada",
+        "provstate": "Alberta",
+        "website": "http:\/\/mrare.ca\/",
+        "bio": "A Calgary based interaction designer and front end developer. Also the product lead on Muzooka.",
+        "artist": true,
+        "producer": false,
+        "workedwith": "",
+        "score": 67.8997006,
+        "scoredetails": {
+          "score": 67.8997006,
+          "code": "#EDBF54"
+        },
+        "votes": 622,
+        "playlists_count": 1,
+        "followers": 24,
+        "follows": 101,
+        "facebook_username": "613130051",
+        "twitter_username": null,
+        "google_username": "108899520862985612392",
+        "membersince": "2014-05-30T17:36:46.000Z",
+        "lastmodified": "2015-05-29T08:48:59.000Z",
+        "is_testuser": true,
+        "is_email_verified": true,
+        "filtering": 1,
+        "genre": "[]",
+        "locations": "[]",
+        "networks": {
+          "facebook": {
+            "username": "613130051",
+            "url": "https:\/\/www.facebook.com\/613130051"
+          },
+          "google": {
+            "username": "108899520862985612392",
+            "url": "https:\/\/plus.google.com\/108899520862985612392"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3142\/avatar.jpg"
+      },
+      {
+        "id": 3338,
+        "name": "Becky Pace",
+        "username": "BeckyPace",
+        "city": null,
+        "country": null,
+        "provstate": null,
+        "bio": null,
+        "artist": false,
+        "producer": false,
+        "workedwith": null,
+        "score": 34.642713,
+        "scoredetails": {
+          "score": 34.642713,
+          "code": "#9A9A9A"
+        },
+        "votes": 7,
+        "playlists_count": 0,
+        "followers": 0,
+        "follows": 1,
+        "facebook_username": null,
+        "twitter_username": null,
+        "google_username": "110437842354658067306",
+        "membersince": "2014-08-11T18:41:06.000Z",
+        "lastmodified": "2015-05-29T08:48:59.000Z",
+        "is_testuser": false,
+        "is_email_verified": true,
+        "filtering": 1,
+        "genre": "[]",
+        "locations": "[]",
+        "networks": {
+          "google": {
+            "username": "110437842354658067306",
+            "url": "https:\/\/plus.google.com\/110437842354658067306"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3338\/avatar.jpg"
+      },
+      {
+        "id": 3662,
+        "name": "Shea Fairbanks",
+        "username": "sheafairbanksproductions",
+        "city": "Vancouver",
+        "country": "Canada",
+        "provstate": "British Columbia",
+        "website": "https:\/\/soundcloud.com\/shea-fairbanks",
+        "bio": "I'm a Record Producer, Songwriter, Mixing and Audio Engineer. I graduated from Nimbus School of Recording Arts, from the Advanced Music Production Diploma course in the winter of 2013.\n\nI've had the privilege of working with many talented artists, and my I'm constantly looking for other amazing artists and bands to work with.\nI bring a modern take on old school production, and like to use my musical memory to harness sound, feeling, and emotion from the artist.",
+        "artist": false,
+        "producer": false,
+        "workedwith": "",
+        "score": 53.3974446,
+        "scoredetails": {
+          "score": 53.3974446,
+          "code": "#9A9A9A"
+        },
+        "votes": 21,
+        "playlists_count": 1,
+        "followers": 2,
+        "follows": 0,
+        "facebook_username": null,
+        "twitter_username": null,
+        "google_username": null,
+        "membersince": "2014-10-01T21:33:08.000Z",
+        "lastmodified": "2015-05-29T09:12:45.000Z",
+        "is_testuser": false,
+        "is_email_verified": true,
+        "filtering": 1,
+        "genre": "[]",
+        "locations": "[]",
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/3662\/avatar.20141001213709.jpg"
+      },
+      {
+        "id": 7700,
+        "name": "Olivia Proffitt",
+        "username": "liv4shasha",
+        "city": null,
+        "country": null,
+        "provstate": null,
+        "bio": null,
+        "artist": false,
+        "producer": false,
+        "workedwith": null,
+        "score": 39.73234,
+        "scoredetails": {
+          "score": 39.73234,
+          "code": "#9A9A9A"
+        },
+        "votes": 20,
+        "playlists_count": 14,
+        "followers": 0,
+        "follows": 0,
+        "facebook_username": "10206874963655350",
+        "twitter_username": null,
+        "google_username": null,
+        "membersince": "2015-05-05T04:38:42.000Z",
+        "lastmodified": "2015-05-29T08:48:59.000Z",
+        "is_testuser": false,
+        "is_email_verified": true,
+        "filtering": 0,
+        "genre": null,
+        "locations": null,
+        "networks": {
+          "facebook": {
+            "username": "10206874963655350",
+            "url": "https:\/\/www.facebook.com\/10206874963655350"
+          }
+        },
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/7700\/avatar.jpg"
+      },
+      {
+        "id": 7853,
+        "name": "Sam",
+        "username": "samburchfieldmusic",
+        "city": null,
+        "country": null,
+        "provstate": null,
+        "bio": null,
+        "artist": true,
+        "producer": false,
+        "workedwith": null,
+        "score": 18.7653503,
+        "scoredetails": {
+          "score": 18.7653503,
+          "code": "#956D4E"
+        },
+        "votes": 1,
+        "playlists_count": 0,
+        "followers": 0,
+        "follows": 0,
+        "facebook_username": null,
+        "twitter_username": null,
+        "google_username": null,
+        "membersince": "2015-05-13T19:41:09.000Z",
+        "lastmodified": "2015-05-29T08:48:59.000Z",
+        "is_testuser": false,
+        "is_email_verified": true,
+        "filtering": 0,
+        "genre": "[]",
+        "locations": "[]",
+        "avatar": null
+      }
+    ]
+  }
+}

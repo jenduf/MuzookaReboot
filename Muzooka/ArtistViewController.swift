@@ -32,12 +32,15 @@ class ArtistViewController: MuzookaViewController, UITableViewDataSource, UITabl
 			self.artistName.text = band!.name
 			self.artistLocation.text = band!.city
 			
+			/*
 			let request = NSURLRequest(URL: NSURL(string: band!.avatar!)!)
 			NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
 			{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
 					let image = UIImage(data: data)
 					self.artistBanner.image = image
-			}
+			}*/
+			
+			self.artistBanner.loadFromURL(NSURL(string: band!.avatar!)!)
 			
 			self.artistTableView.reloadData()
 		}

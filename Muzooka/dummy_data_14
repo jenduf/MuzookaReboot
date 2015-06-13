@@ -1,0 +1,145 @@
+{
+  "id": 4349,
+  "name": "Here Tonight",
+  "published": "2015-05-13T19:43:50.000Z",
+  "listens": 65,
+  "downloadable": false,
+  "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2156\/songs\/4349\/artwork.20150513194633.jpg",
+  "age": "2 weeks ago",
+  "age_short": "2w",
+  "producer_votes": 1,
+  "song_comments": 0,
+  "duration": "4:12",
+  "snippet_start": 114,
+  "hotchartposition": 2,
+  "hotchartpositions": {
+    "range": {
+      "min": 2,
+      "max": 12
+    },
+    "past_days": [
+      6,
+      4,
+      5,
+      11,
+      6,
+      5,
+      2
+    ]
+  },
+  "partner_platforms": [
+    {
+      "id": 3,
+      "subdomain": "basement",
+      "user": {
+        "id": 7741,
+        "participating": false
+      }
+    }
+  ],
+  "primary_tag": "Acoustic",
+  "tags": [
+    "acoustic",
+    "folk",
+    "soul"
+  ],
+  "bitRates": [
+    "128",
+    "256",
+    "320",
+    "96",
+    "dis"
+  ],
+  "ranks": [
+    -1,
+    2,
+    -1,
+    -6,
+    5,
+    1,
+    3
+  ],
+  "rank": 29.9720101,
+  "votes": 11,
+  "status": "Published",
+  "owner_avatar": null,
+  "latest_three_voting_producers": [
+    {
+      "id": 7935,
+      "username": "PaulPesco",
+      "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/7935\/avatar.20150518190002.jpg",
+      "user": {
+        "id": 7741,
+        "following": false
+      }
+    }
+  ],
+  "latest_voting_producer": {
+    "id": 7935,
+    "username": "PaulPesco",
+    "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/7935\/avatar.20150518190002.jpg",
+    "user": {
+      "id": 7741,
+      "following": false
+    }
+  },
+  "band": {
+    "id": 2156,
+    "name": "Sam Burchfield",
+    "score": 41.5806468,
+    "country": null,
+    "provstate": null,
+    "owner_id": 7853,
+    "homepage": "https:\/\/muzooka.com\/samburchfield",
+    "subdomain": "samburchfield",
+    "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2156\/avatar.20150513194258.jpg",
+    "banner": "https:\/\/s3.amazonaws.com\/muzooka-prod\/bands\/2156\/banner.20150513194259.jpg",
+    "allow_join_requests": false,
+    "allow_member_comments": false,
+    "user": {
+      "following": false
+    }
+  },
+  "user": {
+    "id": 7741,
+    "voted": false,
+    "listened": false,
+    "purchased": false
+  },
+  "price": 0,
+  "license": {
+    "type": "All Rights Reserved"
+  },
+  "producerVotes": [
+    {
+      "created": "2015-05-29T13:24:08.000Z",
+      "producer": {
+        "id": 7935,
+        "name": "Paul Pesco",
+        "username": "PaulPesco",
+        "city": "",
+        "country": null,
+        "provstate": null,
+        "artist": false,
+        "producer": true,
+        "score": 47.389119,
+        "scoredetails": {
+          "score": 47.389119,
+          "code": "#9A9A9A"
+        },
+        "genre": [
+          
+        ],
+        "locations": [
+          
+        ],
+        "avatar": "https:\/\/s3.amazonaws.com\/muzooka-prod\/users\/7935\/avatar.20150518190002.jpg",
+        "user": {
+          "id": 7741,
+          "following": false
+        }
+      },
+      "timeago": "7 hours ago"
+    }
+  ]
+}

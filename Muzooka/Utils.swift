@@ -11,7 +11,7 @@ import UIKit
 public class Utils
 {
 	
-	class func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor
+	static func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor
 	{
 		var adjustedString: String = colorCode
 		
@@ -32,4 +32,16 @@ public class Utils
 		
 		return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
 	}
+	
+	static func nonNullObject(object: AnyObject?) -> AnyObject
+	{
+		if (object is NSNull || object == nil)
+		{
+			return ""
+		}
+		
+		return object!
+	}
+	
+	
 }

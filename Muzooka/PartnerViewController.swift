@@ -63,6 +63,8 @@ class PartnerViewController: MuzookaViewController, UITableViewDataSource, UITab
 	// MARK: API Delegate Methods
 	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
 	{
+		super.apiManagerDidReturnData(apiManager, data: data)
+		
 		self.partners.removeAll()
 		
 		var partnerArray:NSArray = data["current"] as! NSArray

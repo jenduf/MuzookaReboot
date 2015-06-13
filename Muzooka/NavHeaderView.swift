@@ -12,6 +12,7 @@ class NavHeaderView: UIView
 {
 	@IBOutlet var navBarView: NavBarView!
 	@IBOutlet var segmentView: SegmentView!
+	@IBOutlet var heightConstraint: NSLayoutConstraint!
 	
 	func updateForScreen(screen: NavScreen)
 	{

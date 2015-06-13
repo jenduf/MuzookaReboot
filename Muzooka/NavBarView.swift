@@ -23,18 +23,36 @@ class NavBarView: UIView
 			case .Playlists:
 				self.leftButton.updateForNavButtonType(.Hamburger)
 				self.rightButton.updateForNavButtonType(.Add)
-			
-			break
+				break
 			
 			case .Artist:
 				self.leftButton.updateForNavButtonType(.BackArrow)
 				self.rightButton.updateForNavButtonType(.Funnel)
 				break
 			
+			case .EditProfile:
+				self.leftButton.updateForNavButtonType(.BackArrow)
+				self.rightButton.updateForNavButtonType(.Save)
+				break
+			
+			case .Artist, .Profile:
+				self.leftButton.updateForNavButtonType(.Hamburger)
+				self.rightButton.updateForNavButtonType(.Share)
+				break
+			
+			case .SearchDetail:
+				self.leftButton.updateForNavButtonType(.BackArrow)
+				self.rightButton.updateForNavButtonType(.None)
+				break
+			
+			case .Search:
+				self.leftButton.updateForNavButtonType(.Hamburger)
+				self.rightButton.updateForNavButtonType(.None)
+				break
+			
 			default:
 				self.leftButton.updateForNavButtonType(.Hamburger)
 				self.rightButton.updateForNavButtonType(.Funnel)
-				
 				break
 		}
 	}

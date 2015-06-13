@@ -1,0 +1,43 @@
+{
+  "total": 2,
+  "count": 2,
+  "offset": 0,
+  "playlists": [
+    {
+      "id": 3964,
+      "name": "Discovered",
+      "songs_count": 3,
+      "subscribers": 0,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/playlists\/3964\/artwork.s.20150525233021.jpg",
+      "owner": {
+        "id": 7741,
+        "name": "Jen Duffey",
+        "username": "jenduf",
+        "producer": false,
+        "artist": false
+      },
+      "user": {
+        "id": 7741,
+        "subscribed": false
+      }
+    },
+    {
+      "id": 3963,
+      "name": "new",
+      "songs_count": 3,
+      "subscribers": 0,
+      "artwork": "https:\/\/s3.amazonaws.com\/muzooka-prod\/playlists\/3963\/artwork.s.20150525232924.jpg",
+      "owner": {
+        "id": 7741,
+        "name": "Jen Duffey",
+        "username": "jenduf",
+        "producer": false,
+        "artist": false
+      },
+      "user": {
+        "id": 7741,
+        "subscribed": false
+      }
+    }
+  ]
+}

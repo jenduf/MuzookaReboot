@@ -62,6 +62,8 @@ class IndustryViewController: MuzookaViewController, UICollectionViewDelegateFlo
 	// MARK: API Delegate Methods
 	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
 	{
+		super.apiManagerDidReturnData(apiManager, data: data)
+		
 		self.producers.removeAll()
 		
 		var producerArray:NSArray = data as! NSArray

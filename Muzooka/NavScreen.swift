@@ -10,25 +10,25 @@ import Foundation
 
 public enum NavScreen: Int
 {
-	case Login = 0, Charts, Playlists, Partners, Industry, Search, Settings, Artist, Song, Profile, EditProfile
+	case Login = 0, Charts, Playlists, Partners, Industry, Search, Settings, Artist, Song, Profile, EditProfile, SearchDetail, ExtendedPlayer, Discover
 	
-	public var titleText: String
+	public static let titles = ["", "Charts", "Playlists", "Partners", "Industry", "Search", "Settings", "", "", "", "Edit Profile", "Search", "", ""]
+	
+	public var showNavBar: Bool
 	{
 		switch self
 		{
-			case .Charts:
-				return "Charts"
-			
-			case .Playlists:
-				return "Playlists"
-			
-			case .EditProfile:
-				return "Edit Profile"
+			case .Profile, .ExtendedPlayer, .Discover:
+				return false
 			
 			default:
-				return ""
+				return true
 		}
-		
+	}
+	
+	public var titleText: String
+	{
+		return NavScreen.titles[self.rawValue]
 	}
 	
 	public var subHeadings: [String]
@@ -40,7 +40,10 @@ public enum NavScreen: Int
 				
 			case .Playlists:
 				return ["Personal", "Subscribed"]
-				
+			
+			case .SearchDetail:
+				return ["All", "Songs", "Bands", "Users", "Playlists"]
+			
 			default:
 				return []
 		}

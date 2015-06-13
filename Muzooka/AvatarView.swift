@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class AvatarView: UIView
 {
 	var avatarDelegate: AvatarDelegate!
@@ -15,6 +16,8 @@ class AvatarView: UIView
 	let backgroundLayer = CAShapeLayer()
 	
 	let imageLayer = CALayer()
+	
+	@IBInspectable var showDetails = false
 	
 	var fillColor: UIColor = UIColor.clearColor()
 	{
@@ -37,7 +40,7 @@ class AvatarView: UIView
 		let label = UILabel()
 		label.font = UIFont(name: Constants.FONT_PROXIMA_NOVA_SEMIBOLD, size: Constants.FONT_SIZE_AVATAR)
 		label.textAlignment = .Center
-		label.textColor = UIColor.blackColor()
+		label.textColor = Color.TextDark.uiColor
 		
 		return label
 	}()
@@ -63,7 +66,17 @@ class AvatarView: UIView
 			
 			self.scoreLabel.backgroundColor = Utils.UIColorFromRGB(user!.scoreDetails.colorCode, alpha: 1.0)
 			
-			self.image = user?.image
+			if !user!.avatarURL!.isEmpty
+			{
+				self.image = UIImage.new()
+				
+				self.image!.loadFromURL(NSURL(string: user!.avatarURL!)!, callback:
+				{ (image) -> Void in
+					self.image = image
+				})
+			}
+			
+			//self.image = user?.image
 		}
 	}
 	
@@ -80,7 +93,10 @@ class AvatarView: UIView
 		
 		self.layer.addSublayer(self.imageLayer)
 		
-		self.addSubview(self.nameLabel)
+		if self.showDetails == true
+		{
+			self.addSubview(self.nameLabel)
+		}
 		
 		self.addSubview(self.scoreLabel)
 		
@@ -143,7 +159,7 @@ class AvatarView: UIView
 			
 		self.backgroundLayer.path = path.CGPath
 		self.backgroundLayer.fillColor = self.fillColor.CGColor
-		self.backgroundLayer.lineWidth = Constants.AVATAR_LINE_WIDTH
+		self.backgroundLayer.lineWidth = 0//Constants.AVATAR_LINE_WIDTH
 		self.backgroundLayer.strokeColor = UIColor(white: 0.5, alpha: 0.3).CGColor
 	}
 	
@@ -152,7 +168,7 @@ class AvatarView: UIView
 		let maskLayer = CAShapeLayer()
 		let dx = Constants.AVATAR_LINE_WIDTH + 3.0
 		let insetBounds = CGRectInset(self.layer.bounds, dx, dx)
-		let innerPath = UIBezierPath(ovalInRect: insetBounds)
+		let innerPath = UIBezierPath(ovalInRect: self.bounds)//insetBounds)
 		maskLayer.path = innerPath.CGPath
 		maskLayer.fillColor = UIColor.blackColor().CGColor
 		maskLayer.frame = self.layer.bounds

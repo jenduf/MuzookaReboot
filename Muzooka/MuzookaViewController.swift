@@ -43,6 +43,10 @@ class MuzookaViewController: UIViewController, APIDelegate
 		self.navController!.showLoader(true)
 	}
 	
+	func performButtonActionType(type: NavButtonType)
+	{
+		// override
+	}
 
 	
     // MARK: - Navigation Delegate Methods
