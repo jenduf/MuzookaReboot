@@ -35,11 +35,11 @@ class AlbumArtView: UIView
 	}
 	
 	
-	init(url: String)
+	init(urlString: String)
 	{
 		self.artImageView = UIImageView(frame: self.frame)
 		
-		self.artImageView!.loadFromURLWithCallback(NSURL(string: url)!, callback:
+		self.artImageView!.loadFromURLWithCallback(NSURL(string: urlString)!, callback:
 		{ (downloadedImage) -> () in
 			
 			self.artImageView!.image = downloadedImage

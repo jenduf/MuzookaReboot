@@ -970,7 +970,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
             endingLineNumber = "143"
-            landmarkName = "musicPlayerDidStartPlaying(_:song:)"
+            landmarkName = "musicPlayerDidUpdateTimeCode(_:current:total:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -986,7 +986,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
             endingLineNumber = "159"
-            landmarkName = "musicPlayerSongDidEnd(_:)"
+            landmarkName = "musicPlayerDidToggle(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1050,8 +1050,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
             endingLineNumber = "120"
-            landmarkName = "musicPlayerDidUpdateTimeCode(_:current:total:)"
-            landmarkType = "5">
+            landmarkName = "DiscoverViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1082,7 +1082,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "dragViewRequestedPass()"
+            landmarkName = "dragViewRequestedAdd()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1098,7 +1098,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "dragViewRequestedAdd()"
+            landmarkName = "dragViewReset()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1114,8 +1114,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
             endingLineNumber = "203"
-            landmarkName = "apiManagerDidReturnData(_:data:)"
-            landmarkType = "5">
+            landmarkName = "DiscoverViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1162,8 +1162,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
             endingLineNumber = "171"
-            landmarkName = "alertViewDidDismissAtIndex(_:)"
-            landmarkType = "5">
+            landmarkName = "DiscoverViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

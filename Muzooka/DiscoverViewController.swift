@@ -210,7 +210,7 @@ class DiscoverViewController: MuzookaViewController, DragDelegate, MusicPlayerDe
 	{
 		let song = self.songs[index]
 		
-		let albumArt = AlbumArtView(url: song.artworkURL!)
+		let albumArt = AlbumArtView(urlString: song.artworkURL!)
 		
 		return albumArt as AlbumArtView
 	}
