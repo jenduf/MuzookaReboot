@@ -13,7 +13,7 @@ class PlaylistDetailViewController: MuzookaViewController, UITableViewDataSource
 
 	var songs = [Song]()
 	
-	var detailTableView: UITableView!
+	@IBOutlet var detailTableView: UITableView!
 	
 	var playlistID: String?
 	
@@ -28,7 +28,9 @@ class PlaylistDetailViewController: MuzookaViewController, UITableViewDataSource
 	{
 		super.loadData()
 		
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.PlaylistDetails, delegate: self, parameters: nil, appendedString: self.playlistID!)
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.PlaylistDetails, requestParameters: nil)
+		
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil)
 		
 	}
 
@@ -72,11 +74,13 @@ class PlaylistDetailViewController: MuzookaViewController, UITableViewDataSource
 	}
 	
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		
-		var songArray:NSArray = data["songs"] as! NSArray
+		var dataDict:NSDictionary = data as! NSDictionary
+		
+		var songArray:NSArray = dataDict["songs"] as! NSArray
 			
 		for eachSong in songArray
 		{

@@ -32,7 +32,9 @@ class LoginViewController: MuzookaViewController, GPPSignInDelegate
 		var currentLoginView = self.loginScreens[self.currentLoginScreen.rawValue]
 		
 		var paramDict = NSDictionary(objectsAndKeys: currentLoginView.emailTextField.text, "email", currentLoginView.passwordTextField.text, "password")
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Login, delegate: self, parameters: paramDict)
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.Login, requestParameters: nil)
+		
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: paramDict)
 	}
 	
 	@IBAction func close(sender: AnyObject)
@@ -43,12 +45,14 @@ class LoginViewController: MuzookaViewController, GPPSignInDelegate
 		{
 			case .Login:
 				var paramDict = NSDictionary(objectsAndKeys: currentLoginView.emailTextField.text, "email", currentLoginView.passwordTextField.text, "password")
-				APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Login, delegate: self, parameters: paramDict)
+				let apiRequest = APIRequest(requestType: APIRequest.RequestType.Login, requestParameters: nil)
+				APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: paramDict)
 				break
 			
 			case .Register:
 				var paramDict = NSDictionary(objectsAndKeys: currentLoginView.nameTextField.text, "name", currentLoginView.userNameTextField.text, "username", currentLoginView.emailTextField.text, "email", currentLoginView.passwordTextField.text, "password")
-				APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Register, delegate: self, parameters: paramDict)
+				let apiRequest = APIRequest(requestType: APIRequest.RequestType.Register, requestParameters: nil)
+				APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: paramDict)
 				break
 			
 			default:
@@ -75,7 +79,8 @@ class LoginViewController: MuzookaViewController, GPPSignInDelegate
 		fbLogin.logInWithReadPermissions(["email"], handler:
 		{ (result: FBSDKLoginManagerLoginResult!, error: NSError!) -> Void in
 			var paramDict = NSDictionary(objectsAndKeys: result.token.tokenString, "accessToken")
-			APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.FacebookRegister, delegate: self, parameters: paramDict)
+			let apiRequest = APIRequest(requestType: APIRequest.RequestType.FacebookRegister, requestParameters: nil)
+			APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: paramDict)
 		
 		})
 	}
@@ -169,7 +174,8 @@ class LoginViewController: MuzookaViewController, GPPSignInDelegate
 	func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!)
 	{
 		var paramDict = NSDictionary(objectsAndKeys: auth.accessToken, "acToken")
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.GoogleRegister, delegate: self, parameters: paramDict)
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.GoogleRegister, requestParameters: nil)
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: paramDict)
 	}
 	
 	func didDisconnectWithError(error: NSError!)
@@ -178,13 +184,13 @@ class LoginViewController: MuzookaViewController, GPPSignInDelegate
 	}
 	
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		
-		switch apiManager.apiRequest!
+		switch apiManager.apiRequest!.requestType
 		{
-			case APIRequest.Login:
+			case .Login:
 				var dict:NSDictionary = data as! NSDictionary
 				
 				apiManager.authToken = dict["token"] as? String
@@ -195,15 +201,15 @@ class LoginViewController: MuzookaViewController, GPPSignInDelegate
 				
 				break
 			
-			case APIRequest.Register:
+			case .Register:
 			
 				break
 			
-			case APIRequest.GoogleRegister:
+			case .GoogleRegister:
 			
 				break
 			
-			case APIRequest.FacebookRegister:
+			case .FacebookRegister:
 			
 				break
 			

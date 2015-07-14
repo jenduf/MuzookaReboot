@@ -12,6 +12,8 @@ class AlbumArtView: UIView
 {
 	@IBOutlet var albumImageView: UIImageView!
 	
+	var artImageView: UIImageView?
+	
 	let gradientView = GradientView()
 	
 	var artURL: String?
@@ -30,6 +32,32 @@ class AlbumArtView: UIView
 			self.albumImageView.loadFromURL(NSURL(string: artURL!)!)
 		}
 		
+	}
+	
+	
+	init(url: String)
+	{
+		self.artImageView = UIImageView(frame: self.frame)
+		
+		self.artImageView!.loadFromURLWithCallback(NSURL(string: url)!, callback:
+		{ (downloadedImage) -> () in
+			
+			self.artImageView!.image = downloadedImage
+						
+			self.addSubview(self.artImageView!)
+				
+			super.init(frame: CGRect(x: 0, y: 0, width: downloadedImage.size.width, height: downloadedImage.size.height))
+		})
+	}
+
+	required init(coder aDecoder: NSCoder)
+	{
+	    fatalError("init(coder:) has not been implemented")
+	}
+	
+	override init(frame: CGRect)
+	{
+		super.init(frame: frame)
 	}
 	
 	override func awakeFromNib()
@@ -55,6 +83,12 @@ class AlbumArtView: UIView
 		
 		self.layer.cornerRadius = 2.0
 		self.layer.masksToBounds = true
+	}
+	
+	func prepareForReuse()
+	{
+		self.gradientView.alpha = 0.0
+		self.albumImageView.image = nil
 	}
 
     /*

@@ -14,6 +14,15 @@ class SegmentView: UIView
 	var indicatorView: IndicatorView?
 
 	var delegate: SegmentViewDelegate?
+	
+	var segmentStrings: String?
+	{
+		didSet
+		{
+			let segArray = segmentStrings?.componentsSeparatedByString(",")
+			self.updateSegments(segArray!)
+		}
+	}
 
 	func updateSegments(segmentTitles: [String])
 	{

@@ -38,9 +38,41 @@ class PlaylistCell: UICollectionViewCell
 			
 			*/
 			
-			self.artImageView.loadFromURL(NSURL(string: playlist!.artwork)!)
+			if let artURL = playlist?.artwork
+			{
+				self.artImageView.loadFromURL(NSURL(string: artURL)!)
+			}
+			else
+			{
+				self.artImageView.image = UIImage(named: Constants.IMAGE_DEFAULT_PLAYLIST)
+			}
 		}
 		
 	}
-    
+	
+	override func prepareForReuse()
+	{
+		super.prepareForReuse()
+		
+		if self.songCount != nil
+		{
+			self.songCount.text = ""
+		}
+		
+		if self.nameLabel != nil
+		{
+			self.nameLabel.text = ""
+		}
+		
+		if self.subscribers != nil
+		{
+			self.subscribers.text = ""
+		}
+		
+		if self.artImageView != nil
+		{
+			self.artImageView.image = nil
+		}
+	}
+	
 }

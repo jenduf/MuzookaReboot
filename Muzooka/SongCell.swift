@@ -18,6 +18,8 @@ class SongCell: UITableViewCell
 	@IBOutlet var voteButton: UIButton!
 	@IBOutlet var menuButton: UIButton!
 	
+	var cellDelegate: MuzookaCellDelegate!
+	
 	var song: Song?
 	{
 		didSet
@@ -35,7 +37,13 @@ class SongCell: UITableViewCell
 			
 			if self.albumArtView != nil
 			{
-				self.albumArtView.artURL = song!.artwork
+				let imageURL = song?.getImageURLForDimension(.ExtraSmall)
+				
+				if imageURL != nil
+				{
+					self.albumArtView.artURL =  imageURL
+					//song!.artwork
+				}
 			}
 		}
 		
@@ -47,6 +55,19 @@ class SongCell: UITableViewCell
 		
 		//self.songArtwork.layer.masksToBounds = true
 		//self.songArtwork.layer.cornerRadius = 2.0
+	}
+	
+	@IBAction func showMenu(sender: AnyObject)
+	{
+		self.cellDelegate!.cellRequestedShowMenu(self, item: self.song!)
+	}
+	
+	@IBAction func actionButtonPressed(sender: AnyObject)
+	{
+		let btn = sender as! UIButton
+		btn.selected = !btn.selected
+		
+		self.cellDelegate!.cellRequestedAction(self, item: self.song!)
 	}
 	
 	override func prepareForReuse()

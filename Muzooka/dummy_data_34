@@ -1,0 +1,84 @@
+{
+  "featured": [
+    {
+      "name": "ballad",
+      "songs_count": 3
+    },
+    {
+      "name": "reggaefest",
+      "songs_count": 0
+    },
+    {
+      "name": "sumfest2014",
+      "songs_count": 0
+    }
+  ],
+  "cities": [
+    {
+      "name": "Vancouver",
+      "songs_count": 204
+    },
+    {
+      "name": "Calgary",
+      "songs_count": 55
+    },
+    {
+      "name": "Vanrena",
+      "songs_count": 50
+    },
+    {
+      "name": "Ma-Me-O Beach",
+      "songs_count": 41
+    },
+    {
+      "name": "Los Angeles",
+      "songs_count": 20
+    }
+  ],
+  "suggested": [
+    {
+      "name": "blues",
+      "songs_count": 8
+    },
+    {
+      "name": "country",
+      "songs_count": 8
+    },
+    {
+      "name": "electronic",
+      "songs_count": 10
+    },
+    {
+      "name": "folk",
+      "songs_count": 15
+    },
+    {
+      "name": "instrumental",
+      "songs_count": 1
+    },
+    {
+      "name": "jazz",
+      "songs_count": 3
+    },
+    {
+      "name": "pop",
+      "songs_count": 28
+    },
+    {
+      "name": "r&b",
+      "songs_count": 3
+    },
+    {
+      "name": "rap",
+      "songs_count": 2
+    },
+    {
+      "name": "reggae",
+      "songs_count": 2
+    },
+    {
+      "name": "rock",
+      "songs_count": 13
+    }
+  ]
+}

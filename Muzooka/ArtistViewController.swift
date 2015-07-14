@@ -40,7 +40,7 @@ class ArtistViewController: MuzookaViewController, UITableViewDataSource, UITabl
 					self.artistBanner.image = image
 			}*/
 			
-			self.artistBanner.loadFromURL(NSURL(string: band!.avatar!)!)
+			self.artistBanner.loadFromURL(NSURL(string: band!.getImageURLForDimension(.Medium, url: band!.bannerURL!))!)
 			
 			self.artistTableView.reloadData()
 		}
@@ -57,7 +57,9 @@ class ArtistViewController: MuzookaViewController, UITableViewDataSource, UITabl
 	
 	override func loadData()
 	{
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Band, delegate: self, parameters: nil, appendedString: "\(self.bandID!)")
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.Band, requestParameters: [APIRequestParameter(key: "", value: self.bandID!)])
+		
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil)
 	
 	}
 
@@ -109,8 +111,10 @@ class ArtistViewController: MuzookaViewController, UITableViewDataSource, UITabl
 	}
 	
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
+		super.apiManagerDidReturnData(apiManager, data: data)
+		
 		switch apiManager.apiRequest!
 		{
 			default:

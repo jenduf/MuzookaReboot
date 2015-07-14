@@ -1,0 +1,76 @@
+{
+  "featured": [
+    {
+      "name": "ballad",
+      "songs_count": 3
+    },
+    {
+      "name": "reggaefest",
+      "songs_count": 0
+    },
+    {
+      "name": "sumfest2014",
+      "songs_count": 0
+    }
+  ],
+  "cities": [
+    {
+      "name": "Ok Djufu",
+      "songs_count": 3
+    },
+    {
+      "name": "Oklad",
+      "songs_count": 1
+    },
+    {
+      "name": "Orlando",
+      "songs_count": 9
+    },
+    {
+      "name": "A Allonca",
+      "songs_count": 1
+    },
+    {
+      "name": "Abbotsford",
+      "songs_count": 1
+    },
+    {
+      "name": "Beaumont",
+      "songs_count": 4
+    },
+    {
+      "name": "Boca Raton",
+      "songs_count": 3
+    },
+    {
+      "name": "Bonavista Downs",
+      "songs_count": 1
+    }
+  ],
+  "suggested": [
+    {
+      "name": "electro",
+      "songs_count": 21
+    },
+    {
+      "name": "folk",
+      "songs_count": 15
+    },
+    {
+      "name": "hip hop",
+      "songs_count": 46
+    },
+    {
+      "name": "hiphop",
+      "songs_count": 14
+    },
+    {
+      "name": "house",
+      "songs_count": 16
+    },
+    {
+      "name": "pop",
+      "songs_count": 28
+    }
+  ]
+}

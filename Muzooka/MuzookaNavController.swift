@@ -46,7 +46,9 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 		// if logged in, load user details
 		if (APIManager.sharedManager.authToken != nil && !(APIManager.sharedManager.authToken!.isEmpty))
 		{
-			APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.User, delegate: self)
+			let apiRequest = APIRequest(requestType: APIRequest.RequestType.User, requestParameters: nil)
+			
+			APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self)
 		}
 		else
 		{
@@ -71,69 +73,79 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 	
 	func updateForScreen(screen: NavScreen)
 	{
-		if screen.subHeadings.count == 0
+		if screen.showNavBar == true
 		{
-			//println("NAV Y: \(self.navHeaderView.navBarView.frame.maxY)")
+			if screen.subHeadings.count == 0
+			{
+				println("NAV Y: \(self.navHeaderView.navBarView.frame.maxY)")
+				
+				self.navHeaderView.heightConstraint.constant = self.navHeaderView.navBarView.frame.maxY
+				
+				self.navHeaderView.setNeedsUpdateConstraints()
+				
+				//self.contentHolderView.setNeedsUpdateConstraints()
+				
+				UIView.animateWithDuration(0.2, animations:
+				{ () -> Void in
+					//self.navHeaderView.layoutIfNeeded()
+					self.navHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.navHeaderView.navBarView.height)
+					//self.contentHolderView.layoutIfNeeded()
+				},
+				completion:
+				{ (Bool) -> Void in
+					self.navHeaderView.updateForScreen(screen)
+				})
+				
+				//self.navHeaderView.segmentView.hidden = true
+			}
+			else
+			{
+				println("NAV Y: \(self.navHeaderView.frame.maxY + self.navHeaderView.navBarView.frame.height) SEGMENT: \(self.navHeaderView.segmentView.frame.maxY) HEADER: \(self.navHeaderView.height + Constants.SEGMENT_HEIGHT)")
+				
+				self.navHeaderView.heightConstraint.constant = self.navHeaderView.height + Constants.SEGMENT_HEIGHT
+				
+				self.navHeaderView.setNeedsUpdateConstraints()
+				
+				//	self.contentHolderView.setNeedsUpdateConstraints()
+				
+				UIView.animateWithDuration(0.2, animations:
+				{ () -> Void in
+					self.navHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.navHeaderView.segmentView.frame.maxY)
+					//self.navHeaderView.layoutIfNeeded()
+					//	self.contentHolderView.layoutIfNeeded()
+				},
+				completion:
+				{ (Bool) -> Void in
+					self.navHeaderView.updateForScreen(screen)
+				})
+				
+				//self.navHeaderView.segmentView.hidden = false
+			}
 			
-			self.navHeaderView.heightConstraint.constant = self.navHeaderView.navBarView.frame.maxY
+		/*	if self.contentTopConstraint.constant < 0
+			{
+				self.contentTopConstraint.constant = 0
+				
+				self.contentHolderView.setNeedsUpdateConstraints()
+			}*/
+		}
+		else
+		{
+			self.navHeaderView.heightConstraint.constant = 0
 			
-			self.navHeaderView.setNeedsUpdateConstraints()
+			self.view.setNeedsUpdateConstraints()
 			
 			//self.contentHolderView.setNeedsUpdateConstraints()
 			
 			UIView.animateWithDuration(0.2, animations:
 			{ () -> Void in
-				self.navHeaderView.layoutIfNeeded()
+				self.view.layoutIfNeeded()
 				//self.contentHolderView.layoutIfNeeded()
 			},
 			completion:
 			{ (Bool) -> Void in
 				self.navHeaderView.updateForScreen(screen)
 			})
-		}
-		else
-		{
-			//println("NAV Y: \(self.navHeaderView.frame.maxY + self.navHeaderView.navBarView.frame.height) SEGMENT: \(self.navHeaderView.segmentView.frame.maxY)")
-			
-			if self.navHeaderView.segmentView.frame.height > 0
-			{
-				self.navHeaderView.heightConstraint.constant = self.navHeaderView.segmentView.frame.maxY
-			}
-			else
-			{
-				self.navHeaderView.heightConstraint.constant = self.navHeaderView.frame.maxY + self.navHeaderView.navBarView.frame.height
-			}
-			
-			self.navHeaderView.setNeedsUpdateConstraints()
-			
-			//	self.contentHolderView.setNeedsUpdateConstraints()
-			
-			UIView.animateWithDuration(0.2, animations:
-			{ () -> Void in
-				self.navHeaderView.layoutIfNeeded()
-				//	self.contentHolderView.layoutIfNeeded()
-			},
-			completion:
-			{ (Bool) -> Void in
-				self.navHeaderView.updateForScreen(screen)
-			})
-		}
-		
-		if screen.showNavBar == true
-		{
-			if self.contentTopConstraint.constant < 0
-			{
-				self.contentTopConstraint.constant = 0
-				
-				self.contentHolderView.setNeedsUpdateConstraints()
-			}
-		}
-		else
-		{
-			self.contentTopConstraint.constant = -self.navHeaderView.frame.height
-			
-			self.contentHolderView.setNeedsUpdateConstraints()
-			
 		}
 		
 		var alphaValue = CGFloat(screen.showNavBar == true ? 1.0 : 0.0)
@@ -154,7 +166,7 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 				
 		})*/
 		
-		self.contentHolderView.layoutIfNeeded()
+		//	self.contentHolderView.layoutIfNeeded()
 		
 	}
 	
@@ -213,6 +225,36 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 		})
 	}
 	
+	func toggleHeader(offScreen: Bool)
+	{
+		if offScreen == true
+		{
+			
+			UIView.animateWithDuration(Constants.SHORT_ANIMATION_DURATION, animations:
+			{ () -> Void in
+				//self.navHeaderView.moveBy(CGPoint(x: 0, y: -(self.navHeaderView.navBarView.getHeight())))
+				self.mainContentView.top = -self.navHeaderView.navBarView.height
+				//moveBy(CGPoint(x: 0, y: -(self.navHeaderView.getHeight() /  2)))
+			})
+			
+			
+			self.navHeaderView.navBarView.animateUp()
+			
+			//self.view.backgroundColor = Color.NavBackgroundColor.uiColor
+		}
+		else
+		{
+			UIView.animateWithDuration(Constants.SHORT_ANIMATION_DURATION, animations:
+			{ () -> Void in
+					//self.navHeaderView.moveBy(CGPoint(x: 0, y: -(self.navHeaderView.navBarView.getHeight())))
+				self.mainContentView.top = 0 //moveBy(CGPoint(x: 0, y: -(self.navHeaderView.getHeight() /  2)))
+			})
+			
+			
+			self.navHeaderView.navBarView.animateDown()
+		}
+	}
+	
 	@IBAction func registerOrLogin(sender: AnyObject?)
 	{
 		self.toggleLeftNav()
@@ -239,7 +281,10 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 	{
 		self.toggleLeftNav()
 		
-		self.showNewViewController(Constants.PROFILE_VIEW_CONTROLLER)
+		let pvc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.PROFILE_VIEW_CONTROLLER) as! ProfileViewController
+		pvc.user = User.currentUser
+		
+		self.showNewViewController(pvc)
 	}
 	
 	@IBAction func navButtonSelected(sender: NavButton)
@@ -257,7 +302,12 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 				break
 			
 			case .Funnel:
-			
+				self.showModalViewController(Constants.FILTER_VIEW_CONTROLLER)
+				//				let fvc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.FILTER_VIEW_CONTROLLER) as! FilterViewController
+					//self.presentViewController(fvc, animated: true, completion:
+			//{ () -> Void in
+					
+				//	})
 				break
 			
 			case .Add:
@@ -298,12 +348,12 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 		})
 		{ (Bool) -> Void in
 			mvc.didMoveToParentViewController(self)
+			
+			mvc.loadData()
+			
+			var navScreen = NavScreen(rawValue: mvc.view.tag)
+			self.updateForScreen(navScreen!)
 		}
-		
-		//var navScreen = NavScreen(rawValue: newController.view.tag)
-				
-		//		self.updateForScreen(navScreen!)
-				//self.navBarView.updateForScreen(navScreen!)
 	}
 	
 	func hideModalViewController()
@@ -322,28 +372,33 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 		})
 	}
 	
-	func showNewViewController(identifier: String)
+	func showNewViewControllerWithIdentifier(identifier: String)
 	{
 		if !self.isTopViewController(identifier)
 		{
-			// remove current controller
-			let viewControllerToRemove = self.topViewController()
-			viewControllerToRemove!.view.removeFromSuperview()
-			viewControllerToRemove!.removeFromParentViewController()
-			viewControllerToRemove!.willMoveToParentViewController(nil)
-			
-			// add new controller
-			let newViewController: MuzookaViewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! MuzookaViewController
-			self.addChildViewController(newViewController)
-			newViewController.view.frame.size = self.contentHolderView.frame.size
-			self.contentHolderView.addSubview(newViewController.view)
-			newViewController.didMoveToParentViewController(self)
-			
-			newViewController.loadData()
-			
-			var navScreen = NavScreen(rawValue: newViewController.view.tag)
-			self.updateForScreen(navScreen!)
+			let newController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! MuzookaViewController
+			self.showNewViewController(newController)
 		}
+	}
+	
+	func showNewViewController(newController: MuzookaViewController)
+	{
+		// remove current controller
+		let viewControllerToRemove = self.topViewController()
+		viewControllerToRemove!.view.removeFromSuperview()
+		viewControllerToRemove!.removeFromParentViewController()
+		viewControllerToRemove!.willMoveToParentViewController(nil)
+		
+		// add new controller
+		self.addChildViewController(newController)
+		newController.view.frame.size = self.contentHolderView.frame.size
+		self.contentHolderView.addSubview(newController.view)
+		newController.didMoveToParentViewController(self)
+		
+		newController.loadData()
+		
+		var navScreen = NavScreen(rawValue: newController.view.tag)
+		self.updateForScreen(navScreen!)
 	}
 	
 	func navigateToControllerWithIdentifier(identifier: String)
@@ -378,6 +433,8 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 		completion:
 		{ (Bool) -> Void in
 			newController.didMoveToParentViewController(self)
+			
+			newController.loadData()
 			
 			var navScreen = NavScreen(rawValue: newController.view.tag)
 				
@@ -418,6 +475,8 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 				
 			var navScreen = NavScreen(rawValue: newController!.view.tag)
 			self.updateForScreen(navScreen!)
+			
+			newController!.loadData()
 		})
 	}
 	
@@ -440,7 +499,7 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 		APIManager.sharedManager.authToken = ""
 		User.currentUser = nil
 		
-		self.showNewViewController(Constants.CHART_VIEW_CONTROLLER)
+		self.showNewViewControllerWithIdentifier(Constants.CHART_VIEW_CONTROLLER)
 	}
 	
 	// MARK: Segment View Delegate Methods
@@ -519,27 +578,27 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 			switch(selectedMenuItem!)
 			{
 				case .Charts:
-					self.showNewViewController(Constants.CHART_VIEW_CONTROLLER)
+					self.showNewViewControllerWithIdentifier(Constants.CHART_VIEW_CONTROLLER)
 					break
 					
 				case .Partners:
-					self.showNewViewController(Constants.PARTNER_VIEW_CONTROLLER)
+					self.showNewViewControllerWithIdentifier(Constants.PARTNER_VIEW_CONTROLLER)
 					break
 					
 				case .Industry:
-					self.showNewViewController(Constants.INDUSTRY_VIEW_CONTROLLER)
+					self.showNewViewControllerWithIdentifier(Constants.INDUSTRY_VIEW_CONTROLLER)
 					break
 					
 				case .Search:
-					self.showNewViewController(Constants.SEARCH_VIEW_CONTROLLER)
+					self.showNewViewControllerWithIdentifier(Constants.SEARCH_VIEW_CONTROLLER)
 					break
 					
 				case .Playlists:
-					self.showNewViewController(Constants.PLAYLIST_VIEW_CONTROLLER)
+					self.showNewViewControllerWithIdentifier(Constants.PLAYLIST_VIEW_CONTROLLER)
 					break
 					
 				case .Settings:
-					self.showNewViewController(Constants.SETTINGS_VIEW_CONTROLLER)
+					self.showNewViewControllerWithIdentifier(Constants.SETTINGS_VIEW_CONTROLLER)
 					break
 					
 				default:
@@ -599,7 +658,7 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 	}
 	
 	// MARK: API Delegate Methods
-	func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		var dict:NSDictionary = data as! NSDictionary
 		

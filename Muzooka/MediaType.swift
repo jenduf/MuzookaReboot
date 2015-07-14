@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum SearchItemType: String
+enum MediaType: String
 {
 	case Band = "band", Song = "song", User = "user", Playlist = "playlist", All = "all"
 	
-	static func getSearchItemFromInt(index: Int) -> SearchItemType?
+	static func getItemFromInt(index: Int) -> MediaType
 	{
 		switch index
 		{

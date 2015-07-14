@@ -9,11 +9,11 @@
 import UIKit
 import AVFoundation
 
-class ChartViewController: MuzookaViewController, UITableViewDataSource, UITableViewDelegate
+class ChartViewController: MuzookaViewController, UITableViewDataSource, UITableViewDelegate, MuzookaCellDelegate
 {
 	var songs = [Song]()
 	
-	var songSelected: Song?
+	var chartType: ChartType = .Hot
 	
 	@IBOutlet var songTableView: UITableView!
 
@@ -26,50 +26,7 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 	{
 		super.loadData()
 		
-		self.setSelectedIndex(APIRequest.Hot.rawValue)
-	}
-	
-	@IBAction func voteForSong(sender: UIButton)
-	{
-		var index = sender.tag
-		
-		var song = self.songs[index] as Song
-		
-		//var paramDict = NSDictionary(objectsAndKeys: "\(song.songID)", "song_id")//"Jen", "name", "jenduf2", "username", "jenduf3@gmail.com", "email", "Duff0818", "password")
-		
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.VoteSong, delegate: self, parameters: nil, appendedString: "\(song.songID)")
-	}
-	
-	@IBAction func showMenu(sender: UIButton)
-	{
-		var index = sender.tag
-		
-		self.songSelected = self.songs[index] as Song
-		
-		let alertController = UIAlertController(title: "\(self.songSelected!.name) - \(self.songSelected!.band.name)", message: "", preferredStyle: .ActionSheet)
-		
-		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel)
-		{ (action) -> Void in
-			//
-		}
-		
-		alertController.addAction(cancelAction)
-		
-		for menuItem in SongMenu.songMenuValues
-		{
-			var action = UIAlertAction(title: menuItem.title, style: .Default, handler:
-			{ (action) -> Void in
-				
-				self.performActionForType(menuItem)
-			})
-			
-			alertController.addAction(action)
-		}
-		
-		self.presentViewController(alertController, animated: true)
-		{ () -> Void in
-			//
-		}
+		self.setSelectedIndex(self.chartType.rawValue)
 	}
 	
 	override func setSelectedIndex(index: Int)
@@ -77,53 +34,10 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 		self.songs.removeAll()
 		self.songTableView.reloadData()
 		
-		var apiRequest = APIRequest(rawValue: index)
-		let referrer = apiRequest!.buildReferrerWithAppendedIDAndExtraInfo(0, extraInfo: "")
-		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest!, delegate: self, apiReferrer: referrer)
-	}
-	
-	// MARK: - Helpers
-	func performActionForType(menuItem: SongMenu)
-	{
-		switch menuItem
-		{
-			case .PlayLater:
-				println("play later")
-				
-				break
-			
-			case .SongInfo:
-				let sivc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.SONG_INFO_VIEW_CONTROLLER) as! SongInfoViewController
-				self.navController?.navigateToController(sivc)
-				sivc.songID = "\(self.songSelected!.songID)"
-				
-				break
-			
-			case .ArtistInfo:
-				let avc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.ARTIST_VIEW_CONTROLLER) as! ArtistViewController
-				self.navController?.navigateToController(avc)
-				avc.bandID = "\(self.songSelected!.band.bandID)"
-				
-				break
-			
-			case .AddToPlaylist:
-				let pvc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.PLAYLIST_VIEW_CONTROLLER) as! PlaylistViewController
-				self.navController?.navigateToController(pvc)
-				
-				break
-			
-			case .Share:
-				var str = "string"
-				var url = NSURL(string: "www.yahoo.com")
-				let objectsToShare = NSArray(objects: str, url!)
-				var activityVC = UIActivityViewController(activityItems: objectsToShare as [AnyObject], applicationActivities: nil)
-				self.presentViewController(activityVC, animated: true, completion:
-				{ () -> Void in
-					
-				})
-				
-				break
-		}
+		var apiRequest = APIRequest(requestType: APIRequest.RequestType(rawValue: index)!, requestParameters: nil)
+		let referrer = apiRequest.buildReferrerWithAppendedIDAndExtraInfo(0, extraInfo: "")
+		//var paramDict = NSDictionary(objectsAndKeys: 10, "offset", Constants.TOTAL_QUEUE_COUNT, "count")
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, apiReferrer: referrer)//, parameters: nil, appendedString: "", offset: 10, count: 20)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -152,33 +66,69 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 		cell.song = song
 		
 		cell.rank.text = "\(indexPath.row + 1)"
-		cell.voteButton.tag = indexPath.row
-		cell.menuButton.tag = indexPath.row
+		cell.cellDelegate = self
+		//cell.voteButton.tag = indexPath.row
+		//cell.menuButton.tag = indexPath.row
 		
 		return cell
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
 	{
-		self.songSelected = self.songs[indexPath.row] as Song
+		self.itemSelected = self.songs[indexPath.row] as Song
 
 		MusicPlayer.sharedPlayer.delegate = self.navController
 		
-		MusicPlayer.sharedPlayer.playSong(self.songSelected!)
+		var nowPlayingSlice: ArraySlice<Song> = self.songs[0..<Constants.TOTAL_QUEUE_COUNT]
+		var nowPlayingArray: [Song] = Array(nowPlayingSlice)
+		
+		MusicPlayer.sharedPlayer.addSongsToQueue(nowPlayingArray, mode: MusicPlayer.Mode(rawValue:self.chartType.rawValue)!, playIndex: indexPath.row)
+		
+		//MusicPlayer.sharedPlayer.playSong(self.songSelected!)
 		
 		//self.navController!.toggleMusicPlayer()
 
 		//	APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Band, delegate: self, parameters: nil, appendedString: "\(self.songSelected!.band.bandID)")
 	}
 	
+	// MARK: - Muzooka Cell Delegate
+	func cellRequestedShowMenu(cell: UITableViewCell, item: AnyObject)
+	{
+		self.itemSelected = item as! Song
+		
+		self.showActionMenuWithTitle(self.itemSelected!.getItemName())
+	}
+	
+	func cellRequestedAction(cell: UITableViewCell, item: AnyObject)
+	{
+		let song = item as! Song
+		
+		if song.userVoted == true
+		{
+			let apiRequest = APIRequest(requestType: APIRequest.RequestType.UnVoteSong, requestParameters: [APIRequestParameter(key: "", value: "\(song.songID)")])
+			APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil)
+			/*MZSongOperations.upvoteSong(searchItem.song?.songID, callback:
+			{ (Bool result) -> Void in
+			
+			})*/
+		}
+		else
+		{
+			let apiRequest = APIRequest(requestType: APIRequest.RequestType.UnVoteSong, requestParameters: [APIRequestParameter(key: "", value: "\(song.songID)")])
+			APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil)
+		}
+		
+		self.itemSelected = song
+	}
+	
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		
-		switch apiManager.apiRequest!
+		switch apiManager.apiRequest!.requestType
 		{
-			case APIRequest.VoteSong:
+			case APIRequest.RequestType.VoteSong:
 				
 				
 				break
@@ -196,7 +146,8 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 				break*/
 			
 			default:
-				var songArray:NSArray = data["songs"] as! NSArray
+				var dataDict:NSDictionary = data as! NSDictionary
+				var songArray:NSArray = dataDict["songs"] as! NSArray
 				
 				for eachSong in songArray
 				{

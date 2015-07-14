@@ -10,6 +10,14 @@ import UIKit
 
 class BorderedButton: UIButton
 {
+	var borderColor: NSNumber!
+	{
+		didSet
+		{
+			var color = Color(rawValue: Int(borderColor))
+			self.strokeColor = color!.uiColor
+		}
+	}
 
 	var strokeColor: UIColor = UIColor.clearColor()
 	{
@@ -23,18 +31,18 @@ class BorderedButton: UIButton
 	{
 		super.awakeFromNib()
 		
-		var color = Color(rawValue:self.tag)
+		//var color = Color(rawValue:self.tag)
 		
-		if color!.rawValue > 0
-		{
-			self.strokeColor = color!.uiColor
-		}
-		else
-		{
-			self.strokeColor = UIColor.clearColor()
+			//if color!.rawValue > 0
+		//{
+		//	self.strokeColor = color!.uiColor
+		//}
+			//	else
+		//{
+		//self.strokeColor = UIColor.clearColor()
 			self.layer.cornerRadius = Constants.BUTTON_CORNER_RADIUS
 			self.layer.masksToBounds = true
-		}
+		//}
 		
 	}
 	

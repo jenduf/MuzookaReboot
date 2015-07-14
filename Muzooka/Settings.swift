@@ -11,11 +11,11 @@ import Foundation
 
 public enum Settings: Int
 {
-	case QualitySettings = 0, ChangePassword = 1, FindFriends = 2, Feedback = 3, Terms = 4
+	case QualitySettings = 0, ChangePassword = 1, FindFriends = 2, Feedback = 3, Terms = 4, ClearSearch = 5, LogOut = 6
 	
-	public static let values = [QualitySettings, ChangePassword, FindFriends, Feedback, Terms]
+	public static let values = [QualitySettings, ChangePassword, FindFriends, Feedback, Terms, ClearSearch, LogOut]
 	
-	public static let strings = ["Quality Settings", "Change Password", "Find Friends",  "Send Feedback", "Terms of Service & Privacy Policy"]
+	public static let strings = ["Quality Settings", "Change Password", "Find Friends",  "Send Feedback", "Terms of Service & Privacy Policy", "Clear Search History", "Log out"]
 	
 	public var description: String
 	{

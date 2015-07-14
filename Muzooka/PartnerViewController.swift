@@ -18,8 +18,10 @@ class PartnerViewController: MuzookaViewController, UITableViewDataSource, UITab
 	override func viewDidLoad()
 	{
 		super.viewDidLoad()
+		
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.Partner, requestParameters: nil)
 
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Partner, delegate: self)
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self)
 	}
 
     override func didReceiveMemoryWarning() {
@@ -61,13 +63,15 @@ class PartnerViewController: MuzookaViewController, UITableViewDataSource, UITab
 	}
 	
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		
 		self.partners.removeAll()
 		
-		var partnerArray:NSArray = data["current"] as! NSArray
+		var dataDict:NSDictionary = data as! NSDictionary
+		
+		var partnerArray:NSArray = dataDict["current"] as! NSArray
 		
 		for eachPartner in partnerArray
 		{

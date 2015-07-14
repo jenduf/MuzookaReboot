@@ -9,7 +9,7 @@
 
 import Foundation
 
-public class SearchDetails
+public struct SearchDetails
 {
 	public var searchTerm: String
 	public var searchItems: [SearchItem]

@@ -13,6 +13,8 @@ public class SearchController
 	public var searchItems = [String]()
 	public var recentlySearchedItems = [String]()
 	
+	public var selectedFilters = [String]()
+	
 	class var sharedController: SearchController
 	{
 		struct SharedInstance
@@ -49,6 +51,26 @@ public class SearchController
 			self.recentlySearchedItems.append(item)
 			
 			NSUserDefaults.standardUserDefaults().setObject(self.recentlySearchedItems, forKey: Constants.RECENT_SEARCHES_KEY)
+		}
+	}
+	
+	public func clearSearched()
+	{
+		self.recentlySearchedItems.removeAll()
+	
+		NSUserDefaults.standardUserDefaults().setObject(self.recentlySearchedItems, forKey: Constants.RECENT_SEARCHES_KEY)
+	}
+	
+	public func addFilter(filter: String)
+	{
+		self.selectedFilters.append(filter)
+	}
+	
+	public func removeFilter(filter: String)
+	{
+		self.selectedFilters.filter
+		{
+			$0.localizedCaseInsensitiveCompare(filter) == NSComparisonResult.OrderedSame
 		}
 	}
 }

@@ -10,9 +10,9 @@ import Foundation
 
 public enum NavScreen: Int
 {
-	case Login = 0, Charts, Playlists, Partners, Industry, Search, Settings, Artist, Song, Profile, EditProfile, SearchDetail, ExtendedPlayer, Discover
+	case Login = 0, Charts, Playlists, Partners, Industry, Search, Settings, Artist, Song, Profile, EditProfile, SearchDetail, ExtendedPlayer, Discover, Filters
 	
-	public static let titles = ["", "Charts", "Playlists", "Partners", "Industry", "Search", "Settings", "", "", "", "Edit Profile", "Search", "", ""]
+	public static let titles = ["", "Charts", "Playlists", "Partners", "Industry", "Search", "Settings", "", "", "", "Edit Profile", "Search", "", "", "Filters"]
 	
 	public var showNavBar: Bool
 	{

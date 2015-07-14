@@ -15,7 +15,7 @@ extension UIImageView
 	
 	func loadFromURL(url: NSURL)
 	{
-		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 		
 		dispatch_async(queue,
 		{
@@ -29,6 +29,25 @@ extension UIImageView
 					self.image = newImage
 				})
 			}
+		})
+	}
+	
+	func loadFromURLWithCallback(url: NSURL, callback: (downloadedImage: UIImage)->())
+	{
+		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+		
+		dispatch_async(queue,
+		{
+			let imageData = NSData(contentsOfURL: url)
+				
+			dispatch_async(dispatch_get_main_queue(),
+			{ () -> Void in
+					if imageData != nil
+					{
+						let newImage = UIImage(data: imageData!)
+							callback(downloadedImage: newImage!)
+					}
+			})
 		})
 	}
 }

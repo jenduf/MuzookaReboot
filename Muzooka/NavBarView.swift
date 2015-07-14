@@ -25,10 +25,10 @@ class NavBarView: UIView
 				self.rightButton.updateForNavButtonType(.Add)
 				break
 			
-			case .Artist:
+			/*case .Artist:
 				self.leftButton.updateForNavButtonType(.BackArrow)
 				self.rightButton.updateForNavButtonType(.Funnel)
-				break
+				break*/
 			
 			case .EditProfile:
 				self.leftButton.updateForNavButtonType(.BackArrow)
@@ -50,11 +50,34 @@ class NavBarView: UIView
 				self.rightButton.updateForNavButtonType(.None)
 				break
 			
+			case .Filters:
+				self.leftButton.updateForNavButtonType(.ClearAll)
+				self.rightButton.updateForNavButtonType(.Save)
+				break
+			
 			default:
 				self.leftButton.updateForNavButtonType(.Hamburger)
 				self.rightButton.updateForNavButtonType(.Funnel)
 				break
 		}
+	}
+	
+	func animateUp()
+	{
+		UIView.animateWithDuration(Constants.SHORT_ANIMATION_DURATION, animations:
+		{ () -> Void in
+			self.title.bottom = -Constants.PADDING
+			self.leftButton.bottom = -Constants.PADDING
+		})
+	}
+	
+	func animateDown()
+	{
+		UIView.animateWithDuration(Constants.SHORT_ANIMATION_DURATION, animations:
+		{ () -> Void in
+				self.title.centerVerticallyInSuperView()
+				self.leftButton.centerVerticallyInSuperView()
+		})
 	}
 
     /*

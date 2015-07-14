@@ -14,6 +14,8 @@ class PlaylistViewController: MuzookaViewController, UICollectionViewDataSource,
 	
 	@IBOutlet var playlistCollectionView: UICollectionView!
 	
+	var userID: Int = 0
+	
 	override func viewDidLoad()
 	{
 		super.viewDidLoad()
@@ -27,7 +29,8 @@ class PlaylistViewController: MuzookaViewController, UICollectionViewDataSource,
 		
 		if User.currentUser != nil
 		{
-			APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.PersonalPlaylists, delegate: self, parameters: nil, appendedString: "\(User.currentUser.userID)")
+			let apiRequest = APIRequest(requestType: APIRequest.RequestType.PersonalPlaylists, requestParameters: [APIRequestParameter(key: "/\(self.userID)", value:  APIRequest.RequestType.CreatePlaylist.stringValue)])
+			APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil)
 		}
 	}
 	
@@ -78,21 +81,24 @@ class PlaylistViewController: MuzookaViewController, UICollectionViewDataSource,
 		var playlistName = alertView.textFieldAtIndex(0)!.text
 		
 		var paramDict = NSDictionary(objectsAndKeys: playlistName, "name")
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.CreatePlaylist, delegate: self, parameters: paramDict)
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.CreatePlaylist, requestParameters: nil)
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: paramDict)
 	}
     
 
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		
-		switch apiManager.apiRequest!
+		switch apiManager.apiRequest!.requestType
 		{
 			case .PersonalPlaylists:
 				self.playlists.removeAll()
 				
-				var playlistArray:NSArray = data["playlists"] as! NSArray
+				var dataDict:NSDictionary = data as! NSDictionary
+				
+				var playlistArray:NSArray = dataDict["playlists"] as! NSArray
 				
 				for eachPlaylist in playlistArray
 				{

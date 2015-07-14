@@ -9,7 +9,7 @@
 
 import Foundation
 
-public class Producer
+public struct Producer
 {
 	public let producerID: Int
 	public let name: String

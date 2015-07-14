@@ -48,7 +48,9 @@ class SongInfoViewController: MuzookaViewController
 	{
 		super.loadData()
 		
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.SongDetails, delegate: self, parameters: nil, appendedString: "\(self.songID!)")
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.SongDetails, requestParameters: [APIRequestParameter(key: "", value: "\(self.songID)")])
+		
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil) //appendedString: "\(self.songID!)")
 	}
 
 	override func viewDidLoad()
@@ -65,7 +67,7 @@ class SongInfoViewController: MuzookaViewController
     
 
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		

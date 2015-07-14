@@ -62,9 +62,9 @@ class AvatarView: UIView
 		{
 			self.nameLabel.text = user?.name
 			
-			self.scoreLabel.text = "\(user!.scoreDetails.score)"
+			self.scoreLabel.text = "\(user?.scoreDetails?.score)"
 			
-			self.scoreLabel.backgroundColor = Utils.UIColorFromRGB(user!.scoreDetails.colorCode, alpha: 1.0)
+			self.scoreLabel.backgroundColor = Utils.UIColorFromRGB(user!.scoreDetails!.colorCode, alpha: 1.0)
 			
 			if !user!.avatarURL!.isEmpty
 			{

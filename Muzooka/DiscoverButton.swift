@@ -19,8 +19,8 @@ class DiscoverButton: UIButton
 		
 		CGContextSaveGState(context)
 		CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().colorWithAlphaComponent(0.25).CGColor)
-		CGContextSetLineWidth(context, 2)
-		CGContextStrokeEllipseInRect(context, rect)
+		CGContextSetLineWidth(context, Constants.DISCOVER_STROKE)
+		CGContextStrokeEllipseInRect(context, rect.rectByInsetting(dx: 3.0, dy: 3.0))
 		CGContextRestoreGState(context)
 	}
 

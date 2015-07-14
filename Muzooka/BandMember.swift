@@ -9,7 +9,7 @@
 
 import Foundation
 
-public class BandMember
+public struct BandMember
 {
 	public let role: String?
 	public var isOwner: Bool = false

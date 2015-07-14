@@ -9,16 +9,20 @@
 
 import Foundation
 
-public class Song
+public class Song: NSObject, Shareable
 {
-	public let songID: Int
-	public let name: String
+	public var songID: Int = 0
+	public var name: String = ""
 	public let position: Int
-	public let artwork: String?
+	public var artwork: String?
+	public var artworkURL: String?
+	public var artworkDimensions = [ImageDimension]()
 	public let band: Band
 	public let listens: Int?
 	public var downloadable: Bool = false
 	public let duration: String?
+	public var durationTime: Int = 0
+	public let snippetStart: Int?
 	public let primaryTag: String?
 	public var tags = [String]()
 	public let votes: Int?
@@ -29,32 +33,109 @@ public class Song
 	public var hotChartMax: Int = 0
 	public var hotChartDays = [Int]()
 	
+	public var userVoted: Bool = false
+	public var userListened: Bool = false
+	public var userPurchased: Bool = false
+	
 	public var image: UIImage?
 	
 	public var songURL: String
 	{
 		get
 		{
-			return "\(Constants.SONG_URL)\(self.band.bandID)/songs/\(self.songID)_96.mp3"
+			return "\(Constants.SONG_URL)\(self.band.bandID)/songs/\(self.songID)_128.mp3"
 		}
 	}
 	
+	public var discoveryURL: String
+	{
+		get
+		{
+			return "\(Constants.SONG_URL)\(self.band.bandID)/songs/\(self.songID)_discovery.mp3"
+		}
+	}
+	
+	public func getImageURLForDimension(dimension: ImageDimension) -> String?
+	{
+		if self.artworkURL != nil
+		{
+			let imageString = self.artworkURL?.stringByReplacingOccurrencesOfString("{%s}", withString: dimension.rawValue, options: NSStringCompareOptions.allZeros, range: nil)
+		
+			return imageString!
+		}
+		
+		return nil
+	}
+
 	public init(dict: NSDictionary)
 	{
 		self.songID = dict["id"] as! Int
-		self.name = dict["name"] as! String
-		self.artwork = dict["artwork"] as? String
+		
+		if let songName = dict["name"] as? String
+		{
+			self.name = songName
+		}
+		
+		if let artworkString = dict["artwork"] as? String
+		{
+			self.artwork = artworkString
+		}
+		
+		if let artworkDict = dict["artworks"] as? NSDictionary
+		{
+			if let url = artworkDict["template"] as? String
+			{
+				self.artworkURL = url
+			}
+			
+			if let dimensions = artworkDict["dimensions"] as? NSArray
+			{
+				for dimension in dimensions
+				{
+					let imageDimension = ImageDimension(rawValue: dimension as! String)
+					self.artworkDimensions.append(imageDimension!)
+				}
+			}
+		}
+		
 		self.position = dict["hotchartposition"] as! Int
 		self.band = Band(dict: dict["band"] as! NSDictionary) as Band
 		self.listens = dict["listens"] as? Int
 		self.downloadable = dict["downloadable"] as! Bool
+		
 		self.duration = dict["duration"] as? String
+		
+		var durationArray = self.duration?.componentsSeparatedByString(":")
+		var hours = 0
+		var minutes = 0
+		var seconds = 0
+		
+		if durationArray?.count == 3
+		{
+			hours = durationArray!.first!.toInt()!
+			minutes = durationArray![1].toInt()!
+			seconds = durationArray!.last!.toInt()!
+		}
+		else if durationArray?.count == 2
+		{
+			minutes = durationArray!.first!.toInt()!
+			seconds = durationArray!.last!.toInt()!
+		}
+		else
+		{
+			let secondString = self.duration?.stringByTrimmingCharactersInSet(NSCharacterSet.letterCharacterSet())
+			seconds = secondString!.toInt()!
+		}
+		
+		self.durationTime = (hours * 3600 + minutes * 60 + seconds)
+		
+		//println("duration: \( (hours * 3600 + minutes * 60 + seconds))")
+		
+		self.snippetStart = dict["snippet_start"] as? Int
 		self.primaryTag = dict["primary_tag"] as? String
 		
-		if dict["tags"] != nil
+		if let tagArray = dict["tags"] as? NSArray
 		{
-			var tagArray: NSArray = dict["tags"] as! NSArray
-			
 			for string in tagArray
 			{
 				self.tags.append(string as! String)
@@ -67,27 +148,60 @@ public class Song
 		
 		self.hotChartRank = dict["hotchartposition"] as! Int
 		
-		if dict["hotchartpositions"] != nil
+		if let hotDict = dict["hotchartpositions"] as? NSDictionary
 		{
-			var hotDict = dict["hotchartpositions"] as! NSDictionary
-			
-			if hotDict["range"] != nil
+			if let rangeDict = hotDict["range"] as? NSDictionary
 			{
-				var rangeDict = hotDict["range"] as! NSDictionary
-				
 				self.hotChartMin = rangeDict["min"] as! Int
 				self.hotChartMax = rangeDict["max"] as! Int
 			}
 			
-			if hotDict["past_days"] != nil
+			if let daysArray = hotDict["past_days"] as? NSArray
 			{
-				var daysArray = hotDict["past_days"] as! NSArray
-				
 				for day in daysArray
 				{
 					self.hotChartDays.append(day as! Int)
 				}
 			}
+			
 		}
+		
+		if let userDict = dict["user"] as? NSDictionary
+		{
+			self.userVoted = userDict["voted"] as! Bool
+			self.userListened = userDict["listened"] as! Bool
+			self.userPurchased = userDict["purchased"] as! Bool
+		}
+	}
+	
+	// MARK: Shareable Helper Methods
+	func getItemID() -> Int
+	{
+		return self.songID
+	}
+	
+	func getItemName() -> String
+	{
+		return self.name
+	}
+	
+	func getActionItems() -> [MenuAction]
+	{
+		return [ .PlayLater, .SongInfo, .ArtistInfo, .AddToPlaylist, .Share ]
+	}
+	
+	func getShareDetails() -> String
+	{
+		return "\(self.name) by \(self.band.name)"
+	}
+	
+	func getShareURL() -> NSURL
+	{
+		return NSURL(string: "\(Constants.WEB_URL)\(self.band.subdomain!)/\(self.songID)")!
+	}
+	
+	func shareableType() -> MediaType
+	{
+		return .Song
 	}
 }

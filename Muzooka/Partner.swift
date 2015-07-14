@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Partner
+public struct Partner
 {
 	public let partnerID: Int
 	public let name: String

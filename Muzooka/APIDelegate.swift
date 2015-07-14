@@ -11,7 +11,7 @@ import Foundation
 
 protocol APIDelegate
 {
-	func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	func apiManagerDidReturnError(apiManager: APIManager, error: String)
 	func apiManagerDidReturnNeedsAuthenticatedUser(apiManager: APIManager)
 }

@@ -11,7 +11,8 @@ import Foundation
 
 public struct ScoreDetails
 {
-	let score: Int, colorCode: String
+	var score: Int = 0
+	var colorCode: String
 	
 	init(score: Int, colorCode: String)
 	{

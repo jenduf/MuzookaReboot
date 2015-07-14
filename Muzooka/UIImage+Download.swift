@@ -14,7 +14,7 @@ extension UIImage
 	
 	func loadFromURL(url: NSURL, callback: (image: UIImage)->())
 	{
-		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 		
 		dispatch_async(queue,
 		{

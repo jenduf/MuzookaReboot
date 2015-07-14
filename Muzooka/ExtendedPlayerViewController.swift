@@ -17,7 +17,7 @@ class ExtendedPlayerViewController: MuzookaViewController, UITableViewDataSource
 	@IBOutlet var musicPlayerView: MusicPlayerView!
 	@IBOutlet var bannerView: BannerView!
 
-	var playlistDictionary = OrderedDictionary<String, [Song]>()
+	var playlistDictionary = [String: [Song]]()
 	
 	override func viewDidLoad()
 	{
@@ -29,14 +29,30 @@ class ExtendedPlayerViewController: MuzookaViewController, UITableViewDataSource
 		
 		self.musicPlayerView.song = MusicPlayer.sharedPlayer.nowPlaying
 		
-		self.bannerView.artURL = MusicPlayer.sharedPlayer.nowPlaying!.band.avatar
+		let band = MusicPlayer.sharedPlayer.nowPlaying!.band
+		
+		self.bannerView.artURL = band.getImageURLForDimension(.Medium, url: band.avatarURL!)
 	}
 	
 	override func loadData()
 	{
 		super.loadData()
 
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Hot, delegate: self)
+		let nowPlaying = MusicPlayer.sharedPlayer.getNowPlayingList()
+		if nowPlaying.count > 0
+		{
+			self.playlistDictionary[Constants.KEY_HOT_CHARTS] = nowPlaying
+		}
+		
+		let personalQueue = MusicPlayer.sharedPlayer.personalQueue
+		if personalQueue.count > 0
+		{
+			self.playlistDictionary[Constants.KEY_QUEUE] = personalQueue
+		}
+		
+		self.playerTableView.reloadData()
+
+		//APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Hot, delegate: self)
 	}
 
     override func didReceiveMemoryWarning() {
@@ -63,9 +79,16 @@ class ExtendedPlayerViewController: MuzookaViewController, UITableViewDataSource
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
 	{
-		let (key, songs) = self.playlistDictionary[section]
+		let arr = Array(self.playlistDictionary.keys)
+		let key = arr[section]
 		
-		return min(songs.count, Constants.TOTAL_QUEUE_COUNT)
+		let songs = self.playlistDictionary[key]
+		
+		return songs!.count
+		
+		//return min(songs.count, Constants.TOTAL_QUEUE_COUNT)
+		
+		//return min(MusicPlayer.sharedPlayer.getNowPlayingList().count, Constants.TOTAL_QUEUE_COUNT)
 	}
 	
 	func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
@@ -73,9 +96,13 @@ class ExtendedPlayerViewController: MuzookaViewController, UITableViewDataSource
 		var headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: Constants.PLAYLIST_HEADER_HEIGHT))
 		headerView.backgroundColor = UIColor.clearColor()
 		
+		let arr = Array(self.playlistDictionary.keys)
+		let key = arr[section]
+		
 		let label = UILabel()
 		label.font = UIFont(name: Constants.FONT_PROXIMA_NOVA_REGULAR, size: Constants.FONT_SIZE_PLAYLIST_HEADER)
-		label.text = self.playlistDictionary.getKeyForIndex(section)
+		label.text = key
+		//MusicPlayer.sharedPlayer.getHeaderForCurrentMusicMode()//
 		label.textAlignment = .Left
 		label.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
 		headerView.addSubview(label)
@@ -94,13 +121,18 @@ class ExtendedPlayerViewController: MuzookaViewController, UITableViewDataSource
 	{
 		let cell = tableView.dequeueReusableCellWithIdentifier(Constants.SONG_PLAYLIST_CELL_IDENTIFIER, forIndexPath: indexPath) as! SongCell
 		
-		let (key, songs) = self.playlistDictionary[indexPath.section]
+		let arr = Array(self.playlistDictionary.keys)
+		let key = arr[indexPath.section]
 		
-		var song = songs[indexPath.row]
+		var allSongs: [Song] = self.playlistDictionary[key]!
+		
+		var song:Song = allSongs[indexPath.row]
+		
+		//MusicPlayer.sharedPlayer.getNowPlayingList()[indexPath.row]
 		
 		cell.song = song
 		
-		println("table height: \(tableView.contentSize.height)")
+		//println("table height: \(tableView.contentSize.height)")
 		
 		return cell
 	}
@@ -164,11 +196,14 @@ class ExtendedPlayerViewController: MuzookaViewController, UITableViewDataSource
 	}
 	
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		
-		var songArray:NSArray = data["songs"] as! NSArray
+		/*
+		var dataDict:NSDictionary = data as! NSDictionary
+		
+		var songArray:NSArray = dataDict["songs"] as! NSArray
 		
 		var songs = [Song]()
 		
@@ -194,7 +229,7 @@ class ExtendedPlayerViewController: MuzookaViewController, UITableViewDataSource
 			default:
 			
 				break
-		}
+		}*/
 	}
 
 }

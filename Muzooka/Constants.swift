@@ -19,22 +19,38 @@ public struct Constants
 	public static let URL_SCHEME_MUZOOKA = "muzooka"
 	
 	// URLS
-	//public static let API_URL = "http://api-qc.muzooka.com"
-	public static let API_URL = "https://api23.muzooka.com"
+	
+	// doesn't work
+	//	public static let API_URL = "http://api-dev.muzooka.com"
+	
+	// prod url
+	//public static let API_URL = "https://api23.muzooka.com"
+	
+	// dev url
+	public static let API_URL = "http://api-qc.muzooka.com"
+	
+	public static let WEB_URL = "https://muzooka.com/"
+	
 	
 	public static let SONG_URL = "https://d2mh4r1oygq2ap.cloudfront.net/bands/"
 	
 	// http codes
 	public static let HTTP_CODE_SUCCESS = 200
 	public static let HTTP_CODE_CREATE = 201
+	public static let HTTP_CODE_NO_CONTENT = 204
 	public static let HTTP_GET = "GET"
 	public static let HTTP_POST = "POST"
 	public static let HTTP_PUT = "PUT"
+	public static let HTTP_DELETE = "DELETE"
 	
-	// stored keys
+	// keys
 	public static let AUTH_TOKEN_KEY = "authTokenKey"
 	public static let FIRST_TIME_USE_SHOWN_KEY = "firstTimeKey"
 	public static let RECENT_SEARCHES_KEY = "recentSearchesKey"
+	public static let KEY_PERSONAL_PLAYLISTS = "Personal Playlists"
+	public static let KEY_SUBSCRIBED_PLAYLISTS = "Subscribed Playlists"
+	public static let KEY_HOT_CHARTS = "Playing from hot charts"
+	public static let KEY_QUEUE = "Queue"
 	
 	// images
 	public static let IMAGE_DEFAULT_ART = "default_artwork"
@@ -45,6 +61,7 @@ public struct Constants
 	public static let IMAGE_GOOGLE_ICON = "login_button_google"
 	public static let IMAGE_EMAIL_ICON = "login_button_email"
 	public static let IMAGE_NAV_HEADER = "nav_header"
+	public static let IMAGE_DEFAULT_PLAYLIST = "default_playlist"
 	
 	// cell identifiers
 	public static let SONG_CELL_IDENTIFIER = "SongCellIdentifier"
@@ -63,6 +80,8 @@ public struct Constants
 	public static let SEARCH_USER_CELL_IDENTIFIER = "SearchUserCellIdentifier"
 	public static let SEARCH_PLAYLIST_CELL_IDENTIFIER = "SearchPlaylistCellIdentifier"
 	public static let SONG_PLAYLIST_CELL_IDENTIFIER = "SongPlaylistCellIdentifier"
+	public static let TAG_CELL_IDENTIFIER = "TagCellIdentifier"
+	public static let FILTER_HEADER_IDENTIFIER = "FilterHeaderIdentifier"
 	
 	// controller identifiers
 	public static let FIRST_TIME_VIEW_CONTROLLER = "FirstTimeViewController"
@@ -81,13 +100,16 @@ public struct Constants
 	public static let SEARCH_DETAIL_VIEW_CONTROLLER	= "SearchDetailViewController"
 	public static let EXTENDED_PLAYER_VIEW_CONTROLLER = "ExtendedPlayerViewController"
 	public static let DISCOVER_VIEW_CONTROLLER = "DiscoverViewController"
+	public static let FILTER_VIEW_CONTROLLER = "FilterViewController"
 	
 	
 	// layout
 	public static let BUTTON_CORNER_RADIUS: CGFloat = 5.0
 	public static let INDICATOR_HEIGHT: CGFloat = 4.0
 	public static let LABEL_HEIGHT: CGFloat = 24.0
+	public static let SMALL_GAP: CGFloat = 2.0
 	public static let PADDING: CGFloat = 10.0
+	public static let TAG_VERTICAL_PADDING: CGFloat = 8.0
 	public static let BUTTON_PADDING: CGFloat = 36.0
 	public static let BUTTON_HEIGHT: CGFloat = 52.0
 	public static let STEP_LABEL_WIDTH: CGFloat = 300.0
@@ -99,8 +121,21 @@ public struct Constants
 	public static let TABLE_HEADER_HEIGHT: CGFloat = 44.0
 	public static let PLAYLIST_HEADER_HEIGHT: CGFloat = 60.0
 	public static let SIDE_PADDING: CGFloat = 20.0
-	public static let BAND_CELL_HEIGHT: CGFloat = 230.0
+	public static let BAND_CELL_HEIGHT: CGFloat = 140.0
 	public static let SEARCH_CELL_HEIGHT: CGFloat = 70.0
+	public static let DISCOVER_STROKE: CGFloat = 5.0
+	public static let ROTATION_MAX: CGFloat	= 1.0
+	public static let ROTATION_STRENGTH: CGFloat = 320.0
+	public static let ROTATION_ANGLE: Float = Float(M_PI) / 8
+	public static let SCALE_STRENGTH: Float = 4.0
+	public static let SCALE_MAX: Float = 0.93
+	public static let ACTION_MARGIN: CGFloat = 120.0
+	public static let EXIT_MARGIN: CGFloat = 500.0
+	public static let DRAG_SIZE: CGFloat = 250.0
+	public static let DRAG_Y: CGFloat = 84.0
+	public static let FILTER_HEIGHT: CGFloat = 40.0
+	public static let FILTER_HEADER_HEIGHT: CGFloat = 50.0
+	public static let SEGMENT_HEIGHT: CGFloat = 44.0
 	
 	// text
 	public static let TITLE_DONE = "Done"
@@ -109,12 +144,7 @@ public struct Constants
 	public static let TITLE_REGISTER = "Sign up or log in"
 	public static let TITLE_NO_THANKS = "No thanks, I'll do it later"
 	public static let TITLE_RECENTLY_SEARCHED = "Recently searched"
-	
-	public static let KEY_PERSONAL_PLAYLISTS = "Personal Playlists"
-	public static let KEY_SUBSCRIBED_PLAYLISTS = "Subscribed Playlists"
-	
-	public static let KEY_HOT_CHARTS = "Playing from hot charts"
-	public static let KEY_QUEUE = "Queue"
+	public static let TITLE_CANCEL = "Cancel"
 	
 	
 	// font
@@ -129,6 +159,8 @@ public struct Constants
 	public static let FONT_SIZE_TABLE_HEADER: CGFloat = 18.0
 	public static let FONT_SIZE_SEARCH_HEADER: CGFloat = 13.0
 	public static let FONT_SIZE_PLAYLIST_HEADER: CGFloat = 14.0
+	public static let FONT_SIZE_TAG_TEXT: CGFloat = 15.0
+	public static let FONT_SIZE_TAG_HEADER: CGFloat = 16.0
 	
 	// tags
 	public static let TAG_DISMISS = 1
@@ -137,4 +169,9 @@ public struct Constants
 	public static let TOTAL_ANIMATING_IMAGES = 30
 	
 	public static let TOTAL_QUEUE_COUNT = 10
+	
+	public static let SHORT_ANIMATION_DURATION: NSTimeInterval = 0.25
+	public static let MEDIUM_ANIMATION_DURATION: NSTimeInterval = 0.6
+	
+	public static let SCROLL_ALBUM_MAX_VISIBLE: Int = 3
 }

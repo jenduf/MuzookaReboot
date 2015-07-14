@@ -10,11 +10,11 @@ import Foundation
 
 public enum NavButtonType: Int
 {
-	case None = 0, Hamburger, Funnel, BackArrow, Add, Save, Share
+	case None = 0, Hamburger, Funnel, BackArrow, Add, Save, Share, ClearAll
 	
-	public static let imageNames = ["", "nav_icon", "filter_icon", "back_arrow", "playlist_add_icon", "", "share_icon"]
+	public static let imageNames = ["", "nav_icon", "filter_icon", "back_arrow", "playlist_add_icon", "", "share_icon", ""]
 	
-	public static let buttonText = ["", "", "", "", "", "Save", ""]
+	public static let buttonText = ["", "", "", "", "", "Save", "", "Clear All"]
 	
 	public var imageForType: String
 	{
@@ -24,5 +24,17 @@ public enum NavButtonType: Int
 	public var textForType: String
 	{
 		return NavButtonType.buttonText[self.rawValue]
+	}
+	
+	public var colorForType: UIColor
+	{
+		switch self
+		{
+			case .Save, .ClearAll:
+				return Color.SearchTint.uiColor
+				
+			default:
+				return UIColor.whiteColor()
+		}
 	}
 }

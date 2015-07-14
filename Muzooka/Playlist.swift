@@ -9,14 +9,14 @@
 
 import Foundation
 
-public class Playlist
+public class Playlist: NSObject, Shareable
 {
 	public let playlistID: Int
 	public let name: String
 	public let songCount: Int
 	public let subscribers: Int
-	public let artwork: String
-	public let ownerName: String?
+	public var artwork: String?
+	public var ownerName: String?
 	
 	public init(dict: NSDictionary)
 	{
@@ -24,9 +24,46 @@ public class Playlist
 		self.name = dict["name"] as! String
 		self.songCount = dict["songs_count"] as! Int
 		self.subscribers = dict["subscribers"] as! Int
-		self.artwork = dict["artwork"] as! String
 		
-		let ownerDict = dict["owner"] as! NSDictionary
-		self.ownerName = ownerDict["name"] as? String
+		if let artImage = dict["artwork"] as? String
+		{
+			self.artwork = artImage
+		}
+		
+		if let ownerDict = dict["owner"] as? NSDictionary
+		{
+			self.ownerName = Utils.nonNullObject(ownerDict["name"]) as? String
+		}
+	}
+	
+	// MARK: Shareable Helper Methods
+	func getItemID() -> Int
+	{
+		return self.playlistID
+	}
+	
+	func getItemName() -> String
+	{
+		return self.name
+	}
+	
+	func getActionItems() -> [MenuAction]
+	{
+		return [ .PlayLater, .SongInfo, .ArtistInfo, .AddToPlaylist, .Share ]
+	}
+	
+	func getShareDetails() -> String
+	{
+		return "\(self.name) by \(self.ownerName)"
+	}
+	
+	func getShareURL() -> NSURL
+	{
+		return NSURL(string: "\(Constants.WEB_URL)/p/\(self.playlistID)")!
+	}
+	
+	func shareableType() -> MediaType
+	{
+		return .Playlist
 	}
 }

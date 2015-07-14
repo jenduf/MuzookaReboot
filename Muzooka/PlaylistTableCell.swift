@@ -30,7 +30,7 @@ class PlaylistTableCell: UITableViewCell
 			}
 			*/
 			
-			self.artwork.loadFromURL(NSURL(string: playlist!.artwork)!)
+			self.artwork.loadFromURL(NSURL(string: playlist!.artwork!)!)
 		}
 	}
 

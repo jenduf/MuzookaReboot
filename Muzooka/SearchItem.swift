@@ -11,7 +11,7 @@ import Foundation
 
 public class SearchItem
 {
-	var searchItemType: SearchItemType!
+	var searchItemType: MediaType!
 	
 	public var band: Band?
 	public var user: User?
@@ -20,7 +20,7 @@ public class SearchItem
 	
 	public init(dict: NSDictionary)
 	{
-		self.searchItemType = SearchItemType(rawValue: dict["type"] as! String)
+		self.searchItemType = MediaType(rawValue: dict["type"] as! String)
 		
 		switch self.searchItemType!
 		{
@@ -42,6 +42,50 @@ public class SearchItem
 			
 			default:
 				break
+		}
+	}
+	
+	func getShareableItem() -> Shareable?
+	{
+		switch self.searchItemType!
+		{
+		case .Band:
+			return self.band! as Shareable
+			
+		case .Song:
+			return self.song! as Shareable
+			
+		case .User:
+			return self.user! as Shareable
+			
+		case .Playlist:
+			return self.playlist! as Shareable
+			
+		default:
+			break
+		}
+		
+		return nil
+	}
+	
+	public func getItemID() -> Int?
+	{
+		switch self.searchItemType!
+		{
+			case .Band:
+				return self.band!.bandID
+				
+			case .Song:
+				return self.song!.songID
+				
+			case .User:
+				return self.user!.userID
+				
+			case .Playlist:
+				return self.playlist!.playlistID
+				
+			default:
+				return 0
 		}
 	}
 	
@@ -77,7 +121,27 @@ public class SearchItem
 				return self.song!.band.name
 				
 			case .User:
-				return "\(self.user!.city), \(self.user!.state), \(self.user!.country)"
+				var cityString = (!self.user!.city.isEmpty ? self.user!.city : "")
+				if !cityString.isEmpty && !self.user!.state.isEmpty
+				{
+					cityString.extend(", \(self.user!.state)")
+				}
+				else if !self.user!.state.isEmpty
+				{
+					cityString.extend(self.user!.state)
+				}
+				
+				if !cityString.isEmpty && !self.user!.country.isEmpty
+				{
+					cityString.extend(", \(self.user!.country)")
+				}
+				else if !self.user!.country.isEmpty
+				{
+					cityString.extend(self.user!.country)
+				}
+				
+				return cityString
+
 				
 			case .Playlist:
 				return "by \(self.playlist!.ownerName)"

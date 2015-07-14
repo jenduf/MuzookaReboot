@@ -96,9 +96,11 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 	}
 	
 	// MARK: Get API Request
-	func getAPIRequestForDelegate(apiRequest: APIRequest, delegate: APIDelegate, apiReferrer: APIReferrer? = nil, parameters:NSDictionary? = nil, appendedString: String = "")
+	func getAPIRequestForDelegate(apiRequest: APIRequest, delegate: APIDelegate, apiReferrer: APIReferrer? = nil, postData:NSDictionary? = nil, offset: Int = 0, count: Int = 0)
 	{
 		self.apiRequest = apiRequest
+		
+		self.delegate = delegate
 		
 		if(self.apiRequest?.requiresAuthentication == true && self.authToken == nil)
 		{
@@ -107,24 +109,33 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 			return
 		}
 		
-		self.delegate = delegate
+		var requestURL = "\(Constants.API_URL)/\(apiRequest.getURLWithParameters())"//getURLWithAppendedID(appendedString))"
 		
-		var requestURL = "\(Constants.API_URL)/\(apiRequest.getURLWithAppendedID(appendedString))"
-		
-		var postData:NSData?
-		
-		if parameters != nil
+		if offset > 0 || count > 0
 		{
-			postData = self.dictionaryToJSON(parameters!)
+			requestURL.extend("?offset=\(offset)&count=\(count)")
+		}
+		
+		var data:NSData?
+		
+		if postData != nil
+		{
+			data = self.dictionaryToJSON(postData!)
 			//let emailString = parameters["email"] as! String
 			//var passString = parameters["password"] as! String
 			//var paramString = "email=\(emailString)&password=\(passString)"
 			//postData = parameters?.dataUsingEncoding(NSUTF8StringEncoding)
 		}
 		
+		println("original url: \(requestURL)")
+		
+		let strippedString = requestURL.stringByReplacingOccurrencesOfString(" ", withString: "%20", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil) //String(filter(requestURL.generate()) { $0 != " "})
+		
+		println("stripped url: \(strippedString)")
+		
 		let apiString = (apiReferrer != nil ? apiReferrer!.getParameterString() : "")
 		
-		self.startRequest(requestURL, method: apiRequest.httpMethod, postData: postData, apiReferrer: apiString)
+		self.startRequest(strippedString, method: apiRequest.httpMethod, postData: data, apiReferrer: apiString)
 	}
 	
 	// MARK: Make the Request
@@ -217,6 +228,16 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 		
 	}
 	
+	/*func handleRequest(request: APIRequest, queryStringArguments: [String: String])
+	{
+		
+	}
+	
+	func handleRequest(request: APIRequest, jsonBody: JSON)
+	{
+		
+	}*/
+	
 	// MARK: NSURLSessionTaskDelegate Methods
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void)
 	{
@@ -228,7 +249,7 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 		
 		println("RESPONSE STATUS CODE: \(status)")
 		
-		if status == Constants.HTTP_CODE_SUCCESS || status == Constants.HTTP_CODE_CREATE
+		if status == Constants.HTTP_CODE_SUCCESS || status == Constants.HTTP_CODE_CREATE || status == Constants.HTTP_CODE_NO_CONTENT
 		{
 			completionHandler(NSURLSessionResponseDisposition.Allow)
 		}
@@ -267,18 +288,21 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
 		}
 		else
 		{
-			var str:NSString = NSString(data: self.responseData!, encoding: NSUTF8StringEncoding)!
 			
-			println("RESPONSE RECEIVED: \(str)")
+			var jsonData:AnyObject?
+			
+			if self.responseData?.length > 0
+			{
+				var str:NSString = NSString(data: self.responseData!, encoding: NSUTF8StringEncoding)!
+			
+				println("RESPONSE RECEIVED: \(str)")
+				
+				jsonData = self.parseJSONResponse(self.responseData)
+			}
 			
 			if self.delegate != nil
 			{
-				var jsonData: AnyObject? = self.parseJSONResponse(self.responseData)
-				
-				if jsonData != nil
-				{
-					self.delegate?.apiManagerDidReturnData(self, data: jsonData!)
-				}
+				self.delegate?.apiManagerDidReturnData(self, data: jsonData)
 			}
 			
 		}

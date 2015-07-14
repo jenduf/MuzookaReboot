@@ -18,7 +18,9 @@ class IndustryViewController: MuzookaViewController, UICollectionViewDelegateFlo
 	{
 		super.viewDidLoad()
 
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.Producers, delegate: self)
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.Producers, requestParameters: nil)
+		
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self)
 	}
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +62,7 @@ class IndustryViewController: MuzookaViewController, UICollectionViewDelegateFlo
 	}
 	
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		

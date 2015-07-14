@@ -43,5 +43,15 @@ public class Utils
 		return object!
 	}
 	
+	static func nonNullValue(value: AnyObject?) -> AnyObject
+	{
+		if (value is NSNull || value == nil)
+		{
+			return 0
+		}
+		
+		return value!
+	}
+	
 	
 }

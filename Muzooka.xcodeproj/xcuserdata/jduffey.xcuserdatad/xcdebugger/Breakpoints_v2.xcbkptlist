@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/ChartViewController.swift"
-            timestampString = "455565591.70428"
+            timestampString = "456296377.331865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/PartnerViewController.swift"
-            timestampString = "454588897.387256"
+            timestampString = "456367338.866765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "apiManagerDidReturnData(_:data:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/IndustryViewController.swift"
-            timestampString = "454588897.387256"
+            timestampString = "456367338.866765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "apiManagerDidReturnData(_:data:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaViewController.swift"
-            timestampString = "454345895.529804"
+            timestampString = "456870085.514609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "apiManagerDidReturnError(_:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,13 +122,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/User.swift"
-            timestampString = "454896450.77128"
+            timestampString = "456990877.182767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "init(dict:)"
-            landmarkType = "5">
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "User"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaNavController.swift"
-            timestampString = "455879323.949848"
+            timestampString = "457988823.974459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "toggleLeftNav()"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,91 +154,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/ProfileViewController.swift"
-            timestampString = "454546557.50816"
+            timestampString = "457491239.012059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muzooka/User.swift"
-            timestampString = "454896450.77128"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "User"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "globalinit_33_5364DE12237F5442CD8A59FC50DF6E09_func0"
-                  moduleName = "Muzooka"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jduffey/Development/iOS/Projects/Muzooka/Muzooka/User.swift"
-                  timestampString = "452605281.309601"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muzooka.User.currentUser.unsafeMutableAddressor : Swift.ImplicitlyUnwrappedOptional&lt;Muzooka.User&gt;"
-                  moduleName = "Muzooka"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jduffey/Development/iOS/Projects/Muzooka/Muzooka/User.swift"
-                  timestampString = "452605281.309812"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "22">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Muzooka.User.currentUser.setter : Swift.ImplicitlyUnwrappedOptional&lt;Muzooka.User&gt;"
-                  moduleName = "Muzooka"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jduffey/Development/iOS/Projects/Muzooka/Muzooka/User.swift"
-                  timestampString = "452605281.310466"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Muzooka.User.currentUser.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;Muzooka.User&gt;"
-                  moduleName = "Muzooka"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jduffey/Development/iOS/Projects/Muzooka/Muzooka/User.swift"
-                  timestampString = "452605281.31067"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -263,28 +185,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Muzooka/ChartViewController.swift"
-            timestampString = "455537804.160928"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "voteForSong(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaNavController.swift"
-            timestampString = "455879323.949848"
+            timestampString = "457988823.974459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "toggleLeftNav()"
             landmarkType = "5">
          </BreakpointContent>
@@ -328,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaNavController.swift"
-            timestampString = "455879323.949848"
+            timestampString = "457988823.974459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "MuzookaNavController"
             landmarkType = "3">
          </BreakpointContent>
@@ -436,11 +342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/ChartViewController.swift"
-            timestampString = "455565591.70428"
+            timestampString = "456367338.866765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "ChartViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -452,12 +358,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/APIManager.swift"
-            timestampString = "453260347.378238"
+            timestampString = "455962768.319916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "getAPIRequestForDelegate(_:delegate:apiReferrer:parameters:appendedString:)"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "getAPIRequestForDelegate(_:delegate:apiReferrer:postData:offset:count:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -468,11 +374,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/ArtistViewController.swift"
-            timestampString = "455578095.090315"
+            timestampString = "456367338.866765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "apiManagerDidReturnData(_:data:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,11 +390,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/ChartViewController.swift"
-            timestampString = "455565591.70428"
+            timestampString = "456367338.866765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "apiManagerDidReturnData(_:data:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -500,11 +406,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/ArtistViewController.swift"
-            timestampString = "455578095.090315"
+            timestampString = "456367338.866765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -580,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaViewController.swift"
-            timestampString = "454345895.529804"
+            timestampString = "456870085.514609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "didMoveToParentViewController(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -596,11 +502,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaViewController.swift"
-            timestampString = "454345895.529804"
+            timestampString = "456870085.514609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "willMoveToParentViewController(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -612,11 +518,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaViewController.swift"
-            timestampString = "453301472.744947"
+            timestampString = "456296377.331865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "MuzookaViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -628,11 +534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaNavController.swift"
-            timestampString = "455879323.949848"
+            timestampString = "457988823.974459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "493"
-            endingLineNumber = "493"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
             landmarkName = "secondTopViewController()"
             landmarkType = "5">
          </BreakpointContent>
@@ -644,11 +550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/MuzookaNavController.swift"
-            timestampString = "455879323.949848"
+            timestampString = "457988823.974459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
             landmarkName = "showLoginScreen()"
             landmarkType = "5">
          </BreakpointContent>
@@ -675,22 +581,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Muzooka/ChartViewController.swift"
-            timestampString = "455537804.160928"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "ChartViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Muzooka/ArtistViewController.swift"
             timestampString = "453812271.283621"
             startingColumnNumber = "9223372036854775807"
@@ -708,11 +598,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Muzooka/SongInfoViewController.swift"
-            timestampString = "455578095.090315"
+            timestampString = "456367338.866765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "apiManagerDidReturnData(_:data:)"
             landmarkType = "5">
          </BreakpointContent>

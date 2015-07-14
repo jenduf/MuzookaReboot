@@ -16,29 +16,34 @@ class ProfileViewController: MuzookaViewController, UITableViewDataSource, UITab
 	@IBOutlet var following: UILabel!
 	@IBOutlet var likes: UILabel!
 	
+	
+	var user: User?
+	{
+		didSet
+		{
+			self.bannerView.user = user
+			
+			self.followers.text = "\(user!.followersCount)"
+			
+			self.following.text = "\(user!.followingCount)"
+			
+			self.likes.text = "\(user!.likesCount)"
+		}
+	}
+	
+	
 	override func loadData()
 	{
 		super.loadData()
 		
-		APIManager.sharedManager.getAPIRequestForDelegate(APIRequest.UserDetails, delegate: self, parameters: nil, appendedString: "\(User.currentUser.userID)")
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.UserDetails, requestParameters: [APIRequestParameter(key: "", value: "\(User.currentUser.userID)")])
+		
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil)
 	}
 
 	override func viewDidLoad()
 	{
 		super.viewDidLoad()
-		
-		
-		
-		if User.currentUser != nil
-		{
-			self.bannerView.user = User.currentUser
-			
-			self.followers.text = "\(User.currentUser.followersCount)"
-			
-			self.following.text = "\(User.currentUser.followingCount)"
-			
-			self.likes.text = "\(User.currentUser.likesCount)"
-		}
 	}
 	
 	@IBAction func editProfile(sender: AnyObject)
@@ -110,11 +115,11 @@ class ProfileViewController: MuzookaViewController, UITableViewDataSource, UITab
     
 
 	// MARK: API Delegate Methods
-	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject)
+	override func apiManagerDidReturnData(apiManager: APIManager, data: AnyObject?)
 	{
 		super.apiManagerDidReturnData(apiManager, data: data)
 		
-		switch apiManager.apiRequest!
+		switch apiManager.apiRequest!.requestType
 		{
 			case .UserDetails:
 				var dict:NSDictionary = data as! NSDictionary

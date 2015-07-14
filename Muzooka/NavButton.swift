@@ -21,6 +21,8 @@ class NavButton: UIButton
 		self.setImage(UIImage(named: type.imageForType), forState: UIControlState.Normal)
 		
 		self.setTitle(type.textForType, forState: UIControlState.Normal)
+		
+		self.setTitleColor(type.colorForType, forState: UIControlState.Normal)
 	}
 	
 	override func drawLayer(layer: CALayer!, inContext ctx: CGContext!)
