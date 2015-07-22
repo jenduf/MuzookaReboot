@@ -35,9 +35,11 @@ class AlbumArtView: UIView
 	}
 	
 	
-	init(urlString: String)
+	init(urlString: String, frame: CGRect)
 	{
-		self.artImageView = UIImageView(frame: self.frame)
+		super.init(frame: frame)
+		
+		self.artImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
 		
 		self.artImageView!.loadFromURLWithCallback(NSURL(string: urlString)!, callback:
 		{ (downloadedImage) -> () in
@@ -45,14 +47,12 @@ class AlbumArtView: UIView
 			self.artImageView!.image = downloadedImage
 						
 			self.addSubview(self.artImageView!)
-				
-			super.init(frame: CGRect(x: 0, y: 0, width: downloadedImage.size.width, height: downloadedImage.size.height))
 		})
 	}
 
 	required init(coder aDecoder: NSCoder)
 	{
-	    fatalError("init(coder:) has not been implemented")
+	    super.init(coder: aDecoder)
 	}
 	
 	override init(frame: CGRect)

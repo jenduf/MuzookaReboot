@@ -50,4 +50,14 @@ extension UIImageView
 			})
 		})
 	}
+	
+	func blurImage(blurImage: UIImage)
+	{
+		var imageToBlur = CIImage(image: blurImage)
+		var blurFilter = CIFilter(name: "CIGaussianBlur")
+		blurFilter.setValue(imageToBlur, forKey: "inputImage")
+		var resultImage = blurFilter.valueForKey("outputImage") as! CIImage
+		var blurredImage = UIImage(CIImage: resultImage)
+		self.image = blurredImage
+	}
 }

@@ -21,6 +21,10 @@ class MusicPlayerView: UIView
 	@IBOutlet var indicatorView: IndicatorView!
 	@IBOutlet var albumArtView: AlbumArtView!
 	@IBOutlet var albumImageView: UIImageView!
+	@IBOutlet var sliderView: SliderView!
+	
+	@IBInspectable
+	var shouldBlur: Bool = false
 	
 	var song: Song?
 	{
@@ -46,7 +50,19 @@ class MusicPlayerView: UIView
 			
 			if self.albumImageView != nil
 			{
-				self.albumImageView.loadFromURL(NSURL(string: song!.artwork!)!)
+				self.albumImageView.loadFromURLWithCallback(NSURL(string: song!.artwork!)!, callback:
+				{ (downloadedImage) -> () in
+					if self.shouldBlur == true
+					{
+						self.albumImageView.blurImage(downloadedImage)
+					}
+					else
+					{
+						self.albumImageView.image = downloadedImage
+					}
+				})
+				
+				//self.albumImageView.loadFromURL(NSURL(string: song!.artwork!)!)
 			}
 		}
 	}
@@ -68,24 +84,36 @@ class MusicPlayerView: UIView
 		//self.albumArtView.albumImageView.image = self.blurImage(self.albumArtView.albumImageView.image!)
 	}
 	
+	@IBAction func playPause(sender: UIButton)
+	{
+		self.togglePlayButton()
+		
+		MusicPlayer.sharedPlayer.toggleAVPlayer()
+	}
+	
 	func togglePlayButton()
 	{
 		self.playPauseButton.selected = !self.playPauseButton.selected
 	}
 	
-	func setPercent(percent: CGFloat)
+	func updateTime(currentTime: String, totalTime: String, percent: CGFloat)
 	{
-		self.indicatorView.percent = percent
+		self.time.text = currentTime
+		self.totalTime.text = totalTime
+		
+		self.setPercent(percent)
 	}
 	
-	func blurImage(image: UIImage) -> UIImage
+	func setPercent(percent: CGFloat)
 	{
-		var imageToBlur = CIImage(image: image)
-		var blurFilter = CIFilter(name: "CIGaussianBlur")
-		blurFilter.setValue(imageToBlur, forKey: "inputImage")
-		var resultImage = blurFilter.valueForKey("outputImage") as! CIImage
-		var blurredImage = UIImage(CIImage: resultImage)
-		return blurredImage!
+		if self.indicatorView != nil
+		{
+			self.indicatorView.percent = percent
+		}
+		else if self.sliderView != nil
+		{
+			self.sliderView.percent = percent
+		}
 	}
 
     /*

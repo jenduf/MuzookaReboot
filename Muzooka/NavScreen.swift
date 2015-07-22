@@ -26,6 +26,18 @@ public enum NavScreen: Int
 		}
 	}
 	
+	public var needsFullScreen: Bool
+	{
+		switch self
+		{
+			case .ExtendedPlayer:
+				return true
+			
+			default:
+				return false
+		}
+	}
+	
 	public var titleText: String
 	{
 		return NavScreen.titles[self.rawValue]

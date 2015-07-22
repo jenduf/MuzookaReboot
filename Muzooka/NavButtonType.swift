@@ -10,11 +10,11 @@ import Foundation
 
 public enum NavButtonType: Int
 {
-	case None = 0, Hamburger, Funnel, BackArrow, Add, Save, Share, ClearAll
+	case None = 0, Hamburger, Funnel, BackArrow, Add, Save, Share, ClearAll, Expand, Detail
 	
-	public static let imageNames = ["", "nav_icon", "filter_icon", "back_arrow", "playlist_add_icon", "", "share_icon", ""]
+	public static let imageNames = ["", "nav_icon", "filter_icon", "back_arrow", "playlist_add_icon", "", "share_icon", "", "nav_expand", "nav_detail_icon"]
 	
-	public static let buttonText = ["", "", "", "", "", "Save", "", "Clear All"]
+	public static let buttonText = ["", "", "", "", "", "Save", "", "Clear All", "", ""]
 	
 	public var imageForType: String
 	{

@@ -24,10 +24,10 @@ public struct Constants
 	//	public static let API_URL = "http://api-dev.muzooka.com"
 	
 	// prod url
-	//public static let API_URL = "https://api23.muzooka.com"
+	public static let API_URL = "https://api23.muzooka.com"
 	
 	// dev url
-	public static let API_URL = "http://api-qc.muzooka.com"
+	//public static let API_URL = "http://api-qc.muzooka.com"
 	
 	public static let WEB_URL = "https://muzooka.com/"
 	
@@ -136,6 +136,8 @@ public struct Constants
 	public static let FILTER_HEIGHT: CGFloat = 40.0
 	public static let FILTER_HEADER_HEIGHT: CGFloat = 50.0
 	public static let SEGMENT_HEIGHT: CGFloat = 44.0
+	public static let SLIDER_TRACK_HEIGHT: CGFloat = 6.0
+	public static let ALBUM_ART_SIZE: CGFloat = 240.0
 	
 	// text
 	public static let TITLE_DONE = "Done"

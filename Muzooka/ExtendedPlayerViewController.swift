@@ -31,7 +31,7 @@ class ExtendedPlayerViewController: MuzookaViewController, UITableViewDataSource
 		
 		let band = MusicPlayer.sharedPlayer.nowPlaying!.band
 		
-		self.bannerView.artURL = band.getImageURLForDimension(.Medium, url: band.avatarURL!)
+		self.bannerView.artURL = band.banner!//band.getImageURLForDimension(.Medium, url: band.avatarURL!)
 	}
 	
 	override func loadData()

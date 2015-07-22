@@ -146,16 +146,18 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 				break*/
 			
 			default:
-				var dataDict:NSDictionary = data as! NSDictionary
-				var songArray:NSArray = dataDict["songs"] as! NSArray
-				
-				for eachSong in songArray
+				if let dataDict = data as? NSDictionary
 				{
-					var song = Song(dict:eachSong as! NSDictionary)
-					self.songs.append(song)
-				}
+					var songArray:NSArray = dataDict["songs"] as! NSArray
 				
-				self.songTableView.reloadData()
+					for eachSong in songArray
+					{
+						var song = Song(dict:eachSong as! NSDictionary)
+						self.songs.append(song)
+					}
+					
+					self.songTableView.reloadData()
+				}
 				
 				break
 		}

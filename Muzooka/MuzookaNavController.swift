@@ -28,7 +28,7 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 		// determine whether to show first time controller
 		var isFirstTime = !NSUserDefaults.standardUserDefaults().boolForKey(Constants.FIRST_TIME_USE_SHOWN_KEY)
 		
-		if isFirstTime == true
+		if isFirstTime == false
 		{
 			let timeOffset = Int64(2.0 * Double(NSEC_PER_SEC))
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeOffset), dispatch_get_main_queue())
@@ -73,8 +73,8 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 	
 	func updateForScreen(screen: NavScreen)
 	{
-		if screen.showNavBar == true
-		{
+		//if screen.showNavBar == true
+		//{
 			if screen.subHeadings.count == 0
 			{
 				println("NAV Y: \(self.navHeaderView.navBarView.frame.maxY)")
@@ -128,10 +128,10 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 				
 				self.contentHolderView.setNeedsUpdateConstraints()
 			}*/
-		}
-		else
-		{
-			self.navHeaderView.heightConstraint.constant = 0
+		//	}
+		//	else
+		//{
+			/*self.navHeaderView.heightConstraint.constant = 0
 			
 			self.view.setNeedsUpdateConstraints()
 			
@@ -145,7 +145,14 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 			completion:
 			{ (Bool) -> Void in
 				self.navHeaderView.updateForScreen(screen)
-			})
+			})*/
+			
+		//	self.navHeaderView.updateForScreen(screen)
+		//	}
+		
+		if screen.needsFullScreen == true
+		{
+			self.contentHolderView.frame = CGRect(origin: CGPoint.zeroPoint, size: self.view.frame.size)
 		}
 		
 		var alphaValue = CGFloat(screen.showNavBar == true ? 1.0 : 0.0)
@@ -273,7 +280,14 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 	{
 		//MusicPlayer.sharedPlayer.toggleAVPlayer()
 		self.toggleMusicPlayer()
+		
+	/*	let epvc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.EXTENDED_PLAYER_VIEW_CONTROLLER) as! ExtendedPlayerViewController
 
+		self.presentViewController(epvc, animated: true)
+		{ () -> Void in
+			
+		}*/
+		
 		self.showModalViewController(Constants.EXTENDED_PLAYER_VIEW_CONTROLLER)
 	}
 	
@@ -421,6 +435,8 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 		{ (Bool) -> Void in
 			oldController!.view.removeFromSuperview()
 		}
+		
+		newController.view.frame.size = self.contentHolderView.frame.size
 		
 		self.contentHolderView.addSubview(newController.view)
 		

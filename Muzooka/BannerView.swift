@@ -32,7 +32,13 @@ class BannerView: UIView
 	{
 		didSet
 		{
-			self.backgroundImageView.loadFromURL(NSURL(string: artURL!)!)
+			if self.backgroundImageView != nil
+			{
+				self.backgroundImageView.loadFromURLWithCallback(NSURL(string: artURL!)!, callback:
+				{ (downloadedImage) -> () in
+					self.backgroundImageView.blurImage(downloadedImage)
+				})
+			}
 		}
 	}
 	
@@ -57,16 +63,6 @@ class BannerView: UIView
 				self.addSubview(self.blurView!)
 			}
 		}
-	}
-	
-	func blurImage(image: UIImage) -> UIImage
-	{
-		var imageToBlur = CIImage(image: image)
-		var blurFilter = CIFilter(name: "CIGaussianBlur")
-		blurFilter.setValue(imageToBlur, forKey: "inputImage")
-		var resultImage = blurFilter.valueForKey("outputImage") as! CIImage
-		var blurredImage = UIImage(CIImage: resultImage)
-		return blurredImage!
 	}
 	
 

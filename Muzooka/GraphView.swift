@@ -77,7 +77,7 @@ import UIKit
 				(graphPoint: Int) -> CGFloat in
 				
 				var y: CGFloat = CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight
-				//y = graphHeight + topBorder - y
+				y = graphHeight + topBorder - y // FLIP
 				
 				return y
 			}
@@ -120,6 +120,8 @@ import UIKit
 			
 			CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0)
 			
+			CGContextRestoreGState(context)
+			
 			// draw the line on top of the clipped gradient
 			graphPath.lineWidth = 2.0
 			graphPath.stroke()
@@ -134,8 +136,6 @@ import UIKit
 				let circle = UIBezierPath(ovalInRect: CGRect(origin: point, size: CGSize(width: 5.0, height: 5.0)))
 				circle.fill()
 			}
-			
-			CGContextRestoreGState(context)
 			
 			// draw horizontal graph lines on the top
 			var linePath = UIBezierPath()

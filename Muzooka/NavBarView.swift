@@ -55,6 +55,11 @@ class NavBarView: UIView
 				self.rightButton.updateForNavButtonType(.Save)
 				break
 			
+			case .ExtendedPlayer:
+				self.leftButton.updateForNavButtonType(.Expand)
+				self.rightButton.updateForNavButtonType(.Detail)
+				break
+			
 			default:
 				self.leftButton.updateForNavButtonType(.Hamburger)
 				self.rightButton.updateForNavButtonType(.Funnel)

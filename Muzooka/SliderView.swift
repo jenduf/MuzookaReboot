@@ -11,11 +11,30 @@ import UIKit
 class SliderView: UIView
 {
 
+	@IBOutlet var sliderButton: UIButton!
+	
 	var percent: CGFloat = 0.0
 	{
 		didSet
 		{
+			let percentWidth = self.width * self.percent
+			self.sliderButton.center = CGPoint(x: percentWidth, y: self.sliderButton.center.y)
+			
+			//	self.sliderButton.moveBy(CGPoint(x: percent, y: 0))
+			
 			self.setNeedsDisplay()
+		}
+	}
+	
+	override func layoutSubviews()
+	{
+		super.layoutSubviews()
+		
+		if self.sliderButton != nil
+		{
+			self.sliderButton.layer.backgroundColor = Color.MusicSliderColor.uiColor.CGColor
+			self.sliderButton.layer.cornerRadius = self.sliderButton.height / 2
+			self.sliderButton.layer.masksToBounds = true
 		}
 	}
 	
@@ -26,7 +45,8 @@ class SliderView: UIView
 		let context = UIGraphicsGetCurrentContext()
 		
 		// draw background
-		let backgroundPath = UIBezierPath(roundedRect: rect, cornerRadius: self.height / 2)
+		let backgroundRect = CGRect(x: 0, y: (rect.height - Constants.SLIDER_TRACK_HEIGHT) / 2, width: rect.width, height: Constants.SLIDER_TRACK_HEIGHT)
+		let backgroundPath = UIBezierPath(roundedRect: backgroundRect, cornerRadius: self.height / 2)
 		CGContextSaveGState(context)
 		CGContextSetFillColorWithColor(context, UIColor.whiteColor().colorWithAlphaComponent(0.5).CGColor)
 		CGContextAddPath(context, backgroundPath.CGPath)
@@ -35,12 +55,12 @@ class SliderView: UIView
 		
 		let percentWidth = rect.size.width * self.percent
 		
-		let percentRect = CGRect(x: 0, y: 0, width: percentWidth, height: rect.size.height)
+		let percentRect = CGRect(x: 0, y: (rect.height - Constants.SLIDER_TRACK_HEIGHT) / 2, width: percentWidth, height: Constants.SLIDER_TRACK_HEIGHT)
 		
 		//println("width: \(percentWidth)")
 		let path = UIBezierPath(roundedRect: percentRect, byRoundingCorners: .BottomLeft | .TopLeft, cornerRadii: CGSize(width: self.width / 2, height: self.height / 2))
 		CGContextSaveGState(context)
-		CGContextSetFillColorWithColor(context, Color.MenuActive.uiColor.CGColor)
+		CGContextSetFillColorWithColor(context, Color.MusicSliderColor.uiColor.CGColor)
 		CGContextAddPath(context, path.CGPath)
 		CGContextDrawPath(context, kCGPathFill)
 		CGContextRestoreGState(context)

@@ -91,18 +91,19 @@ class MuzookaViewController: UIViewController, APIDelegate
 				
 			case .SongInfo:
 				let sivc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.SONG_INFO_VIEW_CONTROLLER) as! SongInfoViewController
+				sivc.songID = "\(self.itemSelected!.getItemID())"//"\(song.songID)"
+				
 				self.navController?.navigateToController(sivc)
 				//let song = self.itemSelected as! Song
-				sivc.songID = "\(self.itemSelected?.getItemID())"//"\(song.songID)"
 				
 				break
 				
 			case .ArtistInfo, .ViewProfile:
 				let avc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.ARTIST_VIEW_CONTROLLER) as! ArtistViewController
-				self.navController?.navigateToController(avc)
 				let song = self.itemSelected as! Song
 				avc.bandID = "\(song.band.bandID)"//"\(song.band.bandID)"
 				
+				self.navController?.navigateToController(avc)
 				break
 				
 			case .AddToPlaylist:

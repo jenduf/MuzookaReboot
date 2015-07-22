@@ -21,7 +21,7 @@ class SongInfoViewController: MuzookaViewController
 	{
 		didSet
 		{
-			self.loadData()
+			//self.loadData()
 		}
 	}
 	
@@ -43,21 +43,66 @@ class SongInfoViewController: MuzookaViewController
 			self.songArtwork.loadFromURL(NSURL(string: song!.artwork!)!)
 		}
 	}
-	
-	override func loadData()
-	{
-		super.loadData()
-		
-		let apiRequest = APIRequest(requestType: APIRequest.RequestType.SongDetails, requestParameters: [APIRequestParameter(key: "", value: "\(self.songID)")])
-		
-		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil) //appendedString: "\(self.songID!)")
-	}
 
 	override func viewDidLoad()
 	{
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+	}
+	
+	override func loadData()
+	{
+		super.loadData()
+		
+		let apiRequest = APIRequest(requestType: APIRequest.RequestType.SongDetails, requestParameters: [APIRequestParameter(key: "", value: "\(self.songID!)")])
+		
+		APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil) //appendedString: "\(self.songID!)")
+	}
+	
+	func setupGraphDisplay()
+	{
+		// Use 7 days for graph - can use any number,
+		// but labels and sample data are set up for 7 days
+		let noOfDays:Int = 7
+		
+		// set up labels
+		// day of week labels are set up in storyboard with tags
+		// today is last day of the array need to go backwards
+		
+		self.graphView.setNeedsDisplay()
+		
+		// get today's day number
+		let dateFormatter = NSDateFormatter()
+		let calendar = NSCalendar.currentCalendar()
+		let componentOptions:NSCalendarUnit = .CalendarUnitWeekday
+		let components = calendar.components(componentOptions, fromDate: NSDate())
+		
+		var weekday = components.weekday
+		
+		let days = ["S", "S", "M", "T", "W", "T", "F"]
+		
+		// set up the day name labels with correct day
+		for i in reverse(1...days.count)
+		{
+			if let labelView = self.graphView.viewWithTag(i) as? UILabel
+			{
+				if weekday == 7
+				{
+					weekday = 0
+				}
+				
+				labelView.text = days[weekday--]
+				
+				if weekday < 0
+				{
+					weekday = days.count - 1
+				}
+			}
+		}
+		
+		// update graph data
+		self.graphView.graphPoints = self.song!.hotChartDays
 	}
 
     override func didReceiveMemoryWarning() {
@@ -75,7 +120,7 @@ class SongInfoViewController: MuzookaViewController
 		
 		self.song = Song(dict: dataDict)
 		
-		self.graphView.graphPoints = self.song!.hotChartDays
+		self.setupGraphDisplay()
 	}
 
 }

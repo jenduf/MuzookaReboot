@@ -20,6 +20,13 @@ class DiscoverViewController: MuzookaViewController, DragDelegate, MusicPlayerDe
 	var draggableImageView: DraggableImageView?
 	
 	var songs = [Song]()
+	{
+		didSet
+		{
+			self.albumScrollView.songs = songs
+		}
+			
+	}
 	
 	var currentSong: Song?
 	{
@@ -31,6 +38,8 @@ class DiscoverViewController: MuzookaViewController, DragDelegate, MusicPlayerDe
 			self.bannerView.artURL = currentSong!.band.getImageURLForDimension(.Medium, url: currentSong!.band.bannerURL!)
 			
 			self.muzookaAlertView.alertDelegate = self
+			
+			
 			
 			//MusicPlayer.sharedPlayer.playSong(currentSong!)
 		}
@@ -49,7 +58,7 @@ class DiscoverViewController: MuzookaViewController, DragDelegate, MusicPlayerDe
 		// make this controller draggable image delegate
 		self.draggableImageView?.dragDelegate = self
 		
-		self.albumScrollView.albumScrollDataSource = self
+		//self.albumScrollView.albumScrollDataSource = self
 	}
 	
 	override func loadData()
@@ -208,9 +217,9 @@ class DiscoverViewController: MuzookaViewController, DragDelegate, MusicPlayerDe
 	
 	func viewForAlbumAtIndex(index: Int) -> AlbumArtView
 	{
-		let song = self.songs[index]
+		let song = self.songs[index] as Song
 		
-		let albumArt = AlbumArtView(urlString: song.artworkURL!)
+		let albumArt = AlbumArtView(urlString: song.artwork!, frame: CGRect(x: 0, y: 0, width: Constants.ALBUM_ART_SIZE, height: Constants.ALBUM_ART_SIZE))
 		
 		return albumArt as AlbumArtView
 	}
@@ -234,6 +243,8 @@ class DiscoverViewController: MuzookaViewController, DragDelegate, MusicPlayerDe
 						var song = Song(dict:eachSong as! NSDictionary)
 						self.songs.append(song)
 					}
+					
+					//self.albumScrollView.layoutItems()
 					
 					MusicPlayer.sharedPlayer.addSongsToQueue(self.songs, mode:.Discovery, playIndex:0)
 					//}
