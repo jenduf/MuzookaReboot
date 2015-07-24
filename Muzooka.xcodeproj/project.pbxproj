@@ -353,7 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				E5935B101AF81D1E003FD37B /* AppDelegate.swift */,
-				E5935B381AF82ED4003FD37B /* Utils */,
+				E5935B381AF82ED4003FD37B /* utils */,
 				E5935B331AF82069003FD37B /* view */,
 				E5935B301AF81DCD003FD37B /* controllers */,
 				E5A0DE981AF8996500DD5039 /* model */,
@@ -460,13 +460,13 @@
 			name = view;
 			sourceTree = "<group>";
 		};
-		E5935B381AF82ED4003FD37B /* Utils */ = {
+		E5935B381AF82ED4003FD37B /* utils */ = {
 			isa = PBXGroup;
 			children = (
 				E5935B391AF82EE3003FD37B /* Utils.swift */,
 				E5935B3D1AF83009003FD37B /* Constants.swift */,
 			);
-			name = Utils;
+			name = utils;
 			sourceTree = "<group>";
 		};
 		E5935B3F1AF83760003FD37B /* cells */ = {

@@ -2315,19 +2315,19 @@ the Terms of Service and Privacy Policy</string>
                                 <rect key="frame" x="600" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aV-oK-4zK" userLabel="Form View">
-                                        <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username or Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJD-Hf-BkZ">
-                                                <rect key="frame" x="10" y="20" width="580" height="80"/>
+                                                <rect key="frame" x="20" y="0.0" width="560" height="60"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="rAE-37-vH9"/>
+                                                    <constraint firstAttribute="height" constant="60" id="rAE-37-vH9"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="21"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWW-fk-sQq" userLabel="Separator View">
-                                                <rect key="frame" x="0.0" y="100" width="600" height="2"/>
+                                                <rect key="frame" x="0.0" y="60" width="600" height="2"/>
                                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Jp4-Rb-DHU"/>
@@ -2340,16 +2340,16 @@ the Terms of Service and Privacy Policy</string>
                                                 </variation>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbO-uK-cCg">
-                                                <rect key="frame" x="10" y="100" width="580" height="80"/>
+                                                <rect key="frame" x="20" y="60" width="560" height="60"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="FHh-Bo-kJZ"/>
+                                                    <constraint firstAttribute="height" constant="60" id="FHh-Bo-kJZ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixb-T2-4cv" userLabel="Separator View">
-                                                <rect key="frame" x="0.0" y="180" width="600" height="2"/>
+                                                <rect key="frame" x="0.0" y="120" width="600" height="2"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="Jrb-XA-0Ja"/>
@@ -2362,12 +2362,12 @@ the Terms of Service and Privacy Policy</string>
                                                 </variation>
                                             </view>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZ0-G7-CbX">
-                                                <rect key="frame" x="129" y="193" width="343" height="40"/>
+                                                <rect key="frame" x="129" y="133" width="343" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="343" id="WH0-z6-JST"/>
                                                     <constraint firstAttribute="height" constant="40" id="ygL-Us-yEH"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
                                                 <state key="normal" title="Oops, I forgot my password">
                                                     <color key="titleColor" red="0.0" green="0.73333333329999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2377,12 +2377,12 @@ the Terms of Service and Privacy Policy</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRh-nc-y56">
-                                                <rect key="frame" x="129" y="241" width="343" height="40"/>
+                                                <rect key="frame" x="129" y="181" width="343" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="DQn-so-MB0"/>
                                                     <constraint firstAttribute="width" constant="343" id="n2Q-4l-he3"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
                                                 <state key="normal" title="Create an account">
                                                     <color key="titleColor" red="0.0" green="0.73333333329999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2394,15 +2394,15 @@ the Terms of Service and Privacy Policy</string>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="zbO-uK-cCg" secondAttribute="trailing" constant="10" id="1Sp-h8-aDm"/>
+                                            <constraint firstAttribute="trailing" secondItem="zbO-uK-cCg" secondAttribute="trailing" constant="20" id="1Sp-h8-aDm"/>
                                             <constraint firstItem="Ixb-T2-4cv" firstAttribute="top" secondItem="zbO-uK-cCg" secondAttribute="bottom" id="20Y-6h-bzU"/>
-                                            <constraint firstAttribute="trailing" secondItem="eJD-Hf-BkZ" secondAttribute="trailing" constant="10" id="8Wn-TG-zOa"/>
+                                            <constraint firstAttribute="trailing" secondItem="eJD-Hf-BkZ" secondAttribute="trailing" constant="20" id="8Wn-TG-zOa"/>
                                             <constraint firstAttribute="trailing" secondItem="CWW-fk-sQq" secondAttribute="trailing" id="B9E-iI-zuP"/>
-                                            <constraint firstItem="eJD-Hf-BkZ" firstAttribute="leading" secondItem="9aV-oK-4zK" secondAttribute="leading" constant="10" id="L3T-bS-SyZ"/>
+                                            <constraint firstItem="eJD-Hf-BkZ" firstAttribute="leading" secondItem="9aV-oK-4zK" secondAttribute="leading" constant="20" id="L3T-bS-SyZ"/>
                                             <constraint firstItem="fRh-nc-y56" firstAttribute="top" secondItem="DZ0-G7-CbX" secondAttribute="bottom" constant="8" id="OyB-YG-ZXN"/>
-                                            <constraint firstItem="zbO-uK-cCg" firstAttribute="leading" secondItem="9aV-oK-4zK" secondAttribute="leading" constant="10" id="SMP-DM-aGT"/>
+                                            <constraint firstItem="zbO-uK-cCg" firstAttribute="leading" secondItem="9aV-oK-4zK" secondAttribute="leading" constant="20" id="SMP-DM-aGT"/>
                                             <constraint firstItem="CWW-fk-sQq" firstAttribute="leading" secondItem="9aV-oK-4zK" secondAttribute="leading" id="asy-JG-YqR"/>
-                                            <constraint firstItem="eJD-Hf-BkZ" firstAttribute="top" secondItem="9aV-oK-4zK" secondAttribute="top" constant="20" id="b0G-Ie-fk0"/>
+                                            <constraint firstItem="eJD-Hf-BkZ" firstAttribute="top" secondItem="9aV-oK-4zK" secondAttribute="top" id="b0G-Ie-fk0"/>
                                             <constraint firstAttribute="centerX" secondItem="DZ0-G7-CbX" secondAttribute="centerX" id="c9R-L2-kug"/>
                                             <constraint firstItem="CWW-fk-sQq" firstAttribute="top" secondItem="eJD-Hf-BkZ" secondAttribute="bottom" id="cW5-Qa-yrr"/>
                                             <constraint firstItem="zbO-uK-cCg" firstAttribute="top" secondItem="eJD-Hf-BkZ" secondAttribute="bottom" id="dFc-AL-GxK"/>
@@ -2412,8 +2412,8 @@ the Terms of Service and Privacy Policy</string>
                                             <constraint firstItem="Ixb-T2-4cv" firstAttribute="leading" secondItem="9aV-oK-4zK" secondAttribute="leading" id="zrD-An-GyE"/>
                                         </constraints>
                                     </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDz-D7-C4T">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="VDz-D7-C4T">
+                                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="OWh-nY-QFt"/>
                                             <barButtonItem style="plain" id="Tr4-y6-PpH">
@@ -2436,7 +2436,6 @@ the Terms of Service and Privacy Policy</string>
                                                 </button>
                                             </barButtonItem>
                                         </items>
-                                        <color key="barTintColor" red="0.18823529410000001" green="0.1960784314" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </toolbar>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.1960784314" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2447,7 +2446,7 @@ the Terms of Service and Privacy Policy</string>
                                     <constraint firstAttribute="trailing" secondItem="9aV-oK-4zK" secondAttribute="trailing" id="Nmh-IB-w8l"/>
                                     <constraint firstItem="9aV-oK-4zK" firstAttribute="leading" secondItem="jeT-aO-hDJ" secondAttribute="leading" id="PaR-w1-B2h"/>
                                     <constraint firstItem="9aV-oK-4zK" firstAttribute="top" secondItem="VDz-D7-C4T" secondAttribute="bottom" id="sWS-Ad-kh9"/>
-                                    <constraint firstItem="VDz-D7-C4T" firstAttribute="top" secondItem="jeT-aO-hDJ" secondAttribute="top" id="vYt-ae-Q3E"/>
+                                    <constraint firstItem="VDz-D7-C4T" firstAttribute="top" secondItem="jeT-aO-hDJ" secondAttribute="top" constant="20" id="vYt-ae-Q3E"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="emailTextField" destination="eJD-Hf-BkZ" id="c2A-Y6-Jim"/>
@@ -2473,6 +2472,7 @@ the Terms of Service and Privacy Policy</string>
                             <constraint firstAttribute="bottom" secondItem="nbI-na-1S6" secondAttribute="bottom" id="v7Q-CN-b4v"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outletCollection property="loginScreens" destination="FDL-hv-65P" collectionClass="NSMutableArray" id="sBG-Zv-M0Z"/>
                         <outletCollection property="loginScreens" destination="jeT-aO-hDJ" collectionClass="NSMutableArray" id="S4d-s0-yR4"/>
@@ -2758,7 +2758,7 @@ the Terms of Service and Privacy Policy</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="2yQ-2F-JIb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSD-fk-HIS" userLabel="Separator View">
@@ -2774,7 +2774,7 @@ the Terms of Service and Privacy Policy</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="xau-na-ksE"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtM-kC-KeS" userLabel="Separator View">
@@ -2790,7 +2790,7 @@ the Terms of Service and Privacy Policy</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="pQH-pT-Gel"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nar-zC-5Th" userLabel="Separator View">
@@ -2806,7 +2806,7 @@ the Terms of Service and Privacy Policy</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="mtG-me-pJl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-xi-HBs" userLabel="Separator View">
@@ -2822,7 +2822,7 @@ the Terms of Service and Privacy Policy</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Yko-2v-umv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxZ-7e-ENy" userLabel="Separator View">
@@ -2838,7 +2838,7 @@ the Terms of Service and Privacy Policy</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="bzc-zh-dmt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UmT-9q-x2Y" userLabel="Separator View">
