@@ -53,5 +53,17 @@ public class Utils
 		return value!
 	}
 	
-	
+    static func getCellHeightForFont(font: UIFont, text: String, bounds: CGSize) -> CGSize
+    {
+        var style = NSMutableParagraphStyle()
+        style.lineSpacing = Constants.LINE_SPACING;
+        
+        let attributes = [ NSParagraphStyleAttributeName : style, NSFontAttributeName : font ]
+        
+        let attributedBioString = NSAttributedString(string: text, attributes: attributes)
+        
+        let rect = attributedBioString.boundingRectWithSize(bounds, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+        
+        return rect.size
+    }
 }

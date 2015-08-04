@@ -15,6 +15,14 @@ class AlbumArtView: UIView
 	var artImageView: UIImageView?
 	
 	let gradientView = GradientView()
+    
+    var showDarkerVersion: Bool = false
+    {
+        didSet
+        {
+            self.setNeedsLayout()
+        }
+    }
 	
 	var artURL: String?
 	{
@@ -78,8 +86,19 @@ class AlbumArtView: UIView
 	{
 		super.layoutSubviews()
 		
-		self.gradientView.frame = CGRect(origin: CGPoint(x: 0, y: self.frame.height / 2), size: CGSize(width: self.frame.width, height: self.frame.height / 2))
-		self.gradientView.colors = [UIColor.blackColor().colorWithAlphaComponent(0.0).CGColor, UIColor.blackColor().colorWithAlphaComponent(0.6).CGColor]
+        if self.showDarkerVersion == true
+        {
+            self.gradientView.frame = CGRect(origin: CGPoint.zeroPoint, size: self.frame.size)
+            
+            self.gradientView.colors = [UIColor.blackColor().colorWithAlphaComponent(0.2).CGColor, UIColor.blackColor().colorWithAlphaComponent(0.9).CGColor]
+        }
+        else
+        {
+            self.gradientView.frame = CGRect(origin: CGPoint(x: 0, y: self.frame.height / 2), size: CGSize(width: self.frame.width, height: self.frame.height / 2))
+            
+            self.gradientView.colors = [UIColor.blackColor().colorWithAlphaComponent(0.0).CGColor, UIColor.blackColor().colorWithAlphaComponent(0.6).CGColor]
+        }
+
 		
 		self.layer.cornerRadius = 2.0
 		self.layer.masksToBounds = true

@@ -18,9 +18,9 @@ public struct APIRequest
 	
 	public enum RequestType: Int
 	{
-		case Hot = 0, New = 1, Top = 2, Partner = 3, Producers = 4, Login = 5, Register = 6, FacebookRegister, GoogleRegister, VoteSong, UnVoteSong, User, UserDetails, Band, BandSongs, SongDetails, PersonalPlaylists, SubscribedPlaylists, CreatePlaylist, SubscribeToPlaylist, PlaylistDetails, AddSongToPlaylist, Followers, Following, SearchAll, Discovery, DiscoverPass, DiscoverAdd, FollowUser, UnfollowUser, FollowBand, UnfollowBand, Subscribe, Unsubscribe, Tags, SearchTags
+		case Hot = 0, New = 1, Top = 2, Partner = 3, Producers = 4, Login = 5, Register = 6, FacebookRegister, GoogleRegister, VoteSong, UnVoteSong, User, UserDetails, Band, BandSongs, SongDetails, PersonalPlaylists, SubscribedPlaylists, CreatePlaylist, SubscribeToPlaylist, PlaylistDetails, AddSongToPlaylist, Followers, Following, SearchAll, Discovery, DiscoverPass, DiscoverAdd, FollowUser, UnfollowUser, FollowBand, UnfollowBand, Subscribe, Unsubscribe, Tags, SearchTags, SongComments, SongVotes
 		
-		public static let values = [Hot, New, Top, Partner, Producers, Login, Register, FacebookRegister, GoogleRegister, VoteSong, UnVoteSong, User, UserDetails, Band, BandSongs, SongDetails, PersonalPlaylists, SubscribedPlaylists, CreatePlaylist, SubscribeToPlaylist, PlaylistDetails, AddSongToPlaylist, Followers, Following, SearchAll, Discovery, DiscoverPass, DiscoverAdd, FollowUser, UnfollowUser, FollowBand, UnfollowBand, Subscribe, Unsubscribe, Tags, SearchTags]
+		public static let values = [Hot, New, Top, Partner, Producers, Login, Register, FacebookRegister, GoogleRegister, VoteSong, UnVoteSong, User, UserDetails, Band, BandSongs, SongDetails, PersonalPlaylists, SubscribedPlaylists, CreatePlaylist, SubscribeToPlaylist, PlaylistDetails, AddSongToPlaylist, Followers, Following, SearchAll, Discovery, DiscoverPass, DiscoverAdd, FollowUser, UnfollowUser, FollowBand, UnfollowBand, Subscribe, Unsubscribe, Tags, SearchTags, SongComments, SongVotes]
 	
 	
 		var stringValue: String
@@ -63,7 +63,9 @@ public struct APIRequest
 				"playlists",
 				"playlists",
 				"search/tags",
-				"search/tags"
+				"search/tags",
+                "songs",
+                "songs"
 				
 			]
 			

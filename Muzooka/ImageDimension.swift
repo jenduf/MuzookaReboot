@@ -16,5 +16,12 @@ public enum ImageDimension: String
 	[
 		.ExtraSmall, .Small, .Medium, .Large
 	]
+    
+    public func getImageDimensionAtURL(url: String) -> String
+    {
+        let imageString = url.stringByReplacingOccurrencesOfString("{%s}", withString: self.rawValue, options: NSStringCompareOptions.allZeros, range: nil)
+        
+        return imageString
+    }
 	
 }

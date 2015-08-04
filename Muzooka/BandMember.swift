@@ -17,6 +17,10 @@ public struct BandMember
 	public let name: String
 	public let userName: String
 	public let city: String?
+    public var avatar: String?
+    public var avatarURL: String?
+    public var avatarDimensions = [ImageDimension]()
+
 	
 	public init(dict: NSDictionary)
 	{
@@ -29,5 +33,28 @@ public struct BandMember
 		self.name = userDict["name"] as! String
 		self.userName = userDict["username"] as! String
 		self.city = userDict["city"] as? String
+        
+        if let avatarString = dict["avatar"] as? String
+        {
+            self.avatar = avatarString
+        }
+        
+        if let avatarDict = dict["avatars"] as? NSDictionary
+        {
+            if let url = avatarDict["template"] as? String
+            {
+                self.avatarURL = url
+            }
+            
+            if let dimensions = avatarDict["dimensions"] as? NSArray
+            {
+                for dimension in dimensions
+                {
+                    let imageDimension = ImageDimension(rawValue: dimension as! String)
+                    self.avatarDimensions.append(imageDimension!)
+                }
+            }
+        }
+
 	}
 }

@@ -18,7 +18,7 @@ public enum NavScreen: Int
 	{
 		switch self
 		{
-			case .Profile, .ExtendedPlayer, .Discover:
+			case .Profile, .ExtendedPlayer, .Discover, .Song, .Artist:
 				return false
 			
 			default:
@@ -30,7 +30,7 @@ public enum NavScreen: Int
 	{
 		switch self
 		{
-			case .ExtendedPlayer:
+			case .ExtendedPlayer, .Song, .Artist:
 				return true
 			
 			default:

@@ -43,13 +43,31 @@ class RequestOperation: NSObject, NSURLConnectionDataDelegate
 		return operation
 	}
 	
-	func isConcurrent() -> Bool
-	{
-		return true
-	}
-	
 	func start()
-	{
+	{/*
+        // Always check for cancellation before launching the task.
+        if self.cancelled
+        {
+            // Must move the operation to the finished state if it is canceled.
+            self.willChangeValueForKey("isFinished")
+            
+            self.finished = true
+            
+            self.didChangeValueForKey("isFinished")
+            
+            return
+        }
+        
+        // If the operation is not canceled, begin executing the task.
+        self.willChangeValueForKey("isExecuting")
+        
+        NSThread.detachNewThreadSelector("main", toTarget: self, withObject: nil)
+        
+        self.executing = true
+        
+        self.didChangeValueForKey("isExecuting")
+        */
+        
 		if self.executing == false && self.cancelled == false
 		{
 			self.executing = true
@@ -59,6 +77,18 @@ class RequestOperation: NSObject, NSURLConnectionDataDelegate
 			self.connection?.start()
 		}
 	}
+    
+    func main()
+    {
+        self.willChangeValueForKey("isFinished")
+        self.willChangeValueForKey("isExecuting")
+        
+        self.executing = false
+        self.finished = true
+        
+        self.didChangeValueForKey("isExecuting")
+        self.didChangeValueForKey("isFinished")
+    }
 	
 	func cancel()
 	{
@@ -136,4 +166,19 @@ class RequestOperation: NSObject, NSURLConnectionDataDelegate
 			self.completionHandler!(response:self.response!, data: self.accumulatedData!, delegate: self.delegate!, error: error!)
 		}
 	}
+    
+    func isConcurrent() -> Bool
+    {
+        return true
+    }
+    
+    func isExecuting() -> Bool
+    {
+        return self.executing
+    }
+    
+    func isFinished() -> Bool
+    {
+        return self.finished
+    }
 }

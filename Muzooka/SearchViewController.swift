@@ -31,6 +31,7 @@ class SearchViewController: MuzookaViewController, UITableViewDataSource, UITabl
 	
 	var filteredResults = [SearchItem]()
 	
+    
 
 	override func viewDidLoad()
 	{

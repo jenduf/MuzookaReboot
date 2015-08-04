@@ -2,165 +2,165 @@
 //  GraphView.swift
 //  Muzooka
 //
-//  Created by Jennifer Duffey on 5/19/15.
-//  Copyright (c) 2015 Jennifer Duffey. All rights reserved.
+//  Created by Jennifer Duffey on 7/30/15.
+//  Copyright (c) 2015 com.muzooka. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class GraphView: UIView
+class GraphView: UIView
 {
-	// gradient properties
-	@IBInspectable var startColor: UIColor = UIColor.redColor()
-	@IBInspectable var endColor: UIColor = UIColor.greenColor()
-	
-	var graphPoints = [Int]()
-	{
-		didSet
-		{
-			self.setNeedsDisplay()
-		}
-		
-	}
-	
-	
+    var rankLabelValues = [Int]()
+    
+    var weekdayValues = [String]()
+    
+    var graphHeight: CGFloat = 0.0
+    var graphWidth: CGFloat = 0.0
+    
+    var increment: Int = 0
+    
+    var song: Song?
+    {
+        didSet
+        {
+            self.increment = Int(floorf(Float(song!.hotChartMax - song!.hotChartMin) / Constants.RANK_LABELS_COUNT))
+            
+            if increment > 0
+            {
+                var tempValues = [Int]()
+                
+                for var startIndex = song!.hotChartMax; startIndex > 0; startIndex -= increment
+                {
+                    tempValues.append(startIndex)
+                }
+                
+                self.rankLabelValues.extend(tempValues.reverse())
+                
+                self.createRankLabels()
+            }
+        }
+        
+    }
+    
+    override func layoutSubviews()
+    {
+        super.layoutSubviews()
+    }
+    
+    func createRankLabels()
+    {
+        var nextY: CGFloat = Constants.GRAPH_LINE_SIZE
+        
+        for rankValue in self.rankLabelValues
+        {
+            let label = UILabel(frame: CGRect(x: 0, y: nextY, width: 0, height: 0))
+            label.textAlignment = NSTextAlignment.Center
+            label.text = "\(rankValue)"
+            label.textColor = UIColor.grayColor()
+            self.addSubview(label)
+            label.sizeToFit()
+            
+            label.centerHorizontallyInRect(CGRect(x: 0, y: label.top, width: Constants.GRAPH_PADDING, height: label.height))
+            
+            nextY += (label.height + Constants.SIDE_PADDING)
+        }
+        
+        self.graphHeight = (nextY - Constants.SIDE_PADDING)
+        
+        self.createDayLabels()
+    }
+    
+    func createDayLabels()
+    {
+        // get days of the week ordered by current day
+        let calendar = NSCalendar.currentCalendar()
+        var day = calendar.component(.CalendarUnitWeekday, fromDate: NSDate())
+        
+        let weekdays = NSCalendar.currentCalendar().veryShortWeekdaySymbols
+        
+        let total = weekdays.count
+        
+        for var index = 0; index < total; index++
+        {
+            self.weekdayValues.append(weekdays[(day - 1)] as! String)
+            
+            if day == total
+            {
+                day = 1
+            }
+            else
+            {
+                day++
+            }
+        }
+        
+        var nextX: CGFloat = Constants.GRAPH_PADDING + Constants.GRAPH_OFFSET
+        
+        for dayValue in self.weekdayValues
+        {
+            let label = UILabel(frame: CGRect(x: nextX, y: self.graphHeight + Constants.PADDING, width: 0, height: 0))
+            label.textAlignment = NSTextAlignment.Center
+            label.text = "\(dayValue)"
+            label.textColor = UIColor.grayColor()
+            self.addSubview(label)
+            label.sizeToFit()
+            
+            nextX += (label.width + Constants.GRAPH_PADDING)
+        }
+        
+        self.graphWidth = (nextX - Constants.GRAPH_PADDING)
+        
+        self.createGraph()
+    }
+    
+    func createGraph()
+    {
+        let graphLeft = (Constants.GRAPH_PADDING + Constants.PADDING)
+        
+        let yLineView = UIView(frame: CGRect(x: graphLeft, y: 0, width: Constants.GRAPH_LINE_SIZE, height: self.graphHeight))
+        yLineView.backgroundColor = Color.GraphBorder.uiColor
+        
+        self.addSubview(yLineView)
+        
+        let xLineView = UIView(frame: CGRect(x: (yLineView.right - Constants.PADDING), y: self.graphHeight - Constants.PADDING, width: (self.graphWidth - Constants.SIDE_PADDING), height: Constants.GRAPH_LINE_SIZE))
+        xLineView.backgroundColor = Color.GraphBorder.uiColor
+        
+        self.addSubview(xLineView)
+        
+        let total = (self.rankLabelValues.count - 1)
+        
+        var nextY = Constants.PADDING + Constants.GRAPH_LINE_SIZE
+        
+        for var index = 0; index < total; index++
+        {
+            let graphLineView = GraphLineView(frame: CGRect(x: graphLeft + Constants.GRAPH_LINE_SIZE, y: nextY, width: (self.graphWidth - Constants.SIDE_PADDING - Constants.PADDING), height: 1))
+            
+            self.addSubview(graphLineView)
+            
+            nextY += (Constants.GRAPH_PADDING)
+        }
+        
+        let curveView = GraphCurveView(frame: CGRect(x: graphLeft + Constants.GRAPH_LINE_SIZE, y: 0, width: (self.graphWidth - Constants.SIDE_PADDING - Constants.GRAPH_OFFSET - (Constants.GRAPH_LINE_SIZE * 2)), height: self.graphHeight - Constants.PADDING))
+        
+        var points = [Int]()
+        
+        for rank in self.song!.hotChartDays
+        {
+            let pointX = rank as Int //- self.song!.hotChartMin
+            points.append(pointX)
+        }
+        
+        curveView.setPointsAndIncrement(points, increment: self.increment)
+        
+        self.addSubview(curveView)
+    }
+
+    /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-	override func drawRect(rect: CGRect)
-	{
-		// set up background clipping area
-		var path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
-		path.addClip()
-		
-		let context = UIGraphicsGetCurrentContext()
-		let colors = [startColor.CGColor, endColor.CGColor]
-		
-		// set up color space
-		let colorSpace = CGColorSpaceCreateDeviceRGB()
-		
-		// set up color stops
-		let colorLocations: [CGFloat] = [0.0, 1.0]
-		
-		// create gradient
-		let gradient = CGGradientCreateWithColors(colorSpace, colors, colorLocations)
-		
-		// draw the gradient
-		var startPoint = CGPoint.zeroPoint
-		var endPoint = CGPoint(x: 0, y: self.bounds.height)
-		
-		CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0)
-		
-		
-		if self.graphPoints.count > 0
-		{
-			// calculate the x point
-			let margin: CGFloat = 20.0
-			var columnXPoint =
-			{
-				(column: Int) -> CGFloat in
-				
-				// calculate gap between points
-				let spacer = (rect.width - margin * 2 - 4) / CGFloat((self.graphPoints.count - 1))
-				var x: CGFloat = CGFloat(column) * spacer
-				x += margin + 2
-				
-				return x
-			}
-			
-			// calculate the y point
-			let topBorder: CGFloat = 60
-			let bottomBorder: CGFloat = 50
-			let graphHeight = rect.height - topBorder - bottomBorder
-			let maxValue = maxElement(self.graphPoints)
-			var columnYPoint =
-			{
-				(graphPoint: Int) -> CGFloat in
-				
-				var y: CGFloat = CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight
-				y = graphHeight + topBorder - y // FLIP
-				
-				return y
-			}
-			
-			// draw the line graph
-			UIColor.whiteColor().setFill()
-			UIColor.whiteColor().setStroke()
-			
-			// set up the points line
-			var graphPath = UIBezierPath()
-			
-			// go to start of line
-			graphPath.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(graphPoints[0])))
-			
-			// add points for each item in the graphPoints array at the correct (x, y) for the point
-			for i in 1..<graphPoints.count
-			{
-				let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
-				graphPath.addLineToPoint(nextPoint)
-			}
-			
-			//graphPath.stroke()
-			
-			CGContextSaveGState(context)
-			
-			// make a copy of the path
-			var clippingPath = graphPath.copy() as! UIBezierPath
-			
-			// add lines to the copied path to complete the clip area
-			clippingPath.addLineToPoint(CGPoint(x: columnXPoint(graphPoints.count - 1), y: rect.height))
-			clippingPath.addLineToPoint(CGPoint(x:columnXPoint(0), y: rect.height))
-			clippingPath.closePath()
-			
-			// add the clipping path to the context
-			clippingPath.addClip()
-			
-			let highestYPoint = columnYPoint(maxValue)
-			startPoint = CGPoint(x: margin, y: highestYPoint)
-			endPoint = CGPoint(x: margin, y: self.bounds.height)
-			
-			CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0)
-			
-			CGContextRestoreGState(context)
-			
-			// draw the line on top of the clipped gradient
-			graphPath.lineWidth = 2.0
-			graphPath.stroke()
-			
-			// draw graph circles
-			for i in 0..<graphPoints.count
-			{
-				var point = CGPoint(x:columnXPoint(i), y: columnYPoint(graphPoints[i]))
-				point.x -= 5.0/2
-				point.y -= 5.0/2
-				
-				let circle = UIBezierPath(ovalInRect: CGRect(origin: point, size: CGSize(width: 5.0, height: 5.0)))
-				circle.fill()
-			}
-			
-			// draw horizontal graph lines on the top
-			var linePath = UIBezierPath()
-			
-			// top line
-			linePath.moveToPoint(CGPoint(x: margin, y: topBorder))
-			linePath.addLineToPoint(CGPoint(x: rect.width - margin, y: topBorder))
-			
-			// center line
-			linePath.moveToPoint(CGPoint(x: margin, y: graphHeight / 2 + topBorder))
-			linePath.addLineToPoint(CGPoint(x: rect.width - margin, y: graphHeight / 2 + topBorder))
-			
-			// bottom line
-			linePath.moveToPoint(CGPoint(x: margin, y: rect.height - bottomBorder))
-			linePath.addLineToPoint(CGPoint(x: rect.width - margin, y: rect.height - bottomBorder))
-			
-			let color = UIColor(white: 1.0, alpha: 0.3)
-			color.setStroke()
-			
-			linePath.lineWidth = 1.0
-			linePath.stroke()
-			
-			
-		}
-	}
-	
+    override func drawRect(rect: CGRect) {
+        // Drawing code
+    }
+    */
 
 }

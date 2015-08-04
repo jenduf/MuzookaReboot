@@ -91,9 +91,14 @@ class MuzookaViewController: UIViewController, APIDelegate
 				
 			case .SongInfo:
 				let sivc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.SONG_INFO_VIEW_CONTROLLER) as! SongInfoViewController
-				sivc.songID = "\(self.itemSelected!.getItemID())"//"\(song.songID)"
-				
-				self.navController?.navigateToController(sivc)
+				sivc.song = self.itemSelected as? Song//"\(song.songID)"
+			
+                self.presentViewController(sivc, animated: true, completion:
+                { () -> Void in
+                        sivc.loadData()
+                })
+                
+			//	self.navController?.navigateToController(sivc)
 				//let song = self.itemSelected as! Song
 				
 				break

@@ -60,7 +60,7 @@ class PlaylistDetailViewController: MuzookaViewController, UITableViewDataSource
 		cell.song = song
 		
 		cell.rank.text = "\(indexPath.row + 1)"
-		cell.voteButton.tag = indexPath.row
+		//cell.voteButton.tag = indexPath.row
 		cell.menuButton.tag = indexPath.row
 		
 		return cell

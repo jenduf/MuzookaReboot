@@ -8,14 +8,14 @@
 
 import UIKit
 
-class SongCell: UITableViewCell
+class SongCell: UITableViewCell, VoteButtonViewDelegate
 {
 	@IBOutlet var songName: UILabel!
 	@IBOutlet var bandName: UILabel!
 	@IBOutlet var rank: UILabel!
 	@IBOutlet var albumArtView: AlbumArtView!
 	@IBOutlet var producerIcon: UIImageView!
-	@IBOutlet var voteButton: UIButton!
+	@IBOutlet var voteButtonView: VoteButtonView!
 	@IBOutlet var menuButton: UIButton!
 	
 	var cellDelegate: MuzookaCellDelegate!
@@ -29,21 +29,17 @@ class SongCell: UITableViewCell
 			//self.rank.text = "\(song!.position)"
 			
 			self.producerIcon.hidden = song!.producerVotes == 0
-			
-			if song!.band.following == true
-			{
-				self.voteButton.selected = true
-			}
+            
+            if self.voteButtonView != nil
+            {
+                self.voteButtonView.setActive(song!.userVoted == true, animated: false)
+            }
 			
 			if self.albumArtView != nil
 			{
-				let imageURL = song?.getImageURLForDimension(.ExtraSmall)
+				let imageURL = ImageDimension.ExtraSmall.getImageDimensionAtURL(song!.artworkURL!) as String
 				
-				if imageURL != nil
-				{
-					self.albumArtView.artURL =  imageURL
-					//song!.artwork
-				}
+				self.albumArtView.artURL =  imageURL
 			}
 		}
 		
@@ -52,6 +48,8 @@ class SongCell: UITableViewCell
 	override func awakeFromNib()
 	{
 		super.awakeFromNib()
+        
+        self.voteButtonView.delegate = self
 		
 		//self.songArtwork.layer.masksToBounds = true
 		//self.songArtwork.layer.cornerRadius = 2.0
@@ -86,6 +84,11 @@ class SongCell: UITableViewCell
 		{
 			self.albumArtView.albumImageView.image = nil
 		}
+        
+        if self.voteButtonView != nil
+        {
+            self.voteButtonView.setActive(false, animated: false)
+        }
 	}
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -94,6 +97,9 @@ class SongCell: UITableViewCell
         // Configure the view for the selected state
     }
 	
-	
-
+	// MARK: VoteButtonView Delegate Methods
+    func voteButtonSelected(voteButton: VoteButtonView)
+    {
+        self.cellDelegate.cellRequestedAction(self, item: self.song!)
+    }
 }

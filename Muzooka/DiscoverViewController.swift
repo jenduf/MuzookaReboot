@@ -35,7 +35,10 @@ class DiscoverViewController: MuzookaViewController, DragDelegate, MusicPlayerDe
 			self.discoverActionView.song = currentSong
 			
 			self.draggableImageView!.loadFromURL(NSURL(string:currentSong!.artwork!)!)
-			self.bannerView.artURL = currentSong!.band.getImageURLForDimension(.Medium, url: currentSong!.band.bannerURL!)
+            
+            let imageURL = ImageDimension.Medium.getImageDimensionAtURL(currentSong!.band.bannerURL!) as String
+            
+            self.bannerView.artURL =  imageURL
 			
 			self.muzookaAlertView.alertDelegate = self
 			

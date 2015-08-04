@@ -13,22 +13,24 @@ public class Song: NSObject, Shareable
 {
 	public var songID: Int = 0
 	public var name: String = ""
-	public let position: Int
+	public var position: Int
 	public var artwork: String?
 	public var artworkURL: String?
 	public var artworkDimensions = [ImageDimension]()
-	public let band: Band
-	public let listens: Int?
+	public var band: Band
+	public var listens: Int?
 	public var downloadable: Bool = false
-	public let duration: String?
+	public var duration: String?
 	public var durationTime: Int = 0
-	public let snippetStart: Int?
-	public let primaryTag: String?
+	public var snippetStart: Int?
+	public var primaryTag: String?
 	public var tags = [String]()
-	public let votes: Int?
-	public let producerVotes: Int?
-	public let price: Int?
+	public var votes: Int?
+	public var producerVotes: Int?
+	public var price: Int?
+    public var age: String?
 	public var hotChartRank: Int = 0
+    public var hotChartChange: Int = 0
 	public var hotChartMin: Int = 0
 	public var hotChartMax: Int = 0
 	public var hotChartDays = [Int]()
@@ -53,18 +55,6 @@ public class Song: NSObject, Shareable
 		{
 			return "\(Constants.SONG_URL)\(self.band.bandID)/songs/\(self.songID)_discovery.mp3"
 		}
-	}
-	
-	public func getImageURLForDimension(dimension: ImageDimension) -> String?
-	{
-		if self.artworkURL != nil
-		{
-			let imageString = self.artworkURL?.stringByReplacingOccurrencesOfString("{%s}", withString: dimension.rawValue, options: NSStringCompareOptions.allZeros, range: nil)
-		
-			return imageString!
-		}
-		
-		return nil
 	}
 
 	public init(dict: NSDictionary)
@@ -145,6 +135,8 @@ public class Song: NSObject, Shareable
 		self.votes = dict["votes"] as? Int
 		self.producerVotes = dict["producer_votes"] as? Int
 		self.price = dict["price"] as? Int
+        
+        self.age = dict["age"] as? String
 		
 		self.hotChartRank = dict["hotchartposition"] as! Int
 		
@@ -162,6 +154,10 @@ public class Song: NSObject, Shareable
 				{
 					self.hotChartDays.append(day as! Int)
 				}
+                
+                let day1 = daysArray[0] as! Int
+                
+                self.hotChartChange = -(self.hotChartRank - day1)
 			}
 			
 		}

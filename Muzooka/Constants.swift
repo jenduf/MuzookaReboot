@@ -51,6 +51,8 @@ public struct Constants
 	public static let KEY_SUBSCRIBED_PLAYLISTS = "Subscribed Playlists"
 	public static let KEY_HOT_CHARTS = "Playing from hot charts"
 	public static let KEY_QUEUE = "Queue"
+    public static let KEY_USER_VOTERS = "Users"
+    public static let KEY_INDUSTRY_VOTERS = "Industry"
 	
 	// images
 	public static let IMAGE_DEFAULT_ART = "default_artwork"
@@ -62,6 +64,8 @@ public struct Constants
 	public static let IMAGE_EMAIL_ICON = "login_button_email"
 	public static let IMAGE_NAV_HEADER = "nav_header"
 	public static let IMAGE_DEFAULT_PLAYLIST = "default_playlist"
+    public static let IMAGE_HEART_FILLED = "heart_filled"
+    public static let IMAGE_HEART_EMPTY = "heart_empty"
 	
 	// cell identifiers
 	public static let SONG_CELL_IDENTIFIER = "SongCellIdentifier"
@@ -82,7 +86,13 @@ public struct Constants
 	public static let SONG_PLAYLIST_CELL_IDENTIFIER = "SongPlaylistCellIdentifier"
 	public static let TAG_CELL_IDENTIFIER = "TagCellIdentifier"
 	public static let FILTER_HEADER_IDENTIFIER = "FilterHeaderIdentifier"
-	
+    public static let BAND_INFO_SONG_CELL_IDENTIFIER = "BandInfoSongCellIdentifier"
+    public static let BAND_INFO_CELL_IDENTIFIER = "BandInfoCellIdentifier"
+    public static let BAND_INFO_BIO_CELL_IDENTIFIER = "BandInfoBioCellIdentifier"
+    public static let BAND_INFO_MEMBERS_CELL_IDENTIFIER = "BandInfoMembersCellIdentifier"
+    public static let BAND_INFO_SOCIAL_CELL_IDENTIFIER = "BandInfoSocialCellIdentifier"
+    public static let SONG_INFO_CELL_IDENTIFIER = "SongInfoCellIdentifier"
+    
 	// controller identifiers
 	public static let FIRST_TIME_VIEW_CONTROLLER = "FirstTimeViewController"
 	public static let CHART_VIEW_CONTROLLER = "ChartViewController"
@@ -105,7 +115,7 @@ public struct Constants
 	
 	// layout
 	public static let BUTTON_CORNER_RADIUS: CGFloat = 5.0
-	public static let INDICATOR_HEIGHT: CGFloat = 4.0
+	public static let INDICATOR_HEIGHT: CGFloat = 6.0
 	public static let LABEL_HEIGHT: CGFloat = 24.0
 	public static let SMALL_GAP: CGFloat = 2.0
 	public static let PADDING: CGFloat = 10.0
@@ -138,6 +148,14 @@ public struct Constants
 	public static let SEGMENT_HEIGHT: CGFloat = 44.0
 	public static let SLIDER_TRACK_HEIGHT: CGFloat = 6.0
 	public static let ALBUM_ART_SIZE: CGFloat = 240.0
+    public static let BAND_SONG_CELL_HEIGHT: CGFloat = 80.0
+    public static let BAND_INFO_CELL_HEIGHT: CGFloat = 60.0
+    public static let BAND_BIO_CELL_HEIGHT: CGFloat = 200.0
+    public static let BAND_PADDING_HEIGHT: CGFloat = 50.0
+    public static let TAG_CELL_HEIGHT: CGFloat = 32.0
+    public static let GRAPH_PADDING: CGFloat = 40.0
+    public static let GRAPH_LINE_SIZE: CGFloat = 2.0
+    public static let GRAPH_OFFSET: CGFloat = 6.0
 	
 	// text
 	public static let TITLE_DONE = "Done"
@@ -147,6 +165,8 @@ public struct Constants
 	public static let TITLE_NO_THANKS = "No thanks, I'll do it later"
 	public static let TITLE_RECENTLY_SEARCHED = "Recently searched"
 	public static let TITLE_CANCEL = "Cancel"
+    public static let TITLE_READ_MORE = "Read More"
+    public static let TITLE_SHOW_LESS = "Show Less"
 	
 	
 	// font
@@ -163,7 +183,9 @@ public struct Constants
 	public static let FONT_SIZE_PLAYLIST_HEADER: CGFloat = 14.0
 	public static let FONT_SIZE_TAG_TEXT: CGFloat = 15.0
 	public static let FONT_SIZE_TAG_HEADER: CGFloat = 16.0
-	
+	public static let FONT_SIZE_BIO_CELL: CGFloat = 16.0
+    public static let FONT_SIZE_INFO_HEADER: CGFloat = 14.0
+    
 	// tags
 	public static let TAG_DISMISS = 1
 	public static let TAG_ACTION = 2
@@ -171,6 +193,8 @@ public struct Constants
 	public static let TOTAL_ANIMATING_IMAGES = 30
 	
 	public static let TOTAL_QUEUE_COUNT = 10
+    
+    public static let RANK_LABELS_COUNT: Float = 6.0
 	
 	public static let SHORT_ANIMATION_DURATION: NSTimeInterval = 0.25
 	public static let MEDIUM_ANIMATION_DURATION: NSTimeInterval = 0.6

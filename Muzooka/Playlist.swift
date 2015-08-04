@@ -17,6 +17,8 @@ public class Playlist: NSObject, Shareable
 	public let subscribers: Int
 	public var artwork: String?
 	public var ownerName: String?
+    
+    public var subscribed: Bool = false
 	
 	public init(dict: NSDictionary)
 	{
@@ -34,6 +36,11 @@ public class Playlist: NSObject, Shareable
 		{
 			self.ownerName = Utils.nonNullObject(ownerDict["name"]) as? String
 		}
+        
+        if let userDict = dict["user"] as? NSDictionary
+        {
+            self.subscribed = userDict["subscribed"] as! Bool
+        }
 	}
 	
 	// MARK: Shareable Helper Methods

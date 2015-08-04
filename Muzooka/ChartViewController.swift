@@ -101,9 +101,9 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 	
 	func cellRequestedAction(cell: UITableViewCell, item: AnyObject)
 	{
-		let song = item as! Song
-		
-		if song.userVoted == true
+        var song = item as! Song
+        
+        if song.userVoted == true
 		{
 			let apiRequest = APIRequest(requestType: APIRequest.RequestType.UnVoteSong, requestParameters: [APIRequestParameter(key: "", value: "\(song.songID)")])
 			APIManager.sharedManager.getAPIRequestForDelegate(apiRequest, delegate: self, postData: nil)
@@ -130,9 +130,35 @@ class ChartViewController: MuzookaViewController, UITableViewDataSource, UITable
 		{
 			case APIRequest.RequestType.VoteSong:
 				
-				
+                if let dataDict = data as? NSDictionary
+                {
+                    var userDict = dataDict["user"] as! NSDictionary
+                    let uID = userDict["id"] as! Int
+                    let votes = userDict["votes"] as! Int
+                    
+                    var song = self.itemSelected as! Song
+                    song.userVoted = true
+                    
+                    println("id: \(uID) votes: \(votes)")
+                }
+                
 				break
-			
+            
+            case APIRequest.RequestType.UnVoteSong:
+                if let dataDict = data as? NSDictionary
+                {
+                    var userDict = dataDict["user"] as! NSDictionary
+                    let uID = userDict["id"] as! Int
+                    let votes = userDict["votes"] as! Int
+                    
+                    var song = self.itemSelected as! Song
+                    song.userVoted = false
+                    
+                    println("id: \(uID) votes: \(votes)")
+                }
+            
+                break
+            
 			/*case APIRequest.Band:
 				var dataDict:NSDictionary = data as! NSDictionary
 				

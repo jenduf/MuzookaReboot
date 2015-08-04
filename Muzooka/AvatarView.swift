@@ -26,6 +26,25 @@ class AvatarView: UIView
 			self.updateLayerProperties()
 		}
 	}
+    
+    var avatarURL: String?
+    {
+        didSet
+        {
+            if avatarURL != nil
+            {
+                self.image?.loadFromURL(NSURL(string: avatarURL!)!, callback:
+                { (image) -> () in
+                    self.image = image
+                })
+            }
+            else
+            {
+                self.image = UIImage(named: Constants.IMAGE_DEFAULT_ART)
+            }
+        }
+        
+    }
 
 	var image: UIImage?
 	{

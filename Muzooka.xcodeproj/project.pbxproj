@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		675EF0811B708DE900A6C058 /* VoteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0801B708DE900A6C058 /* VoteButtonView.swift */; };
+		675EF0831B70A6A000A6C058 /* BandSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0821B70A6A000A6C058 /* BandSection.swift */; };
+		675EF0851B70A7DA00A6C058 /* BandInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0841B70A7DA00A6C058 /* BandInfoCell.swift */; };
+		675EF0871B70A7EE00A6C058 /* SocialSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0861B70A7EE00A6C058 /* SocialSection.swift */; };
+		675EF0891B70B0E000A6C058 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0881B70B0E000A6C058 /* Vote.swift */; };
+		675EF08B1B70B1C900A6C058 /* SongInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF08A1B70B1C900A6C058 /* SongInfoView.swift */; };
+		675EF08D1B70B21400A6C058 /* SongInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF08C1B70B21400A6C058 /* SongInfoCell.swift */; };
+		675EF08F1B70BA5F00A6C058 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF08E1B70BA5F00A6C058 /* GraphView.swift */; };
+		675EF0921B70BA8300A6C058 /* GraphCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0901B70BA8300A6C058 /* GraphCurveView.swift */; };
+		675EF0931B70BA8300A6C058 /* GraphLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0911B70BA8300A6C058 /* GraphLineView.swift */; };
 		E50520481B4D0BE500CCEEA0 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50520471B4D0BE500CCEEA0 /* SliderView.swift */; };
-		E509F2E81B0B60A7009B0DDC /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509F2E71B0B60A7009B0DDC /* GraphView.swift */; };
+		E509F2E81B0B60A7009B0DDC /* GradientGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509F2E71B0B60A7009B0DDC /* GradientGraphView.swift */; };
 		E512CF3E1B26F15A00926C72 /* MusicPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512CF3D1B26F15A00926C72 /* MusicPlayerDelegate.swift */; };
 		E512CF411B27513200926C72 /* APIReferrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512CF401B27513200926C72 /* APIReferrer.swift */; };
 		E512CF431B278B6C00926C72 /* UIImage+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512CF421B278B6C00926C72 /* UIImage+Download.swift */; };
@@ -149,8 +159,18 @@
 /* Begin PBXFileReference section */
 		147F3AF9C0508A67D7490870 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5781D546C7FF099F625A8A09 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		675EF0801B708DE900A6C058 /* VoteButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteButtonView.swift; sourceTree = "<group>"; };
+		675EF0821B70A6A000A6C058 /* BandSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandSection.swift; sourceTree = "<group>"; };
+		675EF0841B70A7DA00A6C058 /* BandInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandInfoCell.swift; sourceTree = "<group>"; };
+		675EF0861B70A7EE00A6C058 /* SocialSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialSection.swift; sourceTree = "<group>"; };
+		675EF0881B70B0E000A6C058 /* Vote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
+		675EF08A1B70B1C900A6C058 /* SongInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongInfoView.swift; sourceTree = "<group>"; };
+		675EF08C1B70B21400A6C058 /* SongInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongInfoCell.swift; sourceTree = "<group>"; };
+		675EF08E1B70BA5F00A6C058 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		675EF0901B70BA8300A6C058 /* GraphCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphCurveView.swift; sourceTree = "<group>"; };
+		675EF0911B70BA8300A6C058 /* GraphLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLineView.swift; sourceTree = "<group>"; };
 		E50520471B4D0BE500CCEEA0 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
-		E509F2E71B0B60A7009B0DDC /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		E509F2E71B0B60A7009B0DDC /* GradientGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientGraphView.swift; sourceTree = "<group>"; };
 		E512CF3D1B26F15A00926C72 /* MusicPlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerDelegate.swift; sourceTree = "<group>"; };
 		E512CF401B27513200926C72 /* APIReferrer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIReferrer.swift; sourceTree = "<group>"; };
 		E512CF421B278B6C00926C72 /* UIImage+Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Download.swift"; sourceTree = "<group>"; };
@@ -438,7 +458,10 @@
 				E59FB0271B03448500ED41C4 /* FirstStepView.swift */,
 				E53C0A8D1B14169500B37F21 /* FormView.swift */,
 				E5B6F88A1B183E96008B884A /* GradientView.swift */,
-				E509F2E71B0B60A7009B0DDC /* GraphView.swift */,
+				E509F2E71B0B60A7009B0DDC /* GradientGraphView.swift */,
+				675EF0901B70BA8300A6C058 /* GraphCurveView.swift */,
+				675EF0911B70BA8300A6C058 /* GraphLineView.swift */,
+				675EF08E1B70BA5F00A6C058 /* GraphView.swift */,
 				E5935B3B1AF82F06003FD37B /* IndicatorView.swift */,
 				E5B97CDA1AFA5EAF00955514 /* LeftNavView.swift */,
 				E59FB0311B04996C00ED41C4 /* LoadingAnimationView.swift */,
@@ -455,7 +478,9 @@
 				E5935B361AF82729003FD37B /* SegmentView.swift */,
 				E5B97CD81AFA16F700955514 /* ScoreView.swift */,
 				E50520471B4D0BE500CCEEA0 /* SliderView.swift */,
+				675EF08A1B70B1C900A6C058 /* SongInfoView.swift */,
 				E5DCDEDC1B45E4010017BA24 /* TagView.swift */,
+				675EF0801B708DE900A6C058 /* VoteButtonView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -472,6 +497,7 @@
 		E5935B3F1AF83760003FD37B /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				675EF0841B70A7DA00A6C058 /* BandInfoCell.swift */,
 				E5A0DEA51AF8D12500DD5039 /* MenuCell.swift */,
 				E5A0DEB61AF8F81D00DD5039 /* PartnerCell.swift */,
 				E53C0A931B14A6E300B37F21 /* PlaylistCell.swift */,
@@ -482,6 +508,7 @@
 				E5935B401AF83788003FD37B /* SongCell.swift */,
 				E5DCDED21B45AA490017BA24 /* TagCollectionCell.swift */,
 				E55A1D431B32752200863594 /* MuzookaCellDelegate.swift */,
+				675EF08C1B70B21400A6C058 /* SongInfoCell.swift */,
 				E5DCDEE21B46C9090017BA24 /* StackedGridLayout.swift */,
 				E5DCDEE41B46D0AB0017BA24 /* StackedGridLayoutSection.swift */,
 			);
@@ -574,6 +601,7 @@
 				E512CF401B27513200926C72 /* APIReferrer.swift */,
 				E5A0DE991AF8997800DD5039 /* APIRequest.swift */,
 				E588CDE01B33A0D300F2DBA8 /* APIRequestParameter.swift */,
+				675EF0821B70A6A000A6C058 /* BandSection.swift */,
 				E554053E1B2D5B8200016C02 /* ChartType.swift */,
 				E53C0A8F1B1430F900B37F21 /* Color.swift */,
 				E5531B921B448FF600EE4251 /* ImageDimension.swift */,
@@ -586,7 +614,9 @@
 				E565CC811B0627FF006A1D20 /* NavScreen.swift */,
 				E5B97CE21AFAA8F500955514 /* QueueMode.swift */,
 				E5A0DEC41AF92A9300DD5039 /* Settings.swift */,
+				675EF0861B70A7EE00A6C058 /* SocialSection.swift */,
 				E59FB0251B03443800ED41C4 /* TutorialSteps.swift */,
+				675EF0881B70B0E000A6C058 /* Vote.swift */,
 			);
 			name = enums;
 			sourceTree = "<group>";
@@ -757,6 +787,7 @@
 				E5A0DEC51AF92A9300DD5039 /* Settings.swift in Sources */,
 				E5B97CDF1AFA994800955514 /* RequestDelegate.swift in Sources */,
 				E55A1D441B32752200863594 /* MuzookaCellDelegate.swift in Sources */,
+				675EF0891B70B0E000A6C058 /* Vote.swift in Sources */,
 				E5935B351AF8207B003FD37B /* NavBarView.swift in Sources */,
 				E59FB0301B0435A900ED41C4 /* BandMember.swift in Sources */,
 				E53C0A8C1B13C82600B37F21 /* EditProfileViewController.swift in Sources */,
@@ -768,14 +799,17 @@
 				E5A0DEA11AF8B49500DD5039 /* SegmentViewDelegate.swift in Sources */,
 				E5FA93CB1B1D1FC100E48979 /* MediaType.swift in Sources */,
 				E5A0DE941AF8852300DD5039 /* APIManager.swift in Sources */,
+				675EF0871B70A7EE00A6C058 /* SocialSection.swift in Sources */,
 				E512CF451B27914200926C72 /* UIImageView+Download.swift in Sources */,
 				E5A0DE971AF896DC00DD5039 /* APIDelegate.swift in Sources */,
 				E5935B131AF81D1E003FD37B /* ChartViewController.swift in Sources */,
 				E5DCDEDD1B45E4010017BA24 /* TagView.swift in Sources */,
 				E5A0DEB31AF8EE5400DD5039 /* MuzookaViewController.swift in Sources */,
+				675EF0831B70A6A000A6C058 /* BandSection.swift in Sources */,
 				E565CC881B065D1A006A1D20 /* MusicPlayer.swift in Sources */,
 				E55A1D481B327BA000863594 /* ShareProvider.swift in Sources */,
 				E5B97CE51AFB0EA100955514 /* LoginScreen.swift in Sources */,
+				675EF0931B70BA8300A6C058 /* GraphLineView.swift in Sources */,
 				E55C0E2C1B1E454200F7C6D9 /* SearchDetails.swift in Sources */,
 				E59FB02C1B03F51D00ED41C4 /* AvatarDelegate.swift in Sources */,
 				E59FB0321B04996D00ED41C4 /* LoadingAnimationView.swift in Sources */,
@@ -786,12 +820,16 @@
 				E5935B3C1AF82F06003FD37B /* IndicatorView.swift in Sources */,
 				E512CF471B27D6D400926C72 /* ExtendedPlayerViewController.swift in Sources */,
 				E565CC861B062E87006A1D20 /* NavButton.swift in Sources */,
+				675EF0811B708DE900A6C058 /* VoteButtonView.swift in Sources */,
 				E5D41F821B20E5CD001B6D3E /* MusicPlayerView.swift in Sources */,
 				E554053B1B2C5FA600016C02 /* UIView+Geometry.swift in Sources */,
 				E5A0DEB11AF8EE0C00DD5039 /* PartnerViewController.swift in Sources */,
 				E5A0DE9E1AF8B18200DD5039 /* Band.swift in Sources */,
+				675EF08F1B70BA5F00A6C058 /* GraphView.swift in Sources */,
+				675EF0921B70BA8300A6C058 /* GraphCurveView.swift in Sources */,
 				E5A0DEC91AF97D9800DD5039 /* LoginViewController.swift in Sources */,
 				E5B97CD51AFA0A4400955514 /* AvatarView.swift in Sources */,
+				675EF0851B70A7DA00A6C058 /* BandInfoCell.swift in Sources */,
 				E554053D1B2C651000016C02 /* DiscoverActionView.swift in Sources */,
 				E565CC821B0627FF006A1D20 /* NavScreen.swift in Sources */,
 				E53C0A961B14C97F00B37F21 /* PlaylistDetailViewController.swift in Sources */,
@@ -806,11 +844,12 @@
 				E5F362301B2C0FDF00B65C08 /* DiscoverViewController.swift in Sources */,
 				E5A0DEB91AF8FE7B00DD5039 /* IndustryViewController.swift in Sources */,
 				E5F362321B2C1E6100B65C08 /* DiscoverButton.swift in Sources */,
+				675EF08B1B70B1C900A6C058 /* SongInfoView.swift in Sources */,
 				E55A1D4A1B327EEB00863594 /* Shareable.swift in Sources */,
 				E565CC841B062A16006A1D20 /* NavButtonType.swift in Sources */,
 				E5B6F88B1B183E96008B884A /* GradientView.swift in Sources */,
 				E59FB0261B03443800ED41C4 /* TutorialSteps.swift in Sources */,
-				E509F2E81B0B60A7009B0DDC /* GraphView.swift in Sources */,
+				E509F2E81B0B60A7009B0DDC /* GradientGraphView.swift in Sources */,
 				E5B97CDD1AFA985800955514 /* RequestOperation.swift in Sources */,
 				E59FB02E1B042B8B00ED41C4 /* ArtistViewController.swift in Sources */,
 				E5D221C51AFC70F8006FE143 /* NavContentView.swift in Sources */,
@@ -828,6 +867,7 @@
 				E5B6F8851B17D456008B884A /* LoginButtonType.swift in Sources */,
 				E5A781CC1AFC45B500736018 /* LoginView.swift in Sources */,
 				E5DCDEE31B46C9090017BA24 /* StackedGridLayout.swift in Sources */,
+				675EF08D1B70B21400A6C058 /* SongInfoCell.swift in Sources */,
 				E512CF431B278B6C00926C72 /* UIImage+Download.swift in Sources */,
 				E5B97CE11AFAA3D600955514 /* RequestQueueManager.swift in Sources */,
 				E5DCDED91B45C5210017BA24 /* TagCollections.swift in Sources */,

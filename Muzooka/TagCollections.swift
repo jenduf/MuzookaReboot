@@ -12,7 +12,7 @@ import Foundation
 
 public struct TagCollections
 {
-	public enum TagSection: Int
+    public enum TagSection: Int
 	{
 		case Featured = 0, Cities, Suggested
 		
@@ -58,7 +58,7 @@ public struct TagCollections
 		}
 	}
 	
-	func getSectionCount() -> Int
+    func getSectionCount() -> Int
 	{
 		var sectionCount = 0
 		
@@ -79,10 +79,43 @@ public struct TagCollections
 		
 		return sectionCount as Int
 	}
+    
+    func getSectionsAvailable() -> [TagSection]
+    {
+        var sectionsAvailable = [TagSection]()
+        
+        if !self.featuredTags.isEmpty
+        {
+            sectionsAvailable.append(TagCollections.TagSection.Featured)
+        }
+        
+        if !self.citiesTags.isEmpty
+        {
+           sectionsAvailable.append(.Cities)
+        }
+        
+        if !self.suggestedTags.isEmpty
+        {
+            sectionsAvailable.append(TagSection.Suggested)
+        }
+        
+        return sectionsAvailable
+    }
+    
+    func getTagSectionAtIndex(index: Int) -> TagSection
+    {
+        let sectionsAvailable = self.getSectionsAvailable()
+        
+        let tagSection = sectionsAvailable[index] as TagSection
+        
+        return tagSection
+    }
 	
-	func getRowCountForTagSection(section: TagSection) -> Int
+	func getRowCountForTagSection(section: Int) -> Int
 	{
-		switch section
+        let tagSection = self.getTagSectionAtIndex(section)
+        
+		switch tagSection
 		{
 			case .Featured:
 				return self.featuredTags.count
@@ -95,18 +128,29 @@ public struct TagCollections
 		}
 	}
 	
-	func getTagInfoForTagSectionAtRowIndex(section: TagSection, index: Int) -> TagInfo
+	func getTagInfoForTagSectionAtRowIndex(section: TagSection, index: Int) -> TagInfo?
 	{
 		switch section
 		{
 			case .Featured:
-				return self.featuredTags[index] as TagInfo
-				
+                if self.featuredTags.count > index
+                {
+                    return self.featuredTags[index] as TagInfo
+                }
+            
 			case .Cities:
-				return self.citiesTags[index] as TagInfo
-				
+                if self.citiesTags.count > index
+                {
+                    return self.citiesTags[index] as TagInfo
+                }
+            
 			case .Suggested:
-				return self.suggestedTags[index] as TagInfo
-		}
+                if self.suggestedTags.count > index
+                {
+                    return self.suggestedTags[index] as TagInfo
+                }
+        }
+        
+        return nil
 	}
 }

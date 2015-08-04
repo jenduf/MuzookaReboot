@@ -14,6 +14,8 @@ class SegmentView: UIView
 	var indicatorView: IndicatorView?
 
 	var delegate: SegmentViewDelegate?
+    
+    var selectedIndex: Int = 0
 	
 	var segmentStrings: String?
 	{
@@ -85,6 +87,8 @@ class SegmentView: UIView
 	
 	@IBAction func segmentClicked(btn: BorderedButton)
 	{
+        self.selectedIndex = btn.tag
+        
 		for b in self.segments
 		{
 			b.selected = false

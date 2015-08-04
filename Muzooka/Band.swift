@@ -11,13 +11,15 @@ import Foundation
 
 public class Band: NSObject, Shareable
 {
-	public let bandID: Int
-	public let name: String
-	public let subdomain: String?
-	public let city: String?
-	public let bio: String?
-	public let webSite: String?
-	public let followers: Int?
+	public var bandID: Int
+	public var name: String
+	public var subdomain: String?
+	public var city: String?
+    public var state: String?
+    public var country: String?
+	public var bio: String?
+	public var webSite: String?
+	public var followers: Int?
 	public var avatar: String?
 	public var avatarURL: String?
 	public var avatarDimensions = [ImageDimension]()
@@ -26,16 +28,14 @@ public class Band: NSObject, Shareable
 	public var bannerDimensions = [ImageDimension]()
 	public var following: Bool = false
 	public var isMember: Bool = false
-	public let votes: Int?
+	public var votes: Int?
 	public var bandMembers = [BandMember]()
 	public var songs = [Song]()
+    public var twitterUserName: String?
+    public var facebookUserName: String?
+    public var googleUserName: String?
 	
-	public func getImageURLForDimension(dimension: ImageDimension, url: String) -> String
-	{
-		let imageString = url.stringByReplacingOccurrencesOfString("{%s}", withString: dimension.rawValue, options: NSStringCompareOptions.allZeros, range: nil)
-		
-		return imageString
-	}
+	
 	
 	public init(dict: NSDictionary)
 	{
@@ -43,6 +43,8 @@ public class Band: NSObject, Shareable
 		self.name = dict["name"] as! String
 		self.subdomain = Utils.nonNullObject(dict["subdomain"]) as? String
 		self.city = Utils.nonNullObject(dict["city"]) as? String
+        self.state = Utils.nonNullObject(dict["provstate"]) as? String
+        self.country = Utils.nonNullObject(dict["country"]) as? String
 		self.bio = Utils.nonNullObject(dict["bio"]) as? String
 		self.webSite = Utils.nonNullObject(dict["website"]) as? String
 		self.followers = dict["followers"] as? Int
@@ -93,34 +95,53 @@ public class Band: NSObject, Shareable
 		
 		self.votes = dict["votes"] as? Int
 		
-		if dict["members"] != nil
-		{
-			var memberArray: NSArray = dict["members"] as! NSArray
+        if let memberArray = dict["members"] as? NSArray
+        {
+            for member in memberArray
+            {
+                var bandMember = BandMember(dict: member as! NSDictionary)
+                self.bandMembers.append(bandMember)
+            }
+        }
 		
-			for member in memberArray
-			{
-				var bandMember = BandMember(dict: member as! NSDictionary)
-				self.bandMembers.append(bandMember)
-			}
-		}
-		
-		if dict["songs"] != nil
-		{
-			var songDict: NSDictionary = (dict["songs"] as? NSDictionary)!
-			var songArray: NSArray = (songDict["songs"] as? NSArray)!
-			
-			for song in songArray
-			{
-				var song = Song(dict: song as! NSDictionary)
-				self.songs.append(song)
-			}
-		}
-		
-		if dict["user"] != nil
-		{
-			var user = dict["user"] as! NSDictionary
-			self.following = user["following"]!.boolValue
-		}
+        if let songDict = dict["songs"] as? NSDictionary
+        {
+            var songArray: NSArray = (songDict["songs"] as? NSArray)!
+            
+            for song in songArray
+            {
+                var song = Song(dict: song as! NSDictionary)
+                self.songs.append(song)
+            }
+        }
+        
+        if let userDict = dict["user"] as? NSDictionary
+        {
+            self.following = userDict["following"]!.boolValue
+            
+            if let memberBool = userDict["is_member"] as? Bool
+            {
+                self.isMember = memberBool
+            }
+        }
+        
+        if let networksDict = dict["networks"] as? NSDictionary
+        {
+            if let facebookDict = networksDict["facebook"] as? NSDictionary
+            {
+                self.facebookUserName = facebookDict["username"] as? String
+            }
+            
+            if let twitterDict = networksDict["twitter"] as? NSDictionary
+            {
+                self.twitterUserName = twitterDict["username"] as? String
+            }
+            
+            if let googleDict = networksDict["google"] as? NSDictionary
+            {
+                self.googleUserName = googleDict["username"] as? String
+            }
+        }
 	}
 	
 	// MARK: Shareable Helper Methods
