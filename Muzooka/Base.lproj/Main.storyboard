@@ -3484,8 +3484,8 @@ the Terms of Service and Privacy Policy</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d47-aW-5m0" userLabel="Left Nav View" customClass="LeftNavView" customModule="Muzooka" customModuleProvider="target">
                                 <rect key="frame" x="-275" y="0.0" width="275" height="600"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xB8-Sn-RC5">
-                                        <rect key="frame" x="0.0" y="245" width="275" height="355"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xB8-Sn-RC5">
+                                        <rect key="frame" x="8" y="245" width="267" height="355"/>
                                         <color key="separatorColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
@@ -3674,20 +3674,49 @@ the Terms of Service and Privacy Policy</string>
                                             <constraint firstItem="S3Q-uP-DUO" firstAttribute="leading" secondItem="0AT-lI-yXF" secondAttribute="leading" id="wru-Rt-Caz"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGK-pX-SLM" customClass="IndicatorView" customModule="Muzooka" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="245" width="6" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="6" id="cYf-Fy-dnD"/>
+                                            <constraint firstAttribute="height" constant="60" id="sfz-6a-PAZ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="0AT-lI-yXF" secondAttribute="trailing" id="7jY-0D-XK9"/>
                                     <constraint firstAttribute="bottom" secondItem="xB8-Sn-RC5" secondAttribute="bottom" id="F50-Rp-vOB"/>
+                                    <constraint firstItem="mGK-pX-SLM" firstAttribute="top" secondItem="0AT-lI-yXF" secondAttribute="bottom" id="FbT-f8-h2y"/>
                                     <constraint firstItem="0AT-lI-yXF" firstAttribute="top" secondItem="d47-aW-5m0" secondAttribute="top" id="HxA-YL-CES"/>
+                                    <constraint firstItem="mGK-pX-SLM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0AT-lI-yXF" secondAttribute="bottom" id="Qtr-L2-JZW"/>
+                                    <constraint firstItem="mGK-pX-SLM" firstAttribute="top" secondItem="xB8-Sn-RC5" secondAttribute="top" id="Qxf-Zc-Kci"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="mGK-pX-SLM" secondAttribute="bottom" constant="295" id="SSO-J3-j5D"/>
+                                    <constraint firstItem="xB8-Sn-RC5" firstAttribute="leading" secondItem="mGK-pX-SLM" secondAttribute="trailing" constant="2" id="XyW-rK-YlU"/>
+                                    <constraint firstAttribute="bottom" secondItem="mGK-pX-SLM" secondAttribute="bottom" id="cXQ-vn-lAO"/>
+                                    <constraint firstItem="mGK-pX-SLM" firstAttribute="leading" secondItem="d47-aW-5m0" secondAttribute="leading" id="cra-BO-qKf"/>
+                                    <constraint firstItem="mGK-pX-SLM" firstAttribute="bottom" secondItem="0AT-lI-yXF" secondAttribute="bottom" constant="60" id="kCG-ZO-zn7"/>
                                     <constraint firstItem="xB8-Sn-RC5" firstAttribute="top" secondItem="0AT-lI-yXF" secondAttribute="bottom" id="kD9-KB-H2t"/>
                                     <constraint firstItem="0AT-lI-yXF" firstAttribute="leading" secondItem="d47-aW-5m0" secondAttribute="leading" id="l7F-24-bEA"/>
+                                    <constraint firstItem="mGK-pX-SLM" firstAttribute="top" secondItem="0AT-lI-yXF" secondAttribute="bottom" id="mDW-Zz-XA8"/>
                                     <constraint firstItem="xB8-Sn-RC5" firstAttribute="leading" secondItem="d47-aW-5m0" secondAttribute="leading" id="uYa-RW-aav"/>
                                     <constraint firstAttribute="trailing" secondItem="xB8-Sn-RC5" secondAttribute="trailing" id="yST-Mg-t8F"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Qtr-L2-JZW"/>
+                                        <exclude reference="Qxf-Zc-Kci"/>
+                                        <exclude reference="SSO-J3-j5D"/>
+                                        <exclude reference="cXQ-vn-lAO"/>
+                                        <exclude reference="kCG-ZO-zn7"/>
+                                        <exclude reference="mDW-Zz-XA8"/>
+                                        <exclude reference="uYa-RW-aav"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="bannerView" destination="qMU-AC-c8E" id="5hZ-ZR-Seh"/>
                                     <outlet property="guestView" destination="S3Q-uP-DUO" id="kRl-u8-7KI"/>
+                                    <outlet property="indicatorView" destination="mGK-pX-SLM" id="hFC-x6-HWF"/>
                                     <outlet property="leadingConstraint" destination="2Eq-RB-1hb" id="P7t-1Z-Cgg"/>
                                 </connections>
                             </view>

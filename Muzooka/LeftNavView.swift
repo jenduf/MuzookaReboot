@@ -13,6 +13,7 @@ class LeftNavView: NavContentView
 	
 	@IBOutlet var guestView: UIView!
 	@IBOutlet var bannerView: BannerView!
+    @IBOutlet var indicatorView: IndicatorView!
 	
 	func viewWillDisplay()
 	{
@@ -33,7 +34,20 @@ class LeftNavView: NavContentView
 		self.layer.shadowRadius = 2.0
 		self.layer.shadowColor = UIColor.blackColor().CGColor
 		self.layer.shadowOpacity = 0.5
+        
+        self.indicatorView!.percent = 1.0
 	}
+    
+    func setSelectedMenuItemWithCallback(yPosition: CGFloat, callback: ()->())
+    {
+        UIView.animateWithDuration(Constants.SHORT_ANIMATION_DURATION, animations:
+        { () -> Void in
+            self.indicatorView.transform = CGAffineTransformMakeTranslation(0, yPosition)
+        })
+        { (Bool) -> Void in
+            callback()
+        }
+    }
 
     /*
     // Only override drawRect: if you perform custom drawing.

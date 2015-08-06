@@ -116,6 +116,7 @@ public struct Constants
 	// layout
 	public static let BUTTON_CORNER_RADIUS: CGFloat = 5.0
 	public static let INDICATOR_HEIGHT: CGFloat = 6.0
+    public static let MENU_CELL_HEIGHT: CGFloat = 60.0
 	public static let LABEL_HEIGHT: CGFloat = 24.0
 	public static let SMALL_GAP: CGFloat = 2.0
 	public static let PADDING: CGFloat = 10.0

@@ -548,9 +548,20 @@ class MuzookaNavController: UIViewController, SegmentViewDelegate, UITableViewDa
 	{
 		var menuItem = Menu.values[indexPath.row]
 		
-		self.toggleLeftNav()
-		
 		self.selectedMenuItem = menuItem
+        
+        let newY = (self.menuTableView.rowHeight * CGFloat(indexPath.row))
+        
+        self.leftNavView.setSelectedMenuItemWithCallback(newY, callback:
+        { () -> () in
+            self.toggleLeftNav()
+        })
+        
+       // let timeOffset = Int64(Constants.SHORT_ANIMATION_DURATION * Double(NSEC_PER_SEC))
+       // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeOffset), dispatch_get_main_queue())
+         //   {
+                
+        //}
 	}
 	
 	// MARK: Helpers
