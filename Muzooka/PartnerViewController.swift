@@ -28,17 +28,7 @@ class PartnerViewController: MuzookaViewController, UITableViewDataSource, UITab
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 	
 	// MARK: - Table View
 	func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -58,6 +48,19 @@ class PartnerViewController: MuzookaViewController, UITableViewDataSource, UITab
 		var partner = self.partners[indexPath.row]
 		
 		cell.partner = partner
+        
+        if indexPath.row % 3 == 0
+        {
+            
+        }
+        else if indexPath.row % 2 == 0
+        {
+            
+        }
+        else
+        {
+            
+        }
 		
 		return cell
 	}

@@ -374,9 +374,9 @@
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="WK0-VW-TvW"/>
-                                                            <exclude reference="TEF-b9-5ca"/>
                                                             <exclude reference="2Q4-S0-Fge"/>
+                                                            <exclude reference="TEF-b9-5ca"/>
+                                                            <exclude reference="WK0-VW-TvW"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -615,11 +615,11 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="Wor-Uw-K6F"/>
                                                             <exclude reference="0SD-o2-PCl"/>
-                                                            <exclude reference="cmz-aV-ahC"/>
+                                                            <exclude reference="Wor-Uw-K6F"/>
                                                             <exclude reference="0Nb-sg-lpU"/>
                                                             <exclude reference="1Mp-f0-kif"/>
+                                                            <exclude reference="cmz-aV-ahC"/>
                                                             <exclude reference="tRH-oB-Tcf"/>
                                                         </mask>
                                                     </variation>
