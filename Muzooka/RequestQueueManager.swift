@@ -9,16 +9,28 @@
 
 import Foundation
 
-let mainQueue = RequestQueueManager()
+
 
 class RequestQueueManager: NSObject
 {
-	let maxConcurrentRequestCount = 2
-	let allowDuplicateRequests = false
+    var maxConcurrentRequestCount:Int = 1
+    
+    var allowDuplicateRequests:Bool = false
 	
 	var operations = [RequestOperation]()
 	
 	var queueMode: QueueMode = QueueMode.FirstInFirstOut
+    
+    class var sharedManager: RequestQueueManager
+    {
+        struct SharedQueue
+        {
+            static let mainQueue = RequestQueueManager.
+            mainQueue.init()
+        }
+        
+        return SharedQueue.mainQueue
+    }
 	
 	var suspended: Bool = false
 	{
@@ -27,6 +39,15 @@ class RequestQueueManager: NSObject
 			self.dequeueOperations()
 		}
 	}
+    
+    init(mode: QueueMode = .FirstInFirstOut, allowDupes: Bool = false, maxRequests: Int = 1)
+    {
+        super.init()
+        
+        self.queueMode = mode
+        self.allowDuplicateRequests = allowDupes
+        self.maxConcurrentRequestCount = maxRequests
+    }
 	
 	
 	func requestCount() -> Int

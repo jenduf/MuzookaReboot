@@ -10,9 +10,10 @@
 import Foundation
 import UIKit
 
-class RequestOperation: NSObject, NSURLConnectionDataDelegate
+class RequestOperation: NSOperation, NSURLConnectionDataDelegate
 {
 	typealias ROCompletionHandler = (response: NSURLResponse, data: NSData, delegate: APIDelegate?, error: NSError?) -> Void
+    typealias ROAuthenticationChallengeHandler = (challenge: NSURLAuthenticationChallenge) -> Void
 	
 	var request: NSURLRequest?
 	var autoRetryDelay: Double?
@@ -22,13 +23,31 @@ class RequestOperation: NSObject, NSURLConnectionDataDelegate
 	var completionHandler: ROCompletionHandler?
 	
 	var delegate: APIDelegate?
-	
-	var executing: Bool = false
-	var cancelled: Bool = false
-	var finished: Bool = false
+
 	var autoRetry: Bool = true
+    
+    var autoRetryErrorCodes: NSSet
+    {
+        get
+        {
+             return NSSet(objects: NSURLErrorTimedOut, NSURLErrorCannotFindHost, NSURLErrorCannotConnectToHost, NSURLErrorDNSLookupFailed, NSURLErrorNotConnectedToInternet, NSURLErrorNetworkConnectionLost)
+        }
+            
+    }
+
+    init(request: NSURLRequest, delegate: APIDelegate)
+    {
+        super.init()
+        
+        self.request = request
+        self.delegate = delegate
+        
+        self.autoRetryDelay = Constants.AUTO_RETRY_TIMEOUT
+        
+        self.connection = NSURLConnection(request: request, delegate: self, startImmediately: false)
+    }
 	
-	class func initWithRequest(request: NSURLRequest, delegate: APIDelegate) -> RequestOperation
+	/*class func initWithRequest(request: NSURLRequest, delegate: APIDelegate) -> RequestOperation
 	{
 		var operation: RequestOperation = RequestOperation.new()
 		
@@ -41,42 +60,49 @@ class RequestOperation: NSObject, NSURLConnectionDataDelegate
 		operation.connection = NSURLConnection(request: request, delegate: self, startImmediately: false)
 		
 		return operation
-	}
+	}*/
 	
-	func start()
-	{/*
+	override func start()
+	{
         // Always check for cancellation before launching the task.
-        if self.cancelled
+        if self.executing == false && self.cancelled == false
         {
-            // Must move the operation to the finished state if it is canceled.
-            self.willChangeValueForKey("isFinished")
-            
-            self.finished = true
-            
-            self.didChangeValueForKey("isFinished")
-            
-            return
+            // If the operation is not canceled, begin executing the task.
+            self.willChangeValueForKey("isExecuting")
+            self.executing = true
+            self.connection?.scheduleInRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+            self.connection?.start()
+            self.didChangeValueForKey("isExecuting")
         }
-        
-        // If the operation is not canceled, begin executing the task.
-        self.willChangeValueForKey("isExecuting")
-        
-        NSThread.detachNewThreadSelector("main", toTarget: self, withObject: nil)
-        
-        self.executing = true
-        
-        self.didChangeValueForKey("isExecuting")
-        */
-        
-		if self.executing == false && self.cancelled == false
-		{
-			self.executing = true
-			
-			self.connection?.scheduleInRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
-			
-			self.connection?.start()
-		}
 	}
+    
+    func cancel()
+    {
+        if self.cancelled == false
+        {
+            self.willChangeValueForKey("isCancelled")
+            self.cancelled = true
+            self.connection?.cancel()
+            self.didChangeValueForKey("isCancelled")
+            
+            let error = NSError(domain: NSURLErrorDomain, code: NSURLErrorCancelled, userInfo: nil)
+            
+            self.connection(self.connection!, didFailWithError: error)
+        }
+    }
+    
+    func finish()
+    {
+        if self.executing == true && self.finished == false
+        {
+            self.willChangeValueForKey("isExecuting")
+            self.willChangeValueForKey("isFinished")
+            self.executing = false
+            self.finished = true
+            self.didChangeValueForKey("isFinished")
+            self.didChangeValueForKey("isExecuting")
+        }
+    }
     
     func main()
     {
@@ -90,32 +116,11 @@ class RequestOperation: NSObject, NSURLConnectionDataDelegate
         self.didChangeValueForKey("isFinished")
     }
 	
-	func cancel()
-	{
-		if self.cancelled == false
-		{
-			self.cancelled = true
-			self.connection?.cancel()
-			
-			let error = NSError(domain: NSURLErrorDomain, code: NSURLErrorCancelled, userInfo: nil)
-			
-			self.connection(self.connection!, didFailWithError: error)
-		}
-	}
-	
-	func finish()
-	{
-		if self.executing == true && self.finished == false
-		{
-			self.executing = false
-			self.finished = true
-		}
-	}
 	
 	// MARK: NSURLConnectionDelegate Methods
 	func connection(connection: NSURLConnection, didFailWithError error: NSError)
 	{
-		if self.autoRetry == true
+		if self.autoRetry == true && self.autoRetryErrorCodes?.containsObject(error.code) == true
 		{
 			self.connection = NSURLConnection(request: self.request!, delegate: self, startImmediately: false)
 			
@@ -125,7 +130,22 @@ class RequestOperation: NSObject, NSURLConnectionDataDelegate
 					self.start()
 				}
 		}
+        else
+        {
+            self.finish()
+            
+            if self.completionHandler != nil
+            {
+                self.completionHandler(self.response, self.accumulatedData, self.delegate, error)
+            }
+        }
 	}
+    
+    func connection(connection: NSURLConnection, didReceiveAuthenticationChallenge challenge: NSURLAuthenticationChallenge)
+    {
+        if self.auth
+        
+    }
 	
 	func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse)
 	{

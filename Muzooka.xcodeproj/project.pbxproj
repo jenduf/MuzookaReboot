@@ -17,6 +17,11 @@
 		675EF08F1B70BA5F00A6C058 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF08E1B70BA5F00A6C058 /* GraphView.swift */; };
 		675EF0921B70BA8300A6C058 /* GraphCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0901B70BA8300A6C058 /* GraphCurveView.swift */; };
 		675EF0931B70BA8300A6C058 /* GraphLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675EF0911B70BA8300A6C058 /* GraphLineView.swift */; };
+		67D0C5E21B8C009200B21160 /* APIOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0C5E11B8C009200B21160 /* APIOperations.swift */; };
+		67D0C5E41B8C063C00B21160 /* APIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0C5E31B8C063C00B21160 /* APIOperation.swift */; };
+		67D0C5E61B8C087F00B21160 /* APITask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0C5E51B8C087F00B21160 /* APITask.swift */; };
+		67D0C5E81B8C11D000B21160 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0C5E71B8C11D000B21160 /* APIResponse.swift */; };
+		67D0C5EA1B8C279600B21160 /* String+Escape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0C5E91B8C279600B21160 /* String+Escape.swift */; };
 		E50520481B4D0BE500CCEEA0 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50520471B4D0BE500CCEEA0 /* SliderView.swift */; };
 		E509F2E81B0B60A7009B0DDC /* GradientGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509F2E71B0B60A7009B0DDC /* GradientGraphView.swift */; };
 		E512CF3E1B26F15A00926C72 /* MusicPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512CF3D1B26F15A00926C72 /* MusicPlayerDelegate.swift */; };
@@ -169,6 +174,11 @@
 		675EF08E1B70BA5F00A6C058 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		675EF0901B70BA8300A6C058 /* GraphCurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphCurveView.swift; sourceTree = "<group>"; };
 		675EF0911B70BA8300A6C058 /* GraphLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLineView.swift; sourceTree = "<group>"; };
+		67D0C5E11B8C009200B21160 /* APIOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIOperations.swift; sourceTree = "<group>"; };
+		67D0C5E31B8C063C00B21160 /* APIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIOperation.swift; sourceTree = "<group>"; };
+		67D0C5E51B8C087F00B21160 /* APITask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITask.swift; sourceTree = "<group>"; };
+		67D0C5E71B8C11D000B21160 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		67D0C5E91B8C279600B21160 /* String+Escape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Escape.swift"; sourceTree = "<group>"; };
 		E50520471B4D0BE500CCEEA0 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		E509F2E71B0B60A7009B0DDC /* GradientGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientGraphView.swift; sourceTree = "<group>"; };
 		E512CF3D1B26F15A00926C72 /* MusicPlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerDelegate.swift; sourceTree = "<group>"; };
@@ -520,6 +530,9 @@
 			children = (
 				E5A0DE951AF896C000DD5039 /* delegates */,
 				E5A0DE931AF8852300DD5039 /* APIManager.swift */,
+				67D0C5E11B8C009200B21160 /* APIOperations.swift */,
+				67D0C5E31B8C063C00B21160 /* APIOperation.swift */,
+				67D0C5E51B8C087F00B21160 /* APITask.swift */,
 				E5B97CDC1AFA985800955514 /* RequestOperation.swift */,
 				E5B97CE01AFAA3D600955514 /* RequestQueueManager.swift */,
 			);
@@ -601,6 +614,7 @@
 				E512CF401B27513200926C72 /* APIReferrer.swift */,
 				E5A0DE991AF8997800DD5039 /* APIRequest.swift */,
 				E588CDE01B33A0D300F2DBA8 /* APIRequestParameter.swift */,
+				67D0C5E71B8C11D000B21160 /* APIResponse.swift */,
 				675EF0821B70A6A000A6C058 /* BandSection.swift */,
 				E554053E1B2D5B8200016C02 /* ChartType.swift */,
 				E53C0A8F1B1430F900B37F21 /* Color.swift */,
@@ -628,6 +642,7 @@
 				E5C545C11B05A35F00FFF3CA /* UIView+Positioning.swift */,
 				E512CF421B278B6C00926C72 /* UIImage+Download.swift */,
 				E512CF441B27914200926C72 /* UIImageView+Download.swift */,
+				67D0C5E91B8C279600B21160 /* String+Escape.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -794,6 +809,7 @@
 				E53CF0E41B1D02D5001DA15E /* SearchController.swift in Sources */,
 				E5935B321AF81FC8003FD37B /* MuzookaNavController.swift in Sources */,
 				E5DCDED71B45C4310017BA24 /* TagInfo.swift in Sources */,
+				67D0C5E21B8C009200B21160 /* APIOperations.swift in Sources */,
 				E5A0DEAF1AF8DDF500DD5039 /* BorderedButton.swift in Sources */,
 				E5B97CD11AF9FEEE00955514 /* User.swift in Sources */,
 				E5A0DEA11AF8B49500DD5039 /* SegmentViewDelegate.swift in Sources */,
@@ -804,6 +820,7 @@
 				E5A0DE971AF896DC00DD5039 /* APIDelegate.swift in Sources */,
 				E5935B131AF81D1E003FD37B /* ChartViewController.swift in Sources */,
 				E5DCDEDD1B45E4010017BA24 /* TagView.swift in Sources */,
+				67D0C5E61B8C087F00B21160 /* APITask.swift in Sources */,
 				E5A0DEB31AF8EE5400DD5039 /* MuzookaViewController.swift in Sources */,
 				675EF0831B70A6A000A6C058 /* BandSection.swift in Sources */,
 				E565CC881B065D1A006A1D20 /* MusicPlayer.swift in Sources */,
@@ -861,8 +878,10 @@
 				E5A0DEB71AF8F81D00DD5039 /* PartnerCell.swift in Sources */,
 				E5A0DEBD1AF903A100DD5039 /* ProducerCell.swift in Sources */,
 				E53C0A901B1430F900B37F21 /* Color.swift in Sources */,
+				67D0C5E41B8C063C00B21160 /* APIOperation.swift in Sources */,
 				E5B97CD31AFA000300955514 /* ScoreDetails.swift in Sources */,
 				E5B6F8891B18110F008B884A /* AlbumArtView.swift in Sources */,
+				67D0C5E81B8C11D000B21160 /* APIResponse.swift in Sources */,
 				E5F362341B2C444700B65C08 /* DraggableImageView.swift in Sources */,
 				E5B6F8851B17D456008B884A /* LoginButtonType.swift in Sources */,
 				E5A781CC1AFC45B500736018 /* LoginView.swift in Sources */,
@@ -885,6 +904,7 @@
 				E5B97CD91AFA16F700955514 /* ScoreView.swift in Sources */,
 				E50520481B4D0BE500CCEEA0 /* SliderView.swift in Sources */,
 				E5A0DEC31AF91A8700DD5039 /* SettingsViewController.swift in Sources */,
+				67D0C5EA1B8C279600B21160 /* String+Escape.swift in Sources */,
 				E554053F1B2D5B8200016C02 /* ChartType.swift in Sources */,
 				E5B6F8831B17D286008B884A /* BannerView.swift in Sources */,
 				E5A0DE9C1AF8A2ED00DD5039 /* Song.swift in Sources */,

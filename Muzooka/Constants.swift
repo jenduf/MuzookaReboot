@@ -199,6 +199,8 @@ public struct Constants
 	
 	public static let SHORT_ANIMATION_DURATION: NSTimeInterval = 0.25
 	public static let MEDIUM_ANIMATION_DURATION: NSTimeInterval = 0.6
+    
+    public static let AUTO_RETRY_TIMEOUT: Double = 5.0
 	
 	public static let SCROLL_ALBUM_MAX_VISIBLE: Int = 3
 }

@@ -14,6 +14,8 @@ public struct APIRequest
 	public let requestType: RequestType
 	
 	public let requestParameters: [APIRequestParameter]?
+    
+    public let requestState: RequestState
 	
 	
 	public enum RequestType: Int
@@ -72,6 +74,21 @@ public struct APIRequest
 			return urls[self.rawValue]
 		}
 	}
+    
+    public enum RequestState: Int
+    {
+        case New, Started, Cancelled, Finished, Failed
+    }
+    
+    public enum HTTPMethod: String
+    {
+        case GET = "GET"
+        case POST = "POST"
+        case PUT = "PUT"
+        case HEAD = "HEAD"
+        case DELETE = "DELETE"
+        case PATCH = "PATCH"
+    }
 	
 	
 	func getURLWithParameters() -> String
